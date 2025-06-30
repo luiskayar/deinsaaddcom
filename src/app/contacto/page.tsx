@@ -1,6 +1,5 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC',
