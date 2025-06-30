@@ -1,0 +1,17 @@
+{
+    "name": "Deinsa Global - Plataforma DELPHOS",
+    "short_name": "DELPHOS",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1e40af",
+    "description": "Software de gobernanza corporativa, gestión de riesgos, continuidad del negocio y cumplimiento normativo.",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      }
+    ]
+  }
+  
