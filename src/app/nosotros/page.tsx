@@ -4,6 +4,9 @@ import { Metadata } from 'next';
 import { MdBusiness, MdTrendingUp, MdSecurity, MdCloudUpload, MdStar } from 'react-icons/md';
 import { FaGlobe, FaUsers, FaChartLine, FaShieldAlt, FaRocket, FaCloudUploadAlt } from 'react-icons/fa';
 
+//Alianzas imports
+import ClientAlianzasGrid from './ClientAlianzasGrid';
+
 export const generateMetadata = (): Metadata => {
   return {
     title: 'Nosotros | DEINSA Global - 35+ Años de Experiencia en Gobernanza Corporativa',
@@ -145,6 +148,7 @@ const coloresPais = {
   RD: 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200',
 };
 
+{/*
 const alianzas = [
   { pais: 'Costa Rica', codigo: 'cr' },
   { pais: 'Panamá', codigo: 'pa' },
@@ -153,7 +157,7 @@ const alianzas = [
   { pais: 'Honduras', codigo: 'hn' },
   { pais: 'El Salvador', codigo: 'sv' },
 ];
-
+*/}
 export default function NosotrosPage() {
   return (
     <main className="min-h-screen">
@@ -373,7 +377,7 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* Alianzas */}
+      {/* Alianzas Server side*/}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -382,26 +386,10 @@ export default function NosotrosPage() {
               Contamos con una red de aliados regionales para implementaciones locales y soporte especializado
             </p>
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-8">
-            {alianzas.map((a, i) => (
-              <div
-                key={i}
-                className="group flex flex-col items-center space-y-3 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-              >
-                <div className="w-16 h-12 relative overflow-hidden rounded-lg shadow-md">
-                  <img
-                    src={`https://flagcdn.com/w80/${a.codigo}.png`}
-                    alt={a.pais}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-sm font-semibold text-gray-700 group-hover:text-blue-600 transition-colors">
-                  {a.pais}
-                </span>
-              </div>
-            ))}
-          </div>
+
+          {/*Alianzas Client Side*/}
+          <ClientAlianzasGrid />
+          {/*Alianzas Client Side*/}
         </div>
       </section>
 
