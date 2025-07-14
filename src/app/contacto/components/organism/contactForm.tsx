@@ -1,0 +1,141 @@
+"use client";
+
+import React, { useState } from "react";
+import { FormField, Input, Textarea, RadioGroup } from "../";
+
+const interesesOpciones = [
+  "Solicitar Demo de DELPHOS",
+  "Consulta sobre Licitación",
+  "Consultoría GRC",
+  "Soporte Técnico",
+  "Información General",
+];
+
+export const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    telefono: "",
+    institucion: "",
+    cargo: "",
+    interes: "",
+    mensaje: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleRadioChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, interes: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Formulario enviado:", formData);
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+      <form className="space-y-5" onSubmit={handleSubmit}>
+        <h2 className="text-2xl font-semibold text-blue-800 mb-6">
+          Envíenos un Mensaje
+        </h2>
+        {/* Campos de Nombre y Apellido */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <FormField htmlFor="nombre" label="Nombre">
+            <Input
+              type="text"
+              id="nombre"
+              name="nombre"
+              value={formData.nombre}
+              onChange={handleChange}
+              required
+            />
+          </FormField>
+          <FormField htmlFor="apellido" label="Apellido">
+            <Input
+              type="text"
+              id="apellido"
+              name="apellido"
+              value={formData.apellido}
+              onChange={handleChange}
+              required
+            />
+          </FormField>
+        </div>
+
+        {/* Campos de Correo y Teléfono */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <FormField htmlFor="email" label="Correo Electrónico">
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </FormField>
+          <FormField htmlFor="telefono" label="Teléfono">
+            <Input
+              type="text"
+              id="telefono"
+              name="telefono"
+              value={formData.telefono}
+              onChange={handleChange}
+            />
+          </FormField>
+        </div>
+
+        {/* Campos de Institución y Cargo */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <FormField htmlFor="institucion" label="Institución/Empresa">
+            <Input
+              type="text"
+              id="institucion"
+              name="institucion"
+              value={formData.institucion}
+              onChange={handleChange}
+            />
+          </FormField>
+          <FormField htmlFor="cargo" label="Cargo">
+            <Input
+              type="text"
+              id="cargo"
+              name="cargo"
+              value={formData.cargo}
+              onChange={handleChange}
+            />
+          </FormField>
+        </div>
+
+        {/* Campo de Interés Principal */}
+        <RadioGroup
+          name="interes"
+          label="Interés Principal"
+          options={interesesOpciones}
+          selectedValue={formData.interes}
+          onChange={handleRadioChange}
+        />
+
+        {/* Campo de Mensaje */}
+        <FormField htmlFor="mensaje" label="Su Mensaje">
+          <Textarea
+            id="mensaje"
+            name="mensaje"
+            rows={4}
+            value={formData.mensaje}
+            onChange={handleChange}
+            placeholder="Escriba su mensaje aquí..."
+            required
+          />
+        </FormField>
+      </form>
+    </div>
+  );
+};
