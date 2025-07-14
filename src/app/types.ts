@@ -20,3 +20,9 @@ export interface ContactAlianza{
     subtitle?:string;
     items:string[];
 }
+
+export interface NewsFirebase{
+    description?:string;
+    image?:string;
+    title?:string;
+}
