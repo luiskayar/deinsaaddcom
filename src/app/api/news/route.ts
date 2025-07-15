@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { NextResponse } from "next/server";
 import { addNews } from "@/lib/addNews";
+import { getNoticias } from "@/lib/functions db/getNoticias";
 
 // Define the validation schema for the news data
 const newsSchema = z.object({
@@ -25,5 +26,15 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Error al agregar noticia:", error);
     return NextResponse.json({ error: "Error al agregar noticia" }, { status: 500 });
+  }
+}
+
+export async function GET() {
+  try {
+    const news = await getNoticias();
+    return NextResponse.json(news, { status: 200 });
+  } catch (error) {
+    console.error("Error al obtener noticias:", error);
+    return NextResponse.json({ error: "Error al obtener noticias" }, { status: 500 });
   }
 }
