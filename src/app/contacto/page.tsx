@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-// import { ContactForm } from "./components/organism/contactForm";
-import { ContactForm } from "../contacto/components/index";
+import { ContactForm } from "../../components/index";
 
 export const metadata: Metadata = {
   title: "Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC",

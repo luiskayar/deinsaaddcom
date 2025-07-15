@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { FormField, Input, Textarea, RadioGroup } from "../";
+import FormField from "../molecules/formField";
+import Input from "../atoms/input";
+import Textarea from "../atoms/textArea";
+import RadioGroup from "../molecules/radioGroup";
 
 const interesesOpciones = [
   "Solicitar Demo de DELPHOS",
@@ -11,7 +14,7 @@ const interesesOpciones = [
   "Información General",
 ];
 
-export const ContactForm: React.FC = () => {
+const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -41,7 +44,7 @@ export const ContactForm: React.FC = () => {
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
-      <form className="space-y-5" onSubmit={handleSubmit}>
+      <div className="space-y-5" onSubmit={handleSubmit}>
         <h2 className="text-2xl font-semibold text-blue-800 mb-6">
           Envíenos un Mensaje
         </h2>
@@ -135,7 +138,9 @@ export const ContactForm: React.FC = () => {
             required
           />
         </FormField>
-      </form>
+      </div>
     </div>
   );
 };
+
+export default ContactForm;

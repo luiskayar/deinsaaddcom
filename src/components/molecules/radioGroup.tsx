@@ -1,5 +1,6 @@
 import React from "react";
-import { RadioButton, Label } from "../";
+import RadioButton from "../atoms/radioButton";
+import Label from "../atoms/label";
 
 interface RadioGroupProps {
   name: string;
@@ -10,7 +11,7 @@ interface RadioGroupProps {
   className?: string;
 }
 
-export const RadioGroup: React.FC<RadioGroupProps> = ({
+const RadioGroup: React.FC<RadioGroupProps> = ({
   name,
   options,
   label,
@@ -37,3 +38,5 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
     </div>
   );
 };
+
+export default RadioGroup;

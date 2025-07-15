@@ -1,5 +1,5 @@
 import React from "react";
-import { Label } from "../";
+import Label from "../atoms/label";
 
 interface FormFieldProps {
   htmlFor: string;
@@ -8,7 +8,7 @@ interface FormFieldProps {
   className?: string;
 }
 
-export const FormField: React.FC<FormFieldProps> = ({
+const FormField: React.FC<FormFieldProps> = ({
   htmlFor,
   label,
   children,
@@ -21,3 +21,5 @@ export const FormField: React.FC<FormFieldProps> = ({
     </div>
   );
 };
+
+export default FormField;
