@@ -54,6 +54,7 @@ export default function Home() {
               <FaRocket className="mr-2" />
               Líder en Gobernanza Corporativa desde 1990
             </div>
+
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">

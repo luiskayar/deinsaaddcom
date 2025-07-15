@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { NextResponse } from "next/server";
 import { addNews } from "@/lib/addNews";
-import { getNoticias } from "@/lib/functions db/getNoticias";
+import { getNoticias } from "@/lib/functions/getNoticias";
 
 // Define the validation schema for the news data
 const newsSchema = z.object({
