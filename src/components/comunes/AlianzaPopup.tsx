@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { extractContactInfo } from '@/lib/functions db/extractContactInfo';
+import { extractContactInfo } from '@/lib/functions/extractContactInfo';
 import { ContactAlianza, AlianzaFirebase} from '@/app/types';
-import { findPais } from '@/lib/functions db/findPais';
+import { findPais } from '@/lib/functions/findPais';
 
 
 
