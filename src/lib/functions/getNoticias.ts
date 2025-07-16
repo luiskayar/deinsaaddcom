@@ -1,7 +1,8 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import { NewsFirebase } from "@/app/types";
 
-export async function getNoticias() {
+export async function getNoticias() : Promise<(NewsFirebase & { id: string })[]> {
   const snapshot = await getDocs(collection(db, "news"));
 
   const documentos = snapshot.docs.map((doc) => ({

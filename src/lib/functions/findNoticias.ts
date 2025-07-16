@@ -1,15 +1,19 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import { NewsFirebase } from "@/app/types";
 
-export async function buscarNoticiasPorTitulo(title: string): Promise<(NewsFirebase & { id: string })[]> {
-  const noticiasRef = collection(db, "news");
+export async function buscarNoticiasPorTitulo(titulo: string): Promise<(NewsFirebase & { id: string })[]> {
+  const snapshot = await getDocs(collection(db, "news"));
 
-  const q = query(noticiasRef, where("title", "==", title));
-  const snapshot = await getDocs(q);
-
-  return snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  })) as (NewsFirebase & { id: string })[];
+  return snapshot.docs
+    .map((doc) => {
+      const data = doc.data() as NewsFirebase;
+      return {
+        id: doc.id,
+        ...data,
+      };
+    })
+    .filter((doc) =>
+      doc.title?.toLowerCase().includes(titulo.toLowerCase())
+    );
 }
