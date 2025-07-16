@@ -7,7 +7,7 @@ export async function getNews() : Promise<(NewsFirebase & { id: string })[]> {
 
   const documentos = snapshot.docs.map((doc) => ({
     id: doc.id,
-    ...doc.data(),
+    ...(doc.data() as NewsFirebase),
   }));
 
   return documentos;
