@@ -9,12 +9,11 @@ type Props = {
     link: string;
     alt: string;
     src: string;
-    key: string;
 };
 
-export default function ArticlePreview({titulo, extracto, link, alt, src, key}: Props) {          //intentar sacar el key
+export default function ArticlePreview({titulo, extracto, link, alt, src}: Props) {          //intentar sacar el key
 
-    return <article key={key} className='bg-white rounded-xl shadow-md overflow-hidden flex flex-col'>
+    return (/*<article key={key} className='bg-white rounded-xl shadow-md overflow-hidden flex flex-col'>
                 <div className="h-40 bg-gray-200 flex items-center justify-center">
                     <NewsImage src={src} alt={alt}/>
                 </div>
@@ -25,5 +24,19 @@ export default function ArticlePreview({titulo, extracto, link, alt, src, key}: 
                     <Paragraph>{extracto}</Paragraph>
                     <LinkNote href={link}/>
                 </div>
-           </article>
+           </article>*/
+
+           <article className='bg-white rounded-xl shadow-md overflow-hidden flex flex-col'>
+            <div className="h-40 bg-gray-200 flex items-center justify-center">
+                <NewsImage src={src} alt={alt}/>
+            </div>
+            <div className="p-6 flex flex-col flex-1">
+                <Heading>{titulo}</Heading>
+                <Paragraph>{extracto}</Paragraph>
+                <LinkNote href={link}/>
+            </div>
+        </article>
+    );
+
+
 }
