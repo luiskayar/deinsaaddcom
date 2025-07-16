@@ -2,7 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import { NewsFirebase } from "@/app/types";
 
-export async function buscarNoticiasPorTitulo(titulo: string): Promise<(NewsFirebase & { id: string })[]> {
+export async function searchNewsByTitle(titulo: string): Promise<(NewsFirebase & { id: string })[]> {
   const snapshot = await getDocs(collection(db, "news"));
 
   return snapshot.docs
