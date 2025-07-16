@@ -88,8 +88,8 @@ export default async function NoticiasPage() {
   
   const res = await fetch('http://localhost:3000/api/news', { cache: 'no-store'});
   if (!res.ok) throw new Error('Error al cargar la noticia');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const raw = await res.json() as Array<Record<string, any>>;
+  
+  const raw = await res.json() as Array<Record<string, string>>;
                                                                   
   const noticias = raw.map((item) => ({
     id: item.id,
