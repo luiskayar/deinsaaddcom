@@ -6,5 +6,11 @@ type Props = {
 }
 
 export default function NewsImage({src, alt}: Props) {
-    return <img src={src} alt={alt} className='object-cover h-full w-full'/>
+    return (<Image
+            src={src}
+            alt={alt}
+            className='object-cover h-full w-full'
+            width={640}
+            height={480}
+        />);
 }
