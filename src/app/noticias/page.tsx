@@ -1,12 +1,11 @@
 
 import React from 'react';
 import TituloSeccion from '@/components/comunes/TituloSeccion';
-import Link from 'next/link';
 import { Metadata } from 'next';
 
-import ArticlePreview from '@/components/molecules/ArticlePreview';
-import { time } from 'console';
+import { ArticlePreview } from '@/components/index';
 
+{/*
   const ejemplo = {
     id: 1,
     titulo: 'Título de prueba para la molécula',
@@ -15,7 +14,7 @@ import { time } from 'console';
     alt:    'Imagen de prueba para ArticlePreview',
     // Si tu molécula acepta también src, inclúyelo:
     src:    '/placeholder-news.jpg',
-  };
+  };*/}
 
 export const metadata: Metadata = {
   title: 'Blog y Noticias DEINSA GLOBAL | Gobernanza, Riesgos y Cumplimiento Normativo',
@@ -42,6 +41,7 @@ export const metadata: Metadata = {
   },
 };
 
+{/*
 const articulos = [
   {
     id: 0,
@@ -71,7 +71,7 @@ const articulos = [
     link: '/noticias/planificacion-estrategica-delphos-net',
     imgAlt: 'Imagen representativa del artículo: Planificación Estratégica Institucional con DELPHOS Net: Visión y Ejecución',
   },
-];
+];*/}
 
 const categorias = [
   'Gestión de Riesgos',
@@ -86,19 +86,16 @@ const categorias = [
 
 export default async function NoticiasPage() {
   
-  const res = await fetch('http://localhost:3001/api/news', { cache: 'no-store'});
+  const res = await fetch('http://localhost:3000/api/news', { cache: 'no-store'});
   if (!res.ok) throw new Error('Error al cargar la noticia');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const raw = await res.json() as Array<Record<string, any>>;
-
+                                                                  
   const noticias = raw.map((item) => ({
     id: item.id,
     title: item.title,
     description: item.description,
-    images:
-      typeof item.images === 'string' ? item.images:
-      typeof item.imagess === 'string' ? item.imagess:
-      typeof item.ddd === 'string' ? item.ddd:
-      '',
+    images: item.image
   }))
 
 
