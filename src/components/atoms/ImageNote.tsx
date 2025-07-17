@@ -9,7 +9,7 @@ export default function NewsImage({src, alt}: Props) {
     return (<Image
             src={src}
             alt={alt}
-            className='object-cover h-full w-full'
+            className='object-cover h-35 w-80'
             width={640}
             height={480}
         />);
