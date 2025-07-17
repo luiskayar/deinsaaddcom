@@ -4,15 +4,21 @@ import { useEffect, useState } from "react";
 import { searchNewsByTitle } from "@/lib/functions/searchNewsByTitle";
 import { getNews } from "@/lib/functions/getNews";
 import { NewsFirebase } from "@/app/types";
-import Image from "next/image";
+import NewsImage from "@/components/atoms/ImageNote";
 
 type NewsItem = NewsFirebase & { id: string };
 
 export default function NewsSearch() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [news, setNews] = useState<NewsItem[]>([]);
+  const [newsList, setNewsList] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const loadNews  = async () => {
@@ -28,8 +34,8 @@ export default function NewsSearch() {
 
     setLoading(true);
     try {
-      const results = await searchNewsByTitle(input);
-      setNews(results);
+      const results = await searchNewsByTitle(input, news);
+      setNewsList(results);
       setMessage(results.length === 0 ? "No se encontraron noticias." : "");
     } catch (error) {
       console.error("Error buscando noticias:", error);
@@ -38,6 +44,9 @@ export default function NewsSearch() {
       setLoading(false);
     }
   };
+
+  if (!isMounted) return null;
+  const displayedNews  = input.trim() ? newsList : news;
 
   return (
     <div className="space-y-4">
@@ -63,16 +72,15 @@ export default function NewsSearch() {
         <p className="text-gray-500">{message}</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-6">
-          {news.map((newsItem) => (
-            <article key={newsItem.id} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+          {displayedNews.map((newsItem) => (
+            <article 
+              key={newsItem.id} 
+              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
               <div className="h-40 bg-gray-200 flex items-center justify-center">
                 {newsItem.image?.startsWith("http") ? (
-                  <Image
+                  <NewsImage
                     src={newsItem.image}
                     alt={newsItem.title ?? "Imagen de noticia"}
-                    width={560}
-                    height={320}
-                    className="object-cover h-full w-full"
                   />
                 ) : (
                   <span className="text-gray-400">Sin imagen</span>
