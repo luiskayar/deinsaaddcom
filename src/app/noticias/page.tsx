@@ -95,7 +95,8 @@ export default async function NoticiasPage() {
     id: item.id,
     title: item.title,
     description: item.description,
-    images: item.image
+    images: item.image,
+    slug: item.slug
   }))
 
 
@@ -139,7 +140,7 @@ export default async function NoticiasPage() {
             <ArticlePreview
               titulo={art.title}
               extracto={art.description}
-              link={art.id}
+              link={`/noticias/${art.slug}`}
               alt={art.images}
               src={art.images}
               key={art.id}
