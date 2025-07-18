@@ -2,11 +2,11 @@ import React from "react";
 import { News } from "@/app/types";
 import Image from "next/image";
 
-type NoticiaPageProps ={
+/*type NoticiaPageProps ={
   params: { slug: string };
-}
+};*/
 
-export default async function NoticiaPage({ params }: NoticiaPageProps) {
+export default async function NoticiaPage({ params }: { params: { slug: string } }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/${params.slug}`, {
     cache: "no-store",
   });
