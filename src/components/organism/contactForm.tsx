@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from "react";
 import FormField from "../molecules/formField";
@@ -37,14 +37,42 @@ const ContactForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, interes: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Formulario enviado:", formData);
+
+    const token = (window as any).grecaptcha?.getResponse();
+
+    if (!token) {
+      alert("Por favor, completa el reCAPTCHA");
+      return;
+    }
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        "g-recaptcha-response": token,
+      }),
+    });
+
+    const result = await res.json();
+
+    if (res.ok) {
+      alert("Formulario enviado ✅");
+    } else {
+      alert(`Error: ${result.error}`);
+    }
+
+    (window as any).grecaptcha?.reset();
   };
+
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
-      <div className="space-y-5" onSubmit={handleSubmit}>
+      <form className="space-y-5" onSubmit={handleSubmit}>
         <h2 className="text-2xl font-semibold text-blue-800 mb-6">
           Envíenos un Mensaje
         </h2>
@@ -138,7 +166,15 @@ const ContactForm: React.FC = () => {
             required
           />
         </FormField>
-      </div>
+        <div className="g-recaptcha" data-sitekey="6Ld_2YYrAAAAADCNaewT-M7O_TetUpXWDW1dJcRl"></div>
+        <button
+              type="submit"
+              className="w-full py-3 rounded-md text-white font-bold text-lg transition-colors"
+              style={{ background: "#F57F26" }}
+            >
+              Enviar Mensaje
+            </button>
+      </form>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { ContactForm } from "../../components/index";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC",
@@ -31,7 +32,9 @@ export const metadata: Metadata = {
 
 export default function ContactoPage() {
   return (
+    
     <div className="min-h-screen bg-gray-50 py-10">
+      <Script async src="https://www.google.com/recaptcha/api.js" />
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Título y Mensaje */}
         <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4 text-center">
@@ -47,25 +50,9 @@ export default function ContactoPage() {
         </p>
 
         {/* Formulario de Contacto */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
-          <form className="space-y-5">
-            <ContactForm />
-            {/* reCAPTCHA visual placeholder */}
-            <div className="flex justify-center my-4">
-              {/* Aquí debe integrarse Google reCAPTCHA real en producción */}
-              <div className="bg-gray-200 rounded shadow px-8 py-4 text-gray-500 text-sm select-none">
-                [reCAPTCHA]
-              </div>
-            </div>
-            <button
-              type="submit"
-              className="w-full py-3 rounded-md text-white font-bold text-lg transition-colors"
-              style={{ background: "#F57F26" }}
-            >
-              Enviar Mensaje
-            </button>
-          </form>
-        </div>
+        
+            <ContactForm  />
+            
 
         {/* Información de Contacto Directa */}
         <div className="mb-12">
