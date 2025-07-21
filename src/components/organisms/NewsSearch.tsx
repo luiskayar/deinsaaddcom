@@ -1,96 +1,69 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { searchNewsByTitle } from "@/lib/functions/searchNewsByTitle";
-import { getNews } from "@/lib/functions/getNews";
 import { NewsFirebase } from "@/app/types";
-import NewsImage from "@/components/atoms/ImageNote";
+//import NewsImage from "@/components/atoms/ImageNote";
+import { Search } from "lucide-react";
+import ArticlePreview from "@/components/molecules/ArticlePreview";
 
 type NewsItem = NewsFirebase & { id: string };
 
-export default function NewsSearch() {
-  const [input, setInput] = useState('');
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [newsList, setNewsList] = useState<NewsItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [message, setMessage] = useState("");
-  const [isMounted, setIsMounted] = useState(false);
+interface Props {
+  allNews: NewsItem[];
+}
+
+export default function NewsSearch({ allNews }: Props) {
+  const [input, setInput] = useState("");
+  const [filtered, setFiltered] = useState<NewsItem[]>(allNews);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    setMounted(true);
   }, []);
 
   useEffect(() => {
-    const loadNews  = async () => {
-      const allNews = await getNews();
-      setNews(allNews);
-      setLoading(false);
-    };
-    loadNews ();
-  }, []);
-
-  const handleSearch = async () => {
-    if (!input.trim()) return;
-
-    setLoading(true);
-    try {
-      const results = await searchNewsByTitle(input, news);
-      setNewsList(results);
-      setMessage(results.length === 0 ? "No se encontraron noticias." : "");
-    } catch (error) {
-      console.error("Error buscando noticias:", error);
-      setMessage("Hubo un error al buscar.");
-    } finally {
-      setLoading(false);
+    const term = input.trim().toLowerCase();
+    if (!term) {
+      setFiltered(allNews);
+    } else {
+      setFiltered(
+        allNews.filter(
+          (n) =>
+            n.title.toLowerCase().includes(term) ||
+            n.description.toLowerCase().includes(term)
+        )
+      );
     }
-  };
+  }, [input, allNews]);
 
-  if (!isMounted) return null;
-  const displayedNews  = input.trim() ? newsList : news;
+  if (!mounted) return null;
 
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
+      <div className="flex items-center border border-gray-300 rounded-lg px-3 py-1.5 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 w-full max-w-md mt-7 mb-7">
+        <Search className="w-4 h-4 text-gray-500 mr-2" />
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Buscar noticia por título"
-          className="border px-2 py-1 rounded w-full text-black"
+          placeholder="Buscar por título o descripción…"
+          className="flex-1 text-black placeholder-gray-400 focus:outline-none"
         />
-        <button
-          onClick={handleSearch}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Buscar
-        </button>
       </div>
 
-      {loading ? (
-        <p className="text-gray-500">Cargando noticias...</p>
-      ) : message ? (
-        <p className="text-gray-500">{message}</p>
+      {filtered.length === 0 ? (
+        <p className="text-gray-500">No se encontraron noticias.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-6">
-          {displayedNews.map((newsItem) => (
-            <article 
-              key={newsItem.id} 
-              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-              <div className="h-40 bg-gray-200 flex items-center justify-center">
-                {newsItem.image?.startsWith("http") ? (
-                  <NewsImage
-                    src={newsItem.image}
-                    alt={newsItem.title ?? "Imagen de noticia"}
-                  />
-                ) : (
-                  <span className="text-gray-400">Sin imagen</span>
-                )}
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold text-blue-800 mb-2">{newsItem.title}</h3>
-                <p className="text-gray-700 mb-4 flex-1">{newsItem.description}</p>
-              </div>
-            </article>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {filtered.map((item) => (
+            <ArticlePreview
+              key={item.id}
+              titulo={item.title}
+              extracto={item.description}
+              link={`/noticias/${item.id}`}
+              alt={item.title}
+              src={item.image}
+            />
           ))}
         </div>
       )}

@@ -5,10 +5,10 @@ import { NewsFirebase } from "@/app/types";
 export async function getNews() : Promise<(NewsFirebase & { id: string })[]> {
   const snapshot = await getDocs(collection(db, "news"));
 
-  const documentos = snapshot.docs.map((doc) => ({
+  const news = snapshot.docs.map((doc) => ({
     id: doc.id,
     ...(doc.data() as NewsFirebase),
   }));
 
-  return documentos;
+  return news;
 }
