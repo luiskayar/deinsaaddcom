@@ -7,13 +7,15 @@ import { News } from "@/app/types";
 export async function GET(request: NextRequest) {
 
   const slug = request.nextUrl.pathname.split("/").pop();
+  const decodedSlug = decodeURIComponent(slug ?? "");
+
 
   if (!slug) {
     return NextResponse.json({ error: "Slug no proporcionado" }, { status: 400 });
   }
 
   try {
-    const noticia = await getNoticiaBySlug(slug) as News;
+    const noticia = await getNoticiaBySlug(decodedSlug) as News;
     if (!noticia) {
       return NextResponse.json({ error: "Noticia no encontrada" }, { status: 404 });
     }
