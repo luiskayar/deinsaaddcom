@@ -60,12 +60,25 @@ const ContactForm: React.FC = () => {
 
     const result = await res.json();
 
+
     if (res.ok) {
       alert("Formulario enviado ✅");
+      
     } else {
       alert(`Error: ${result.error}`);
     }
 
+    setFormData({
+      nombre: "",
+      apellido: "",
+      email: "",
+      telefono: "",
+      institucion: "",
+      cargo: "",
+      interes: "",
+      mensaje: "",
+    });
+    
     (window as any).grecaptcha?.reset();
   };
 
