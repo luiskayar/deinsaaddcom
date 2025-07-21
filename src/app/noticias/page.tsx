@@ -2,8 +2,10 @@
 import React from 'react';
 import TituloSeccion from '@/components/comunes/TituloSeccion';
 import { Metadata } from 'next';
+import { getNews } from "@/lib/functions/getNews";
+import NewsSearch from "@/components/organisms/NewsSearch";
 
-import { ArticlePreview } from '@/components/index';
+//import { ArticlePreview } from '@/components/index';
 
 {/*
   const ejemplo = {
@@ -85,27 +87,16 @@ const categorias = [
 ];
 
 export default async function NoticiasPage() {
-  
-  const res = await fetch('http://localhost:3000/api/news', { cache: 'no-store'});
-  if (!res.ok) throw new Error('Error al cargar la noticia');
-  
-  const raw = await res.json() as Array<Record<string, string>>;
-                                                                  
-  const noticias = raw.map((item) => ({
-    id: item.id,
-    title: item.title,
-    description: item.description,
-    images: item.image
-  }))
 
-
-  console.log(noticias);
-
-  noticias.map((art) => {
-    console.log(art);
-    
-  })
+  const allNews = await getNews().catch(() => null);
   
+  if (!allNews || allNews.length === 0) {
+    return (
+      <p className="text-center text-red-500">
+        Ocurrió un error al cargar las noticias.
+      </p>
+    );
+  }
   
   return (
     <div className="min-h-screen bg-gray-50 py-10">
@@ -118,34 +109,8 @@ export default async function NoticiasPage() {
 
         {/* Artículos Destacados */}
         <TituloSeccion titulo="Artículos Relevantes para el Sector Público y Financiero" nivel={2} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-6">
-          {/*}{articulos.map((art, idx) => (
-            <article key={idx} className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-              <div className="h-40 bg-gray-200 flex items-center justify-center">
-                <span className="sr-only">{art.imgAlt}</span>
-                <img src="/placeholder-news.jpg" alt={art.imgAlt} className="object-cover h-full w-full" />
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold text-blue-800 mb-2">{art.titulo}</h3>
-                <p className="text-gray-700 mb-4 flex-1">{art.extracto}</p>
-                <Link href={art.link} >
-                  <a className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-lg transition-colors">Leer Artículo</a>
-                </Link>
-              </div>
-            </article>
-          ))}{*/}
-
-          {noticias.map((art) => (
-            <ArticlePreview
-              titulo={art.title}
-              extracto={art.description}
-              link={art.id}
-              alt={art.images}
-              src={art.images}
-              key={art.id}
-            />
-          ))}
-        </div>              
+        <NewsSearch allNews={allNews} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-6"></div>           
 
         {/* Categorías del Blog */}
         <TituloSeccion titulo="Explorar por Categoría" nivel={2} />

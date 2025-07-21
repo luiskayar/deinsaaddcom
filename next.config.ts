@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
     domains: [
       "firebasestorage.googleapis.com",
       "encrypted-tbn0.gstatic.com",
-      "ejemplo.com",
     ],
   },
 };

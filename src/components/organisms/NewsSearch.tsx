@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { NewsFirebase } from "@/app/types";
-import NewsImage from "@/components/atoms/ImageNote";
+//import NewsImage from "@/components/atoms/ImageNote";
+import { Search } from "lucide-react";
+import ArticlePreview from "@/components/molecules/ArticlePreview";
 
 type NewsItem = NewsFirebase & { id: string };
 
@@ -38,37 +40,30 @@ export default function NewsSearch({ allNews }: Props) {
 
   return (
     <div className="space-y-4">
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Buscar por título o descripción…"
-        className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      <div className="flex items-center border border-gray-300 rounded-lg px-3 py-1.5 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 w-full max-w-md mt-7 mb-7">
+        <Search className="w-4 h-4 text-gray-500 mr-2" />
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Buscar por título o descripción…"
+          className="flex-1 text-black placeholder-gray-400 focus:outline-none"
+        />
+      </div>
 
       {filtered.length === 0 ? (
         <p className="text-gray-500">No se encontraron noticias.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filtered.map((item) => (
-            <article
+            <ArticlePreview
               key={item.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
-            >
-              <div className="h-40 bg-gray-200 flex items-center justify-center">
-                {item.image?.startsWith("http") ? (
-                  <NewsImage src={item.image} alt={item.title} />
-                ) : (
-                  <span className="text-gray-400">Sin imagen</span>
-                )}
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold text-blue-800 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-700 flex-1">{item.description}</p>
-              </div>
-            </article>
+              titulo={item.title}
+              extracto={item.description}
+              link={`/noticias/${item.id}`}
+              alt={item.title}
+              src={item.image}
+            />
           ))}
         </div>
       )}
