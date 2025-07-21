@@ -1,7 +1,6 @@
 
 import React, { ChangeEvent, useState } from 'react';
 import TituloSeccion from '@/components/comunes/TituloSeccion';
-import Link from 'next/link';
 import { Metadata } from 'next';
 import FormSearchNews from './formulario'
 
@@ -14,6 +13,8 @@ import FormSearchNews from './formulario'
     // Si tu molécula acepta también src, inclúyelo:
     src:    '/placeholder-news.jpg',
   };
+import { getNews } from "@/lib/functions/getNews";
+import NewsSearch from "@/components/organisms/NewsSearch";
 
 export const metadata: Metadata = {
   title: 'Blog y Noticias DEINSA GLOBAL | Gobernanza, Riesgos y Cumplimiento Normativo',
@@ -59,6 +60,15 @@ export default async function NoticiasPage() {
 
 
   
+  const allNews = await getNews().catch(() => null);
+  
+  if (!allNews || allNews.length === 0) {
+    return (
+      <p className="text-center text-red-500">
+        Ocurrió un error al cargar las noticias.
+      </p>
+    );
+  }
   
   return (
     <div className="min-h-screen bg-gray-50 py-10">
@@ -82,6 +92,10 @@ export default async function NoticiasPage() {
             </li>
           ))}
         </ul>
+        {/* Artículos Destacados */}
+        <TituloSeccion titulo="Artículos Relevantes para el Sector Público y Financiero" nivel={2} />
+        <NewsSearch allNews={allNews} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-6"></div>           
 
         {/* Suscríbase a Nuestro Newsletter (CTA) */}
         <div className="bg-gradient-to-r from-blue-100 via-white to-blue-50 rounded-xl p-8 shadow flex flex-col items-center">

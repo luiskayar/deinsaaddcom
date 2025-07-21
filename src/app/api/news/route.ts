@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { NextResponse } from "next/server";
 import { addNews } from "@/lib/addNews";
-import { getNoticias } from "@/lib/functions/getNoticias";
+import { getNews } from "@/lib/functions/getNews";
 
 // Define the validation schema for the news data
 const newsSchema = z.object({
@@ -36,7 +36,7 @@ export async function GET(request: Request) {
 
     const q = searchParams.get("q")?.toLowerCase(); 
     
-    const news = await getNoticias();
+    const news = await getNews();
     
     
     if (!q || q.trim() === "") {
