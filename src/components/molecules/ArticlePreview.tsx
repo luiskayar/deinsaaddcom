@@ -8,15 +8,14 @@ type Props = {
     extracto: string;
     link: string;
     alt: string;
-    src?: string;
-    key: string;
+    src: string;
 };
 
-export default function ArticlePreview({titulo, extracto, link, alt, src, key}: Props) {
+export default function ArticlePreview({titulo, extracto, link, alt, src}: Props) {
 
-    return <article key={key} className='bg-white rounded-xl shadow-md overflow-hidden flex flex-col'>
+    return <article className='bg-white rounded-xl shadow-md overflow-hidden flex flex-col'>
                 <div className="h-40 bg-gray-200 flex items-center justify-center">
-                    <NewsImage src={key} alt={alt}/>
+                    <NewsImage src={src} alt={alt}/>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                     <Heading>{titulo}</Heading>
