@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
+import Script from "next/script"; // 👈 Importamos el Script para cargar reCAPTCHA
 import FormField from "../molecules/formField";
 import Input from "../atoms/input";
 import Textarea from "../atoms/textArea";
@@ -40,43 +41,65 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const token = (window as any).grecaptcha?.getResponse();
+    const token = window.grecaptcha?.getResponse();
 
     if (!token) {
       alert("Por favor, completa el reCAPTCHA");
       return;
     }
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...formData,
-        "g-recaptcha-response": token,
-      }),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          "g-recaptcha-response": token,
+        }),
+      });
 
-    const result = await res.json();
+      const result = await res.json();
 
-    if (res.ok) {
-      alert("Formulario enviado ✅");
-    } else {
-      alert(`Error: ${result.error}`);
+      if (res.ok) {
+        setFormData({
+          nombre: "",
+          apellido: "",
+          email: "",
+          telefono: "",
+          institucion: "",
+          cargo: "",
+          interes: "",
+          mensaje: "",
+        });
+        alert("Formulario enviado ✅");
+      } else {
+        alert(`Error: ${result.error || "Algo salió mal."}`);
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      alert(
+        "Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo."
+      );
+    } finally {
+      window.grecaptcha?.reset();
     }
-
-    (window as any).grecaptcha?.reset();
   };
-
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+      {/* ✅ Carga automática del script de reCAPTCHA */}
+      <Script
+        src="https://www.google.com/recaptcha/api.js"
+        strategy="afterInteractive"
+      />
+
       <form className="space-y-5" onSubmit={handleSubmit}>
         <h2 className="text-2xl font-semibold text-blue-800 mb-6">
           Envíenos un Mensaje
         </h2>
-        {/* Campos de Nombre y Apellido */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FormField htmlFor="nombre" label="Nombre">
             <Input
@@ -100,7 +123,6 @@ const ContactForm: React.FC = () => {
           </FormField>
         </div>
 
-        {/* Campos de Correo y Teléfono */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FormField htmlFor="email" label="Correo Electrónico">
             <Input
@@ -123,7 +145,6 @@ const ContactForm: React.FC = () => {
           </FormField>
         </div>
 
-        {/* Campos de Institución y Cargo */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FormField htmlFor="institucion" label="Institución/Empresa">
             <Input
@@ -145,7 +166,6 @@ const ContactForm: React.FC = () => {
           </FormField>
         </div>
 
-        {/* Campo de Interés Principal */}
         <RadioGroup
           name="interes"
           label="Interés Principal"
@@ -154,7 +174,6 @@ const ContactForm: React.FC = () => {
           onChange={handleRadioChange}
         />
 
-        {/* Campo de Mensaje */}
         <FormField htmlFor="mensaje" label="Su Mensaje">
           <Textarea
             id="mensaje"
@@ -166,14 +185,20 @@ const ContactForm: React.FC = () => {
             required
           />
         </FormField>
-        <div className="g-recaptcha" data-sitekey="6Ld_2YYrAAAAADCNaewT-M7O_TetUpXWDW1dJcRl"></div>
+
+        {/* ✅ Este div será renderizado automáticamente por Google */}
+        <div
+          className="g-recaptcha flex justify-center"
+          data-sitekey="6Ld_2YYrAAAAADCNaewT-M7O_TetUpXWDW1dJcRl"
+        ></div>
+
         <button
-              type="submit"
-              className="w-full py-3 rounded-md text-white font-bold text-lg transition-colors"
-              style={{ background: "#F57F26" }}
-            >
-              Enviar Mensaje
-            </button>
+          type="submit"
+          className="w-full py-3 rounded-md text-white font-bold text-lg transition-colors cursor-pointer"
+          style={{ background: "#F57F26" }}
+        >
+          Enviar Mensaje
+        </button>
       </form>
     </div>
   );
