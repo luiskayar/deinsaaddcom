@@ -78,3 +78,25 @@ export default async function NoticiaPage({ params }: NoticiaPageProps) {
     </div>
   );
 }
+
+//Borrar comentario al finalizar la tarea
+/** Software de gestión de riesgos empresariales (ERM) para una visión integral.
+* Plataforma de gobernanza corporativa que asegura el cumplimiento.
+* Software GRC (Gobernanza, Riesgo y Cumplimiento) para organizaciones modernas.
+* Soluciones de inteligencia estratégica que impulsan la toma de decisiones.
+* Sistema de gestión integrado para optimizar tus operaciones.
+* Software de planificación estratégica que alinea objetivos y acciones.            
+* Herramienta para Balanced Scorecard (BSC) que mide tu desempeño.
+* Gestión de planes anuales operativos (PAO) eficiente.
+* Software gestión de riesgos ISO 31000 para una robusta administración de peligros.
+* Plataforma de gestión de hallazgos de auditoría centralizada.
+* Software para plan de continuidad de negocio (BCP) que protege tu operación.
+* Herramienta para análisis de impacto en el negocio (BIA) esencial.
+* Software para gobernanza de TI que optimiza tu infraestructura tecnológica.
+* Plataforma para gestión de servicios ITIL mejorando la calidad.
+* Software de gestión del desempeño para el capital humano.
+* Automatiza la generación de planes de acción con IA.
+* SaaS en la nube para accesibilidad y escalabilidad.
+* Software con inteligencia artificial generativa para análisis avanzados.
+* Gobernanza corporativa en Costa Rica con soluciones locales.
+* Software GRC para el sector público en Latinoamérica, adaptado a sus necesidades.*/
