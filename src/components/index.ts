@@ -1,6 +1,3 @@
-
-
-//FORM
 export { default as Input } from "./atoms/input";
 export { default as Label } from "./atoms/label";
 export { default as RadioButton } from "./atoms/radioButton";

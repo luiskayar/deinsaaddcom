@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Script from "next/script"; // 👈 Importamos el Script para cargar reCAPTCHA
+import Script from "next/script";
 import FormField from "../molecules/formField";
 import Input from "../atoms/input";
 import Textarea from "../atoms/textArea";
@@ -186,7 +186,6 @@ const ContactForm: React.FC = () => {
           />
         </FormField>
 
-        {/* ✅ Este div será renderizado automáticamente por Google */}
         <div
           className="g-recaptcha flex justify-center"
           data-sitekey="6Ld_2YYrAAAAADCNaewT-M7O_TetUpXWDW1dJcRl"
