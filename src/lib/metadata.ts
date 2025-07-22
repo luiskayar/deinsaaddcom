@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 // src/lib/metadata.ts
 export const defaultMetadata = {
   title: 'DEINSA Global | Software de Gobernanza Corporativa y Gestión de Riesgos | DELPHOS',
@@ -43,3 +45,44 @@ export const defaultMetadata = {
     },
   },
 };
+
+export const metadataNoticias: Metadata = {
+  title: "Noticias | Deinsa Global",
+  description:
+    "Soluciones de gestión, riesgos y cumplimiento para empresas modernas en Latinoamérica. Descubre las últimas novedades y tendencias con Deinsa Global.",
+  keywords: [
+    "software de gestión de riesgos",
+    "Solución SaaS",
+    "gobernanza corporativa",
+    "inteligencia estratégica",
+    "planificación estratégica",
+    "Balanced Scorecard",
+    "ISO 31000",
+    "ITIL",
+    "Deinsa Global",
+    "Latinoamérica",
+  ],
+  openGraph: {
+    title: "Noticias | Deinsa Global",
+    description:
+      "Soluciones de gestión, riesgos y cumplimiento para empresas modernas en Latinoamérica. Descubre las últimas novedades y tendencias con Deinsa Global.",
+    type: "website",
+    url: "https://www.deinsa.com/noticias",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Noticias | Deinsa Global",
+    description:
+      "Soluciones de gestión, riesgos y cumplimiento para empresas modernas en Latinoamérica. Descubre las últimas novedades y tendencias con Deinsa Global.",
+  },
+  alternates: {
+    canonical: "https://www.deinsa.com/noticias",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+
+
