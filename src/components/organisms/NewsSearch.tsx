@@ -5,7 +5,7 @@ import { NewsFirebase } from "@/app/types";
 import { Search } from "lucide-react";
 import ArticlePreview from "@/components/molecules/ArticlePreview";
 
-type NewsItem = NewsFirebase & { id: string; category?: string };
+type NewsItem = NewsFirebase & { id: string; category?: string; slug: string };
 
 interface Props {
   allNews: NewsItem[];
@@ -142,7 +142,7 @@ export default function NewsSearch({ allNews }: Props) {
               key={item.id}
               titulo={item.title}
               extracto={item.description}
-              link={`/noticias/${item.id}`}
+              link={`/noticias/${item.slug}`}
               alt={item.title}
               src={item.image}
             />
