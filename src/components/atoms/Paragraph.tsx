@@ -1,5 +1,6 @@
 export default function Paragraph({children}: { children: React.ReactNode}) {
     
+    //Solo mostrar 15 palabras
     const textContent = String(children);
     const words = textContent.split(/\s+/).filter(word => word.length > 0);
     const maxWords = 15;
