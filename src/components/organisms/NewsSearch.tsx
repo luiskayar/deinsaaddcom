@@ -65,7 +65,7 @@ export default function NewsSearch({ allNews }: Props) {
     <div className="space-y-4">
       <aside className="space-y-4">
         <h2 className="text-xl font-semibold text-gray-700">Categorías</h2>
-        <div className="flex flex-col gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((cat) => {
             const conteo = getCategoryTotal(cat.key);
             const isSelected = category === cat.key;
@@ -77,7 +77,7 @@ export default function NewsSearch({ allNews }: Props) {
                 className={`text-left px-4 py-2 rounded shadow transition-all duration-200 flex justify-between items-center ${
                   isSelected
                     ? "bg-blue-600 text-white"
-                    : "bg-white hover:bg-blue-100"
+                    : "bg-white hover:bg-blue-100 text-gray-600"
                 }`}
               >
                 <span>{cat.label}</span>
@@ -95,6 +95,7 @@ export default function NewsSearch({ allNews }: Props) {
           })}
         </div>
       </aside>
+
       <div className="flex items-center border border-gray-300 rounded-lg px-3 py-1.5 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 w-full max-w-md mt-7 mb-7">
         <Search className="w-4 h-4 text-gray-500 mr-2" />
         <input
