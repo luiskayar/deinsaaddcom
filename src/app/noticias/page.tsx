@@ -6,27 +6,15 @@ import { getNews } from "@/lib/functions/getNews";
 import NewsSearch from "@/components/organisms/NewsSearch";
 
 export const metadata: Metadata = {
-  title: 'Blog y Noticias DEINSA GLOBAL | Gobernanza, Riesgos y Cumplimiento Normativo',
-  description: 'Manténgase informado con el blog de DEINSA GLOBAL. Artículos sobre Software de gestión de riesgos, Planificación estratégica institucional, Gestión del desempeño institucional, Normas técnicas del MICITT y Ley 9635 para Costa Rica.',
-  keywords: [
-    'blog DEINSA GLOBAL',
-    'noticias gobernanza',
-    'gestión de riesgos',
-    'cumplimiento normativo',
-    'planificación estratégica',
-    'desempeño institucional',
-    'normas MICITT',
-    'Ley 9635',
-    'sector público',
-    'sector financiero',
-  ],
+  title: "Noticias | Deinsa",
+  description: "Conozca las últimas novedades, proyectos y eventos de Deinsa Global.",
   openGraph: {
-    title: 'Blog y Noticias DEINSA GLOBAL | Gobernanza, Riesgos y Cumplimiento Normativo',
-    description: 'Manténgase informado con el blog de DEINSA GLOBAL. Artículos sobre Software de gestión de riesgos, Planificación estratégica institucional, Gestión del desempeño institucional, Normas técnicas del MICITT y Ley 9635 para Costa Rica.',
-    url: 'https://www.deinsa.com/noticias',
+    title: "Noticias | Deinsa",
+    description: "Conozca las últimas novedades, proyectos y eventos de Deinsa Global.",
+    url: "https://www.deinsa.com/noticias",
   },
   alternates: {
-    canonical: 'https://www.deinsa.com/noticias',
+    canonical: "https://www.deinsa.com/noticias",
   },
 };
 
