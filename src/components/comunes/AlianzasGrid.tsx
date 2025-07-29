@@ -3,9 +3,9 @@ import { useState, useEffect} from "react"
 import { AlianzaPopup } from "./index"
 import Image from "next/image"
 import { getAlianzas } from "@/lib/getAlianzas"
-import { mapTitleFlag, TitleFlag } from "@/lib/functions db/mapTitleFlag"
+import { mapTitleFlag, TitleFlag } from "@/lib/functions/mapTitleFlag"
 import type { AlianzaFirebase } from "@/app/types"
-import { filterAlianzaValida } from "@/lib/functions db/filterAlianzaValida"
+import { filterAlianzaValida } from "@/lib/functions/filterAlianzaValida"
 
 
 export default function AlianzasGrid() {

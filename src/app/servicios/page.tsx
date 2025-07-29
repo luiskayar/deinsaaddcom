@@ -53,7 +53,7 @@ export default function ServiciosPage() {
             <span className="text-white">Su Socio Estratégico en<br />Gobernanza Coorporativa</span>
           </h1>
           <p className="text-white text-lg mb-12 max-w-xl">
-            Transforma mos la gestión institucional con soluciones innovadoras en <b>GRC</b>, riesgo y cumplimiento.
+            Transformamos la gestión institucional con soluciones innovadoras en <b>GRC</b>, riesgo y cumplimiento.
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mt-16">
             Consultoría Expertos en <span className="text-orange-500">GRC</span>
