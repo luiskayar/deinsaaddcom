@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { FaGlobe, FaChartLine, FaShieldAlt, FaCogs, FaSearch, FaRocket, FaChalkboardTeacher, FaHandsHelping, FaPuzzlePiece, FaRegHandshake } from 'react-icons/fa';
+import { FaGlobe, FaChartLine, FaShieldAlt, FaCogs, FaSearch, FaRocket, FaChalkboardTeacher, FaHandsHelping } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Consultoría GRC, Gestión de Riesgos y Soluciones a Medida | DEINSA',
@@ -31,124 +31,122 @@ export const metadata: Metadata = {
   },
 };
 
-const consultoria = [
-  {
-    icon: <FaGlobe className="text-blue-700 text-3xl" />,
-    title: 'Implementación de Estándares Internacionales',
-    desc: 'ISO 31000, ISO 22301, ISO 27001, COSO ERM. Fortalecemos la estructura institucional alineándola a marcos globales de control, gestión de riesgos y continuidad del negocio.'
-  },
-  {
-    icon: <FaChartLine className="text-green-700 text-3xl" />,
-    title: 'Planificación y Desempeño Estratégico',
-    desc: 'Modelos de planificación alineados al cumplimiento de objetivos institucionales, integrando visión estratégica y evaluación del desempeño.'
-  },
-  {
-    icon: <FaShieldAlt className="text-purple-700 text-3xl" />,
-    title: 'Gestión de Riesgos y Cumplimiento Regulatorio',
-    desc: 'Implementación del SEVRI, cumplimiento de normas del MICITT y regulaciones sectoriales. Reduzca incertidumbres y mejore su resiliencia institucional.'
-  },
-  {
-    icon: <FaCogs className="text-orange-700 text-3xl" />,
-    title: 'Optimización de Procesos y Transformación Digital',
-    desc: 'Mejoramos procesos clave mediante automatización, reingeniería y alineamiento tecnológico para mayor eficiencia operativa.'
-  },
-];
 
-const hitos = [
-  {
-    icon: <FaSearch className="text-blue-700 text-2xl" />,
-    title: 'Diagnóstico y análisis personalizado',
-    desc: 'Evaluamos su situación actual y definimos la mejor hoja de ruta para su institución.'
-  },
-  {
-    icon: <FaRocket className="text-green-700 text-2xl" />,
-    title: 'Implementación acompañada paso a paso',
-    desc: 'Despliegue ágil de nuestros sistemas con el respaldo continuo de consultores expertos.'
-  },
-  {
-    icon: <FaChalkboardTeacher className="text-purple-700 text-2xl" />,
-    title: 'Capacitación y transferencia de conocimiento',
-    desc: 'Formación práctica al personal para maximizar el uso y valor de DELPHOS.'
-  },
-  {
-    icon: <FaHandsHelping className="text-orange-700 text-2xl" />,
-    title: 'Soporte continuo y mejora permanente',
-    desc: 'Acompañamiento post-proyecto para garantizar sostenibilidad y evolución.'
-  },
-];
+
+
 
 export default function ServiciosPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* HERO ASIMÉTRICO */}
-      <section className="w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 py-16 shadow-lg mb-12">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex-1 text-left md:pr-8">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow">Servicios Especializados en Gobernanza, Riesgos y Cumplimiento (GRC)</h1>
-            <h2 className="text-xl md:text-2xl text-blue-100 font-light mb-8 max-w-xl">Impulsamos la transformación institucional con soluciones integrales en cumplimiento normativo, planificación estratégica, gestión de riesgos y automatización.</h2>
-            <a href="/contacto" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">Solicite una Consultoría Personalizada</a>
-          </div>
-          <div className="flex-1 flex justify-center md:justify-end">
-            <FaRegHandshake className="text-[120px] md:text-[180px] text-white/70 drop-shadow-lg" />
-          </div>
-        </div>
-      </section>
-
-      {/* CONSULTORÍA ESPECIALIZADA - CARDS HORIZONTALES */}
-      <section className="bg-blue-50 py-16 mb-16">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold text-blue-800 mb-10 text-center">Consultoría Estratégica en GRC para Instituciones Públicas y Financieras</h3>
-          <div className="flex flex-col gap-6 max-w-3xl mx-auto">
-            {consultoria.map((item, i) => (
-              <div key={i} className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md p-6 md:p-8 gap-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-blue-100">{item.icon}</div>
-                <div className="flex-1 text-center md:text-left">
-                  <h4 className="text-lg font-semibold text-blue-900 mb-1">{item.title}</h4>
-                  <p className="text-gray-700 text-base">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* IMPLEMENTACIÓN Y SOPORTE - STEPPER VISUAL */}
-      <section className="bg-white py-16 mb-16">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold text-blue-800 mb-10 text-center">Implementación Ágil, Capacitación y Acompañamiento Integral</h3>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-            {hitos.map((item, i) => (
-              <div key={i} className="flex flex-col items-center w-64">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 mb-2 border-4 border-blue-200">{item.icon}</div>
-                <h4 className="text-base font-semibold text-blue-900 mb-1 text-center">{item.title}</h4>
-                <p className="text-gray-700 text-sm text-center">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SOLUCIONES A MEDIDA CON DELPHOS - BANNER DESTACADO */}
-      <section className="container mx-auto px-4 mb-16">
-        <div className="bg-gradient-to-r from-blue-500 via-blue-300 to-green-300 rounded-xl p-10 shadow flex flex-col items-center">
-          <FaPuzzlePiece className="text-5xl text-blue-900 mb-4" />
-          <h3 className="text-2xl font-bold text-blue-900 mb-4 text-center">Consultoría Tecnológica a la Medida con DELPHOS</h3>
-          <p className="text-white text-lg max-w-2xl text-center font-medium">
-            Adaptamos nuestra plataforma <b>DELPHOS</b> y todos nuestros servicios a las necesidades específicas de su institución. Garantizamos resultados tangibles mediante soluciones escalables, flexibles y alineadas a estándares internacionales.
+    <div className="min-h-screen bg-black">
+      {/* HERO DEINSA GRC */}
+      <section className="w-full min-h-[380px] flex items-center bg-black relative">
+        {/* Fondo decorativo telaraña */}
+        <img
+          src="/images/telaraña.jpg"
+          alt="Fondo telaraña"
+          className="absolute top-0 right-0 h-full w-auto max-w-none opacity-40 z-0 pointer-events-none"
+          draggable="false"
+        />
+        <div className="max-w-3xl px-8 py-20 relative z-10">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            <span className="text-orange-500">DEINSA:</span><br />
+            <span className="text-white">Su Socio Estratégico en<br />Gobernanza Coorporativa</span>
+          </h1>
+          <p className="text-white text-lg mb-12 max-w-xl">
+            Transformamos la gestión institucional con soluciones innovadoras en <b>GRC</b>, riesgo y cumplimiento.
           </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mt-16">
+            Consultoría Expertos en <span className="text-orange-500">GRC</span>
+          </h2>
         </div>
       </section>
 
-      {/* CTA FINAL DIFERENCIADA */}
-      <section className="flex flex-col items-center justify-center mb-20">
-        <span className="text-blue-800 text-lg font-semibold mb-2">¿Listo para transformar su institución?</span>
-        <a
-          href="/contacto"
-          className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-12 rounded-full text-xl shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 animate-pulse"
-        >
-          Solicite una Consultoría Personalizada
-        </a>
+
+
+
+
+      {/* SERVICIOS PRINCIPALES */}
+      <section className="py-16 bg-black relative z-10">
+        {/* Gradiente azul decorativo entre secciones */}
+        <div className="absolute left-0 bottom-0 w-2/3 h-2/3 z-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 80%, #0a3a4a 0%, transparent 80%)', opacity: 0.4, filter: 'blur(32px)' }} />
+        <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 relative z-10">
+          {/* Columna 1 */}
+          <div className="space-y-10">
+            <div className="flex items-start gap-4">
+              <span className="text-orange-500 text-3xl mt-1"><FaChartLine /></span>
+              <div>
+                <h3 className="font-bold text-white text-lg mb-1">Planificación y desempeño estratégico</h3>
+                <p className="text-gray-300 text-sm">Modelos de planificación y gestión alineados a objetivos institucionales.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-orange-500 text-3xl mt-1"><FaCogs /></span>
+              <div>
+                <h3 className="font-bold text-white text-lg mb-1">Optimización de Procesos y TI</h3>
+                <p className="text-gray-300 text-sm">Mejora de procesos, automatización y alineamiento tecnológico.</p>
+              </div>
+            </div>
+          </div>
+          {/* Columna 2 */}
+          <div className="space-y-10">
+            <div className="flex items-start gap-4">
+              <span className="text-orange-500 text-3xl mt-1"><FaGlobe /></span>
+              <div>
+                <h3 className="font-bold text-white text-lg mb-1">Implementación de Estándares Internacionales</h3>
+                <p className="text-gray-300 text-sm">ISO 31000, ISO 22301, ISO 27001, COSO ERM.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-orange-500 text-3xl mt-1"><FaShieldAlt /></span>
+              <div>
+                <h3 className="font-bold text-white text-lg mb-1">Gestión de Riesgos y Cumplimiento Normativo</h3>
+                <p className="text-gray-300 text-sm">SEVRI, Normas técnicas del MICITT, cumplimiento regulatorio sectorial.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12">Implementación, Capacitación y Soporte</h2>
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
+            <FaSearch className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
+            <span className="text-white font-bold uppercase text-base mt-2">Diagnóstico y análisis personalizados.</span>
+          </div>
+          <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
+            <FaRocket className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
+            <span className="text-white font-bold uppercase text-base mt-2">Implementación ágil y acompañamiento.</span>
+          </div>
+          <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
+            <FaChalkboardTeacher className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
+            <span className="text-white font-bold uppercase text-base mt-2">Capacitación y transferencia de conocimiento.</span>
+          </div>
+          <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
+            <FaHandsHelping className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
+            <span className="text-white font-bold uppercase text-base mt-2">Soporte post-proyecto y mejora continua.</span>
+          </div>
+        </div>
       </section>
+
+      {/* SOLUCIONES A MEDIDA CON DELPHOS */}
+      <section className="relative py-20 bg-black overflow-hidden z-10">
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            <span className="text-orange-500">Soluciones</span> <span className="text-white">a Medida con</span> <span className="text-white font-bold">Delphos</span>
+          </h2>
+          <p className="text-white mb-10">
+            Adaptamos nuestra plataforma DELPHOS y servicios a las necesidades específicas de cada cliente, garantizando flexibilidad, escalabilidad y resultados tangibles.
+          </p>
+          <div className="flex flex-col items-center">
+            <a
+              href="/contacto"
+              className="flex items-center gap-2 text-white font-semibold px-6 py-3 border-b border-gray-400 hover:text-orange-500 transition-colors duration-200"
+            >
+              <span className="text-orange-500 text-xl font-bold">+</span>
+              <span className="text-sm">Solicite una consultoría personalizada</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 } 

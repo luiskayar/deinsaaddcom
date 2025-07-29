@@ -1,130 +1,147 @@
-import React from 'react';
-import { Metadata } from 'next';
+import React from "react";
+import { Metadata } from "next";
+import { ContactForm } from "../../components/index";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: 'Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC',
-  description: 'Contacte a DEINSA GLOBAL para soluciones de Software de gestión de riesgos, Planificación estratégica institucional y Gestión del desempeño institucional. Oficinas en Miami, Costa Rica y Panamá.',
+  title: "Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC",
+  description:
+    "Contacte a DEINSA GLOBAL para soluciones de Software de gestión de riesgos, Planificación estratégica institucional y Gestión del desempeño institucional. Oficinas en Miami, Costa Rica y Panamá.",
   keywords: [
-    'contacto DEINSA GLOBAL',
-    'demo DELPHOS',
-    'consultoría GRC',
-    'software gestión de riesgos',
-    'planificación estratégica institucional',
-    'gestión del desempeño institucional',
-    'oficinas Miami',
-    'oficinas Costa Rica',
-    'oficinas Panamá',
+    "contacto DEINSA GLOBAL",
+    "demo DELPHOS",
+    "consultoría GRC",
+    "software gestión de riesgos",
+    "planificación estratégica institucional",
+    "gestión del desempeño institucional",
+    "oficinas Miami",
+    "oficinas Costa Rica",
+    "oficinas Panamá",
   ],
   openGraph: {
-    title: 'Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC',
-    description: 'Contacte a DEINSA GLOBAL para soluciones de Software de gestión de riesgos, Planificación estratégica institucional y Gestión del desempeño institucional. Oficinas en Miami, Costa Rica y Panamá.',
-    url: 'https://www.deinsa.com/contacto',
+    title:
+      "Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC",
+    description:
+      "Contacte a DEINSA GLOBAL para soluciones de Software de gestión de riesgos, Planificación estratégica institucional y Gestión del desempeño institucional. Oficinas en Miami, Costa Rica y Panamá.",
+    url: "https://www.deinsa.com/contacto",
   },
   alternates: {
-    canonical: 'https://www.deinsa.com/contacto',
+    canonical: "https://www.deinsa.com/contacto",
   },
 };
 
-const intereses = [
-  'Solicitar Demo de DELPHOS',
-  'Consulta sobre Licitación',
-  'Consultoría GRC',
-  'Soporte Técnico',
-  'Información General',
-];
-
 export default function ContactoPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-10">
-      <div className="container mx-auto px-4 max-w-3xl">
-        {/* Título y Mensaje */}
-        <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4 text-center">Contacte a DEINSA GLOBAL: Transforme su Gobernanza Corporativa con DELPHOS</h1>
-        <p className="text-lg text-gray-700 mb-10 text-center">
-          Estamos listos para ayudarle a implementar un Sistema modular para instituciones que optimice su gestión. Llene el formulario o contáctenos directamente para explorar nuestras soluciones de Software de gestión de riesgos, Planificación estratégica institucional y Gestión del desempeño institucional.
-        </p>
+    <div className="min-h-screen bg-black">
+      <Script async src="https://www.google.com/recaptcha/api.js" />
+      
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 bg-black">
+        <div className="container mx-auto max-w-6xl">
+          {/* Título principal */}
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+              <span className="text-orange-500">CONTÁCTENOS</span>
+              <span className="text-white"> PARA UNA DEMO GRATUITA</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+              Estamos listos para ayudarle a usted y a su institución.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      {/* Contenido principal */}
+      <div className="container mx-auto px-4 max-w-6xl pb-20">
         {/* Formulario de Contacto */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
-          <h2 className="text-2xl font-semibold text-blue-800 mb-6">Envíenos un Mensaje</h2>
-          <form className="space-y-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400" />
-              </div>
-              <div>
-                <label htmlFor="apellido" className="block text-sm font-medium text-gray-700 mb-1">Apellido</label>
-                <input type="text" id="apellido" name="apellido" required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400" />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400" />
-              </div>
-              <div>
-                <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                <input type="text" id="telefono" name="telefono" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400" />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="institucion" className="block text-sm font-medium text-gray-700 mb-1">Institución/Empresa</label>
-                <input type="text" id="institucion" name="institucion" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400" />
-              </div>
-              <div>
-                <label htmlFor="cargo" className="block text-sm font-medium text-gray-700 mb-1">Cargo</label>
-                <input type="text" id="cargo" name="cargo" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Interés Principal</label>
-              <div className="flex flex-wrap gap-4">
-                {intereses.map((opcion) => (
-                  <label key={opcion} className="flex items-center gap-2 text-gray-700">
-                    <input type="radio" name="interes" value={opcion} required className="accent-orange-500" />
-                    {opcion}
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div>
-              <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-1">Su Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows={4} required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400" placeholder="Escriba su mensaje aquí..." />
-            </div>
-            {/* reCAPTCHA visual placeholder */}
-            <div className="flex justify-center my-4">
-              {/* Aquí debe integrarse Google reCAPTCHA real en producción */}
-              <div className="bg-gray-200 rounded shadow px-8 py-4 text-gray-500 text-sm select-none">[reCAPTCHA]</div>
-            </div>
-            <button type="submit" className="w-full py-3 rounded-md text-white font-bold text-lg transition-colors" style={{ background: '#F57F26' }}>
-              Enviar Mensaje
-            </button>
-          </form>
+        <div className="mb-16">
+          <ContactForm />
         </div>
 
         {/* Información de Contacto Directa */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold text-blue-800 mb-2">O Contáctenos Directamente</h2>
-          <p className="text-gray-700 mb-1">Correo Electrónico: <a href="mailto:info@deinsaglobal.com" className="text-blue-700 underline">info@deinsaglobal.com</a></p>
-          <p className="text-gray-700 mb-1">Teléfono (Costa Rica): <a href="tel:+50622763380" className="text-blue-700 underline">(506) 22763380</a></p>
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-orange-500 mb-8 text-center">
+            Contáctenos
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="text-center">
+              <div className="flex items-center justify-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="text-gray-400 text-sm">Correo Electrónico</p>
+                  <a
+                    href="mailto:info@deinsaglobal.com"
+                    className="text-white hover:text-orange-400 transition-colors font-medium"
+                  >
+                    info@deinsaglobal.com
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="text-gray-400 text-sm">Teléfono (Costa Rica)</p>
+                  <a href="tel:+50622763380" className="text-white hover:text-orange-400 transition-colors font-medium">
+                    (506) 2276-3380
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Nuestras Oficinas */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold text-blue-800 mb-2">Visítenos en Nuestras Oficinas Estratégicas</h2>
-          <ul className="list-disc pl-6 text-gray-700 mb-4">
-            <li>Miami, Florida (Casa Matriz)</li>
-            <li>San José, Costa Rica (Centro de Soporte Global)</li>
-            <li>Ciudad de Panamá, Panamá (Oficina Regional de Ventas GRC)</li>
-          </ul>
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-orange-500 mb-8 text-center">
+            Visítenos en Nuestras Oficinas
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold mb-2">Miami, Florida</h3>
+              <p className="text-gray-400 text-sm">Casa Matriz</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold mb-2">San José, Costa Rica</h3>
+              <p className="text-gray-400 text-sm">Centro de Soporte Global</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold mb-2">Ciudad de Panamá, Panamá</h3>
+              <p className="text-gray-400 text-sm">Oficina Regional de Ventas GRC</p>
+            </div>
+          </div>
+          
           {/* Google Maps embed para San José, Costa Rica */}
-          <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+          <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
             <iframe
-              title="Oficina San José, Costa Rica"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.017964024052!2d-84.0907246852096!3d9.92806989291147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fa8e5b6e7e0d%3A0x7e8e7e8e7e8e7e8e!2sSan%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses-419!2scr!4v1680000000000!5m2!1ses-419!2scr"
+                             title="Desarrollos Informáticos Deinsa Sociedad Anónima - San José, Costa Rica"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.017964024052!2d-84.049706!3d9.8957466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e38f49e04dbd%3A0x3c6c42af025b9e1!2sDesarrollos%20Inform%C3%A1ticos%20Deinsa%20Sociedad%20An%C3%B3nima!5e0!3m2!1ses-419!2scr!4v1680000000000!5m2!1ses-419!2scr"
               width="100%"
-              height="300"
+              height="400"
               style={{ border: 0 }}
               allowFullScreen={true}
               loading="lazy"
@@ -135,4 +152,4 @@ export default function ContactoPage() {
       </div>
     </div>
   );
-} 
+}

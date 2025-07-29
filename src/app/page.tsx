@@ -1,8 +1,8 @@
 // src/app/page.tsx
 import Link from "next/link";
-import { MdOutlineAccessTime, MdSecurity, MdGavel, MdTrendingUp, MdCloudUpload, MdAnalytics } from "react-icons/md";
-import {  FaUsers, FaChartLine, FaShieldAlt, FaRocket, FaCheckCircle } from "react-icons/fa";
 import { Metadata } from "next";
+import { MdSecurity, MdGavel, MdIntegrationInstructions, MdSettings, MdTimeline, MdVerifiedUser, MdAssessment, MdCloudUpload, MdPeople, MdCheckCircle, MdTrendingUp } from "react-icons/md";
+import { FaRegFileAlt, FaChartBar } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "DEINSA Global | Software de Gobernanza Corporativa y Gestión de Riesgos | DELPHOS",
@@ -39,177 +39,263 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-black">
       {/* Hero Section - Diseño Único */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Fondo animado */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_30%,rgba(156,146,172,0.3),transparent_50%)]"></div>
-        </div>
-        
-        {/* Contenido principal */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-4 mt-8">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-600/20 backdrop-blur-sm rounded-full border border-blue-400/30 text-blue-200 text-sm font-medium mb-6">
-              <FaRocket className="mr-2" />
-              Líder en Gobernanza Corporativa desde 1990
-            </div>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            <span className="block">Impulse su</span>
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-            Gobernanza Corporativa
+      <section
+        className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+        style={{ backgroundImage: "url('/images/fondo principal.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+            <span className="block">
+              <span className="text-orange-500">IMPULSE</span>
+              <span className="text-white"> SU</span>
             </span>
-            <span className="block text-3xl md:text-4xl text-blue-200 mt-4">
-            con la Plataforma Líder en Latinoamérica
-            </span>
+            <span className="block text-white">GOBERNANZA</span>
+            <span className="block text-white">CORPORATIVA</span>
           </h1>
-          
-          <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed">
-          Más de 500 instituciones públicas y privadas en 4 continentes confían en DELPHOS para gestionar riesgos, cumplimiento normativo, planificación y continuidad del negocio.
+          <p className="text-lg md:text-2xl text-white/80 mb-10">
+            Con la plataforma líder en Latinoamérica desde 1990
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link 
-              href="/delphos" 
-              className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Link
+              href="/delphos"
+              className="px-8 py-4 rounded font-semibold text-lg uppercase text-white bg-gradient-to-r from-[#C96A13] to-[#7A4D13] shadow-sm transition-transform duration-200 transform hover:scale-105 hover:from-[#A05A1C] hover:to-[#7A4D13] focus:outline-none"
             >
-              <span className="flex items-center justify-center">
-                Conozca DELPHOS
-                <FaRocket className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
+              CONOZCA DELPHOS
             </Link>
-            <Link 
-              href="/contacto" 
-              className="group bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
+            <span className="text-orange-500 font-bold text-2xl hidden sm:inline-block">+</span>
+            <Link
+              href="/contacto"
+              className="px-8 py-4 rounded font-semibold text-lg uppercase text-white bg-transparent border-none transition-transform duration-200 transform hover:scale-105 focus:outline-none"
             >
-              Solicite una Demo Gratuita
+              PROBAR DEMO GRATUITA
             </Link>
           </div>
-          
-          {/* Stats flotantes */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-4">
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">35+ Años de Experiencia</div>
-              <div className="text-blue-200">Trayectoria consolidada desde 1990 en desarrollo de soluciones para el sector público y financiero.</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-4">
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">500+ Implementaciones</div>
-              <div className="text-blue-200">Casos de éxito en gobiernos, bancos, cooperativas, ministerios y organismos internacionales.</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-4">
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">Presencia en 4 Continentes</div>
-              <div className="text-blue-200">DELPHOS se adapta a marcos regulatorios globales y locales con multilenguaje y configuraciones regionales.</div>
-            </div>
-          </div>
         </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-black/60" style={{ zIndex: 1 }}></div>
       </section>
 
-      {/* Sección de Características */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              ¿Por qué elegir <span className="text-blue-600">DELPHOS</span> para su institución?
-              
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            DELPHOS es una plataforma modular que integra gestión de riesgos, cumplimiento normativo, planificación estratégica, control interno y continuidad operativa. Optimice sus procesos institucionales con tecnología avanzada y alineada a estándares internacionales.            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200 hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MdOutlineAccessTime className="text-2xl text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">35+ Años de Innovación Continua</h3>
-              <p className="text-gray-700 leading-relaxed">
-              Desde 1990, pioneros en software de gobernanza institucional. Innovamos con cada versión.
-              </p>
-            </div>
-            
-            <div className="group bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border border-purple-200 hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MdSecurity className="text-2xl text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">500+ Implementaciones Exitosas</h3>
-              <p className="text-gray-700 leading-relaxed">
-              Nuestra experiencia es avalada por ministerios, bancos, municipios y entes reguladores.
-              </p>
-            </div>
-            
-            <div className="group bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border border-green-200 hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MdGavel className="text-2xl text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Gobernanza y Cumplimiento en un Solo Lugar</h3>
-              <p className="text-gray-700 leading-relaxed">
-              DELPHOS integra el SEVRI, cumplimiento de normas MICITT, y gestión estratégica operativa.
-              </p>
-            </div>
+      {/* Cards principales, subidos visualmente y sin separación de sección */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 -mt-24 flex flex-col md:flex-row justify-center items-start gap-8 mb-0">
+        {/* Card 1 */}
+        <div className="relative rounded-xl overflow-visible flex flex-col items-center w-full md:w-[420px] min-h-[340px]">
+          <div className="absolute -inset-4 -z-10 rounded-2xl bg-black/60 blur-xl" />
+          <div className="bg-black/80 rounded-xl shadow-2xl border-b-2 border-orange-500 flex flex-col items-center p-8 h-full w-full" style={{ boxShadow: '0 8px 40px 0 rgba(0,0,0,0.7)' }}>
+            <div className="text-5xl font-extrabold text-orange-500 mb-2">35+</div>
+            <div className="text-xl font-bold text-white mb-2 text-center">AÑOS DE EXPERIENCIA</div>
+            <div className="text-white/80 text-center text-base">Trayectoria consolidada desde 1990 en desarrollo de soluciones para el sector público y financiero.</div>
           </div>
         </div>
-      </section>
+        {/* Card 2 */}
+        <div className="relative rounded-xl overflow-visible flex flex-col items-center w-full md:w-[420px] min-h-[340px]">
+          <div className="absolute -inset-4 -z-10 rounded-2xl bg-black/60 blur-xl" />
+          <div className="bg-black/80 rounded-xl shadow-2xl border-b-2 border-orange-500 flex flex-col items-center p-8 h-full w-full" style={{ boxShadow: '0 8px 40px 0 rgba(0,0,0,0.7)' }}>
+            <div className="text-5xl font-extrabold text-orange-500 mb-2">500+</div>
+            <div className="text-xl font-bold text-white mb-2 text-center">IMPLEMENTACIONES</div>
+            <div className="text-white/80 text-center text-base">Casos de éxito en gobiernos, bancos, cooperativas, ministerios y organismos internacionales.</div>
+          </div>
+        </div>
+        {/* Card 3 */}
+        <div className="relative rounded-xl overflow-visible flex flex-col items-center w-full md:w-[420px] min-h-[340px]">
+          <div className="absolute -inset-4 -z-10 rounded-2xl bg-black/60 blur-xl" />
+          <div className="bg-black/80 rounded-xl shadow-2xl border-b-2 border-orange-500 flex flex-col items-center p-8 h-full w-full" style={{ boxShadow: '0 8px 40px 0 rgba(0,0,0,0.7)' }}>
+            <div className="text-5xl font-extrabold text-orange-500 mb-2">4</div>
+            <div className="text-xl font-bold text-white mb-2 text-center">CONTINENTES</div>
+            <div className="text-white/80 text-center text-base">Delphos se adapta a marcos regulatorios globales y locales con multilenguaje y configuraciones regionales.</div>
+          </div>
+        </div>
+      </div>
 
-      {/* Sección de Funcionalidades */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Funciones Clave para una Gobernanza Efectiva y Sostenible
+      {/* Carrusel de logos - estilo personalizado */}
+      <div className="relative w-full flex justify-center items-center py-8 mb-2 overflow-hidden">
+        {/* Círculo gris difuminado restaurado, más alto */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[220px] rounded-full bg-gradient-to-r from-transparent via-gray-700/40 to-transparent blur-3xl opacity-60 z-0" />
+        {/* Borde naranja degradado, más alto y más naranja */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[150px] rounded-full pointer-events-none z-10" style={{ border: '3px solid', borderImage: 'linear-gradient(90deg, transparent 0%, #ff6600 45%, #ff6600 55%, transparent 100%) 1', borderRadius: '9999px', filter: 'blur(1.5px)', opacity: 0.95 }} />
+        {/* Carrusel de logos */}
+        <div className="relative z-20 w-full max-w-6xl flex items-center justify-center gap-6 animate-scroll-logos">
+          {[
+            '/images/banco m.png',
+            '/images/BID.png',
+            '/images/D&B.png',
+            '/images/CR Gobierno.png',
+            '/images/MIDELPAN.png',
+            '/images/buro.png',
+            '/images/CR.png',
+          ].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`Logo carrusel ${i+1}`}
+              className="h-12 w-auto transition duration-300"
+              draggable="false"
+            />
+          ))}
+        </div>
+        <style>{`
+          @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-scroll-logos {
+            animation: scroll-logos 30s linear infinite;
+            width: max-content;
+          }
+        `}</style>
+      </div>
+
+      {/* El resto de la página sigue con fondo negro continuo, sin cortes visuales */}
+
+      {/* ¿Por qué elegir Delphos? */}
+      <section className="bg-black py-20 relative overflow-hidden">
+        {/* Círculo azul/gris difuminado a la izquierda, más abajo y más difuso */}
+        <div className="absolute top-40 -left-32 w-[350px] h-[350px] rounded-full bg-gradient-to-br from-blue-900 via-gray-400 to-transparent opacity-20 blur-[120px] pointer-events-none z-0" />
+        {/* Círculo naranja difuminado a la derecha, más abajo y más difuso */}
+        <div className="absolute top-60 -right-40 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-orange-500 via-yellow-500 to-transparent opacity-20 blur-[140px] pointer-events-none z-0" />
+        {/* Hexágono en la esquina inferior derecha */}
+        <img
+          src="/images/hexagono.png"
+          alt="Hexágono decorativo"
+          className="absolute bottom-0 right-0 w-[320px] opacity-20 pointer-events-none z-0"
+          draggable="false"
+        />
+        {/* El contenido real de la sección debe tener z-10 o superior */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 grid-rows-3 gap-6">
+          {/* Card 1: Solo texto, sin borde ni icono */}
+          <div className="flex flex-col justify-center h-full">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+              ¿Por qué elegir <span className="text-orange-500">Delphos</span>?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Desde la planificación hasta el cumplimiento normativo, DELPHOS ofrece herramientas inteligentes para elevar el nivel de control, trazabilidad y eficiencia institucional.
+            <p className="text-white/80 text-base">
+              Ofrecemos herramientas inteligentes para elevar nivel de control, trazabilidad y eficiencia institucional.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: <FaShieldAlt />, title: "Gestión de Riesgos Integrada", desc: "Administración completa del SEVRI con evaluación, monitoreo y tratamiento automatizado." },
-              { icon: <MdAnalytics />, title: "Análisis Estratégico en Tiempo Real", desc: "Dashboards ejecutivos con métricas clave, comparativos, alertas y visualización dinámica." },
-              { icon: <MdTrendingUp />, title: "Planificación Estratégica y Operativa", desc: "Desde visión y objetivos hasta actividades, metas e indicadores. Alineado al marco GpRD." },
-              { icon: <MdCloudUpload />, title: "Plataforma SaaS en Oracle Cloud", desc: "Acceda desde cualquier lugar con seguridad, escalabilidad y respaldo automático." },
-              { icon: <FaUsers />, title: "Control Interno y Auditoría", desc: "Gestión de hallazgos, acciones correctivas, cumplimiento de controles ISO y regulatorios." },
-              { icon: <FaChartLine />, title: "Gestión de Continuidad del Negocio (BCM)", desc: "Análisis BIA, planes de recuperación y ejercicios de prueba integrados en la misma plataforma." },
-              { icon: <FaCheckCircle />, title: "Cumplimiento Normativo Automatizado", desc: "ISO 27001, ISO 22301, CONASSIF, MICITT, y otras normas precargadas en el sistema." }
-            ].map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
-                <div className="text-3xl text-blue-600 mb-4">{item.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
-              </div>
-            ))}
+          {/* Card 2 */}
+          <div className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
+            <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl"><MdSecurity /></span>
+            <span className="text-white text-base font-semibold text-center w-full">GESTIÓN DE RIESGOS INTEGRADA</span>
+          </div>
+          {/* Card 3 */}
+          <div className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
+            <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl"><FaRegFileAlt /></span>
+            <span className="text-white text-base font-semibold text-center w-full">CUMPLIMIENTO DEL MICITT</span>
+          </div>
+          {/* Card 4 */}
+          <div className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
+            <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl"><MdGavel /></span>
+            <span className="text-white text-base font-semibold text-center w-full">GOBERNANZA Y CUMPLIMIENTOS EN UN SOLO LUGAR</span>
+          </div>
+          {/* Card 5 */}
+          <div className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
+            <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl"><MdIntegrationInstructions /></span>
+            <span className="text-white text-base font-semibold text-center w-full">INTEGRA SEVRI</span>
+          </div>
+          {/* Card 6 */}
+          <div className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
+            <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl"><MdSettings /></span>
+            <span className="text-white text-base font-semibold text-center w-full">GESTIÓN ESTRATÉGICA OPERATIVA</span>
+          </div>
+          {/* Card 7 */}
+          <div className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
+            <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl"><MdTimeline /></span>
+            <span className="text-white text-base font-semibold text-center w-full">PLANIFICACIÓN ESTRATÉGICA</span>
+          </div>
+          {/* Card 8 */}
+          <div className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
+            <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl"><MdVerifiedUser /></span>
+            <span className="text-white text-base font-semibold text-center w-full">CUMPLIMIENTO NORMATIVO AUTOMATIZADO</span>
+          </div>
+          {/* Card 9: vacío */}
+          <div></div>
+        </div>
+      </section>
+
+      {/* Funciones Clave */}
+      <section className="bg-black py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12">
+            Funciones Clave para una <span className="text-orange-500">Gobernanza Efectiva y Sostenible</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            {/* Card 1 */}
+            <div className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
+              <MdSecurity className="text-4xl text-orange-500 mb-2" />
+              <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" />
+              <span className="text-white text-center font-semibold">Gestión de Riesgos Integrada</span>
+            </div>
+            {/* Card 2 */}
+            <div className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
+              <FaChartBar className="text-4xl text-orange-500 mb-2" />
+              <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" />
+              <span className="text-white text-center font-semibold">Análisis Estratégico en Tiempo Real</span>
+            </div>
+            {/* Card 3 */}
+            <div className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
+              <MdTrendingUp className="text-4xl text-orange-500 mb-2" />
+              <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" />
+              <span className="text-white text-center font-semibold">Planificación Estratégica y Operativa</span>
+            </div>
+            {/* Card 4 */}
+            <div className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
+              <MdCloudUpload className="text-4xl text-orange-500 mb-2" />
+              <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" />
+              <span className="text-white text-center font-semibold">Plataforma SaaS en Oracle Cloud</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 5 */}
+            <div className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
+              <MdPeople className="text-4xl text-orange-500 mb-2" />
+              <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" />
+              <span className="text-white text-center font-semibold">Control Interno y Auditoría</span>
+            </div>
+            {/* Card 6 */}
+            <div className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
+              <MdAssessment className="text-4xl text-orange-500 mb-2" />
+              <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" />
+              <span className="text-white text-center font-semibold">Gestión de Continuidad del Negocio (BCM)</span>
+            </div>
+            {/* Card 7 */}
+            <div className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
+              <MdCheckCircle className="text-4xl text-orange-500 mb-2" />
+              <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" />
+              <span className="text-white text-center font-semibold">Cumplimiento Normativo Automatizado</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-4xl font-bold mb-6">¿Listo para modernizar su gobernanza institucional?</h2>
-          <p className="text-xl mb-8 text-blue-100">
-          Más de 500 instituciones en Latinoamérica y el mundo ya transformaron su gestión con DELPHOS. Solicite una demostración y descubra cómo podemos hacerlo también por usted.
+      {/* CTA Final */}
+      <section className="bg-black py-20 relative overflow-hidden">
+        {/* Círculo azul grande difuminado abajo a la izquierda */}
+        <div className="absolute -bottom-32 -left-32 w-[350px] h-[350px] rounded-full bg-gradient-to-br from-blue-900 via-blue-400 to-transparent opacity-30 blur-3xl pointer-events-none z-0" />
+        {/* Círculo azul más pequeño difuminado más arriba */}
+        <div className="absolute -bottom-10 left-40 w-[180px] h-[180px] rounded-full bg-gradient-to-br from-blue-800 via-blue-300 to-transparent opacity-20 blur-2xl pointer-events-none z-0" />
+        {/* Contenido principal */}
+        <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+            ¿Listo para <span className="bg-orange-500 text-white px-2 rounded">modernizar</span> su<br className="hidden md:inline" />gobernanza institucional?
+          </h2>
+          <p className="text-white/80 mb-2">
+            Más de 500 instituciones en Latinoamérica y el mundo ya transformaron su gestión con <span className="text-orange-500 font-bold">DELPHOS</span>.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contacto" 
-              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+          <p className="text-white font-bold mb-8">
+            Solicite una demostración y descubra cómo podemos hacerlo también para usted.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/delphos"
+              className="px-8 py-4 rounded font-semibold text-lg uppercase text-white bg-gradient-to-r from-[#C96A13] to-[#7A4D13] shadow-sm transition-transform duration-200 transform hover:scale-105 hover:from-[#A05A1C] hover:to-[#7A4D13] focus:outline-none"
             >
-              Solicitar Demostración
+              CONOZCA DELPHOS
             </Link>
-            <Link 
-              href="/delphos" 
-              className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+            <span className="text-orange-500 font-bold text-2xl hidden sm:inline-block">+</span>
+            <Link
+              href="/contacto"
+              className="px-8 py-4 rounded font-semibold text-lg uppercase text-white bg-transparent border-none transition-transform duration-200 transform hover:scale-105 focus:outline-none"
             >
-              Conozca DELPHOS
+              PROBAR DEMO GRATUITA
             </Link>
           </div>
         </div>

@@ -1,0 +1,270 @@
+"use client";
+
+import React, { useState } from "react";
+import Script from "next/script";
+import FormField from "../molecules/formField";
+import Input from "../atoms/input";
+import Textarea from "../atoms/textArea";
+import RadioGroup from "../molecules/radioGroup";
+
+const interesesOpciones = [
+  "Solicitar Demo de DELPHOS",
+  "Consulta sobre Licitación",
+  "Consultoría GRC",
+  "Soporte Técnico",
+  "Información General",
+];
+
+const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    telefono: "",
+    institucion: "",
+    cargo: "",
+    interes: "",
+    mensaje: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Limpiar mensajes de error cuando el usuario empiece a escribir
+    if (submitStatus.type === 'error') {
+      setSubmitStatus({ type: null, message: '' });
+    }
+  };
+
+  const handleRadioChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, interes: value }));
+    if (submitStatus.type === 'error') {
+      setSubmitStatus({ type: null, message: '' });
+    }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      nombre: "",
+      apellido: "",
+      email: "",
+      telefono: "",
+      institucion: "",
+      cargo: "",
+      interes: "",
+      mensaje: "",
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    // Verificar que reCAPTCHA esté disponible
+    if (typeof window.grecaptcha === 'undefined') {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Error: reCAPTCHA no está cargado. Por favor, recarga la página.'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    const token = window.grecaptcha.getResponse();
+
+    if (!token) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Por favor, completa el reCAPTCHA antes de enviar el formulario.'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          "g-recaptcha-response": token,
+        }),
+      });
+
+      if (res.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: '¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.'
+        });
+        resetForm();
+        window.grecaptcha.reset();
+      } else {
+        const errorData = await res.json();
+        setSubmitStatus({
+          type: 'error',
+          message: errorData.message || 'Error al enviar el mensaje. Por favor, intenta de nuevo.'
+        });
+        window.grecaptcha.reset();
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Error de conexión. Por favor, verifica tu conexión a internet e intenta de nuevo.'
+      });
+      window.grecaptcha.reset();
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="bg-[#181818] p-8 rounded-2xl">
+      <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-12 text-center">
+          Formulario de Contacto
+        </h2>
+
+        {submitStatus.type && (
+          <div className={`p-4 rounded-lg text-center ${
+            submitStatus.type === 'success'
+              ? 'bg-green-900/20 border border-green-500/30 text-green-400' 
+              : 'bg-red-900/20 border border-red-500/30 text-red-400'
+          }`}>
+            {submitStatus.message}
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <FormField htmlFor="nombre" label="Nombre *">
+            <Input
+              type="text"
+              id="nombre"
+              name="nombre"
+              value={formData.nombre}
+              onChange={handleChange}
+              required
+              disabled={isSubmitting}
+            />
+          </FormField>
+          <FormField htmlFor="apellido" label="Apellido *">
+            <Input
+              type="text"
+              id="apellido"
+              name="apellido"
+              value={formData.apellido}
+              onChange={handleChange}
+              required
+              disabled={isSubmitting}
+            />
+          </FormField>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <FormField htmlFor="email" label="Correo Electrónico *">
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              disabled={isSubmitting}
+            />
+          </FormField>
+          <FormField htmlFor="telefono" label="Teléfono">
+            <Input
+              type="text"
+              id="telefono"
+              name="telefono"
+              value={formData.telefono}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
+          </FormField>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <FormField htmlFor="institucion" label="Institución/Empresa">
+            <Input
+              type="text"
+              id="institucion"
+              name="institucion"
+              value={formData.institucion}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
+          </FormField>
+          <FormField htmlFor="cargo" label="Cargo">
+            <Input
+              type="text"
+              id="cargo"
+              name="cargo"
+              value={formData.cargo}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
+          </FormField>
+        </div>
+
+        <div className="space-y-4">
+          <RadioGroup
+            name="interes"
+            label="Interés Principal *"
+            options={interesesOpciones}
+            selectedValue={formData.interes}
+            onChange={handleRadioChange}
+            disabled={isSubmitting}
+          />
+        </div>
+
+        <FormField htmlFor="mensaje" label="Su Mensaje *">
+          <Textarea
+            id="mensaje"
+            name="mensaje"
+            rows={4}
+            value={formData.mensaje}
+            onChange={handleChange}
+            placeholder="Escriba su mensaje aquí..."
+            required
+            disabled={isSubmitting}
+          />
+        </FormField>
+
+        <div
+          className="g-recaptcha flex justify-center"
+          data-sitekey="6Ld_2YYrAAAAADCNaewT-M7O_TetUpXWDW1dJcRl"
+        ></div>
+
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={`w-full py-4 rounded-xl text-white font-bold text-lg transition-all duration-200 ${
+            isSubmitting 
+              ? 'opacity-50 cursor-not-allowed' 
+              : 'hover:opacity-90 cursor-pointer transform hover:scale-105'
+          }`}
+          style={{ background: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)" }}
+        >
+          {isSubmitting ? 'Enviando...' : 'ENVIAR MENSAJE'}
+        </button>
+
+        <p className="text-sm text-gray-400 text-center">
+          * Campos obligatorios
+        </p>
+      </form>
+    </div>
+  );
+};
+
+export default ContactForm;
