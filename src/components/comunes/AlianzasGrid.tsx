@@ -40,7 +40,7 @@ export default function AlianzasGrid() {
           <div
             onClick={() => setSelected(a)}
             key={i}
-            className="group cursor-pointer flex flex-col items-center space-y-3 p-4 w-32 h-32 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            className="group cursor-pointer flex flex-col items-center space-y-3 p-4 w-32 h-32 bg-[#181818] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
           >
             <div className="w-16 h-12 relative overflow-hidden rounded-lg shadow-md">
                 <Image
@@ -50,7 +50,7 @@ export default function AlianzasGrid() {
                     className="w-full h-full object-cover"
                 />
             </div>
-            <span className="text-sm font-semibold text-gray-700 text-center group-hover:text-blue-600 transition-colors break-words">
+            <span className="text-sm font-semibold text-white text-center group-hover:text-orange-400 transition-colors break-words">
               {a.title}
             </span>
           </div>
