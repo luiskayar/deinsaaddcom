@@ -1,28 +1,15 @@
+# *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
-# Permitir acceso completo a Googlebot
+# Googlebot
 User-agent: Googlebot
 Allow: /
 
-# Permitir acceso completo a Bingbot
-User-agent: Bingbot
-Allow: /
+# Host
+Host: https://www.deinsa.com
 
-# Bloquear acceso a directorios sensibles
-Disallow: /api/
-Disallow: /admin/
-Disallow: /_next/
-Disallow: /private/
-Disallow: /temp/
-
-# Permitir acceso a recursos importantes
-Allow: /images/
-Allow: /public/
-Allow: /sitemap.xml
-
-# Sitemap
+# Sitemaps
 Sitemap: https://www.deinsa.com/sitemap.xml
-
-# Crawl-delay para evitar sobrecarga del servidor
-Crawl-delay: 1
