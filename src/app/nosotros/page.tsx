@@ -67,7 +67,7 @@ export default function NosotrosPage() {
           Más de <span className="text-orange-500">35 años</span> de <span className="text-orange-500">innovación</span> constante
         </h1>
         <p className="text-white/80 mb-12 max-w-2xl">
-          Somos una empresa costarricense con implementaciones en <span className="font-bold">4 continentes</span>. Nuestra plataforma DELPHOS fortalece la <span className="font-bold">gestión pública y financiera</span> con <span className="font-bold">soluciones integrales</span> en Gobernanza Corporativa.
+        Impulsamos gobiernos y entidades financieras con soluciones que fortalecen la gobernanza, reducen riesgos y aseguran el cumplimiento, a través de nuestra plataforma DELPHOS, presente en más de 4 continentes.
         </p>
         {/* Bloques Misión, Visión, Valores */}
         <div className="space-y-12">

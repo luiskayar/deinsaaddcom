@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { NewsFirebase } from "@/app/types";
+import React, { useState, useEffect } from 'react';
 import ArticlePreview from "@/components/molecules/ArticlePreview";
-import { Search } from "lucide-react";
+import { NewsFirebase } from '@/app/types';
 
 type NewsItem = NewsFirebase & { id: string; category?: string; slug: string };
 
@@ -14,14 +13,17 @@ interface Props {
 
 const categories = [
   { key: "todas", label: "Todas las Categorías" },
+  { key: "grc", label: "GRC - Gobernanza, Riesgos y Cumplimiento" },
+  { key: "delphos", label: "DELPHOS" },
   { key: "gestion de riesgos", label: "Gestión de Riesgos" },
   { key: "cumplimiento normativo", label: "Cumplimiento Normativo" },
   { key: "planificacion estrategica", label: "Planificación Estratégica" },
   { key: "gestion del desempeño", label: "Gestión del Desempeño" },
-  { key: "tecnologia y saas", label: "Tecnología y SaaS" },
-  { key: "casos de exito", label: "Casos de Éxito" },
+  { key: "continuidad del negocio", label: "Continuidad del Negocio" },
   { key: "sector publico", label: "Sector Público" },
   { key: "sector financiero", label: "Sector Financiero" },
+  { key: "casos de exito", label: "Casos de Éxito" },
+  { key: "tecnologia", label: "Tecnología" },
 ];
 
 export default function NewsSearch({ allNews, searchQuery = "" }: Props) {
@@ -42,13 +44,13 @@ export default function NewsSearch({ allNews, searchQuery = "" }: Props) {
       result = result.filter((n) => n.category?.toLowerCase() === category);
     }
 
-     if (term) {
-    result = result.filter(
-      (n) =>
-        n.title.toLowerCase().includes(term) ||
-        n.description.toLowerCase().includes(term)
-    );
-  }
+    if (term) {
+      result = result.filter(
+        (n) =>
+          n.title.toLowerCase().includes(term) ||
+          n.description.toLowerCase().includes(term)
+      );
+    }
     setFiltered(result);
   }, [searchQuery, allNews, category, news]);
 
@@ -62,44 +64,30 @@ export default function NewsSearch({ allNews, searchQuery = "" }: Props) {
   if (!mounted) return null;
 
   return (
-    <div className="space-y-6">
-      {/* Categorías */}
-      <div className="space-y-4">
-        <h3 className="text-2xl font-bold text-white text-center">Filtrar por Categoría</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {categories.map((cat) => {
-            const conteo = getCategoryTotal(cat.key);
-            const isSelected = category === cat.key;
-
-            return (
-              <button
-                key={cat.key}
-                onClick={() => setCategory(cat.key)}
-                className={`text-left px-6 py-4 rounded-xl shadow-lg transition-all duration-200 flex justify-between items-center border ${
-                  isSelected
-                    ? "bg-[#181818] text-white border-orange-500/50 shadow-orange-500/10"
-                    : "bg-[#181818] hover:bg-gray-800 text-gray-300 border-[#181818] hover:border-gray-600 hover:shadow-lg"
-                }`}
-              >
-                <span className="font-medium">{cat.label}</span>
-                <span
-                  className={`text-sm px-3 py-1 rounded-full font-bold ${
-                    isSelected
-                      ? "bg-orange-500/80 text-white"
-                      : "bg-gray-700 text-gray-300"
-                  }`}
-                >
-                  {conteo}
-                </span>
-              </button>
-            );
-          })}
+    <div className="space-y-8">
+      {/* Filtros por categorías */}
+      <div className="bg-[#181818] rounded-xl p-6">
+        <h3 className="text-white font-semibold text-lg mb-4">Filtrar por categoría</h3>
+        <div className="flex flex-wrap gap-3">
+          {categories.map((cat) => (
+            <button
+              key={cat.key}
+              onClick={() => setCategory(cat.key)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 transform hover:scale-105 ${
+                category === cat.key
+                  ? "bg-orange-500 text-white shadow-lg"
+                  : "text-gray-300 bg-white/10"
+              }`}
+            >
+              {cat.label} ({getCategoryTotal(cat.key)})
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Filtros activos */}
       {(category !== "todas" || searchQuery) && (
-        <div className="bg-[#181818] border border-gray-700 rounded-xl p-6 flex items-center justify-between">
+        <div className="bg-[#181818] rounded-xl p-6 flex items-center justify-between">
           <div className="flex items-center gap-3 flex-wrap">
             {category !== "todas" && (
               <span className="bg-orange-500/80 text-white px-4 py-2 rounded-full text-sm font-medium">
@@ -146,4 +134,4 @@ export default function NewsSearch({ allNews, searchQuery = "" }: Props) {
       )}
     </div>
   );
-}
+} 
