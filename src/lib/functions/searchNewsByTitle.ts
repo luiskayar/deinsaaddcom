@@ -5,4 +5,4 @@ export async function searchNewsByTitle(titulo: string, newsList: (NewsFirebase 
     .filter((doc) =>
       doc.title?.toLowerCase().includes(titulo.toLowerCase())
     );
-}
+} 

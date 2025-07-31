@@ -37,27 +37,53 @@ export const metadata: Metadata = {
 
 export default function ServiciosPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative overflow-x-hidden">
+      {/* Círculo azul difuminado a la izquierda */}
+      <div className="absolute top-32 -left-40 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-blue-900 via-blue-400 to-transparent opacity-40 blur-[100px] pointer-events-none z-0" />
+      {/* Círculo naranja difuminado a la derecha */}
+      <div className="absolute top-1/2 -right-60 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-500 via-yellow-400 to-transparent opacity-30 blur-[120px] pointer-events-none z-0" />
+      {/* Hexágono decorativo */}
+      <img
+        src="/images/hexagono.png"
+        alt="Hexágono decorativo"
+        className="absolute bottom-10 right-10 w-[320px] opacity-20 pointer-events-none z-0"
+        draggable="false"
+      />
+      
       {/* HERO DEINSA GRC */}
-      <section className="w-full min-h-[380px] flex items-center bg-black relative">
-        {/* Fondo decorativo telaraña */}
-        <img
-          src="/images/telaraña.jpg"
-          alt="Fondo telaraña"
-          className="absolute top-0 right-0 h-full w-auto max-w-none opacity-40 z-0 pointer-events-none"
-          draggable="false"
-        />
-        <div className="max-w-3xl px-8 py-20 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-            <span className="text-orange-500">DEINSA:</span><br />
-            <span className="text-white">Su Socio Estratégico en<br />Gobernanza Coorporativa</span>
+      <section className="w-full min-h-[420px] flex flex-col md:flex-row items-center justify-between bg-black relative py-12 md:py-20 px-4 md:px-12 z-10">
+        {/* Columna izquierda: textos */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-start md:items-start text-left z-10">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+            <span className="text-orange-500">DEINSA:</span> <br />
+            Su Socio Estratégico en <br className="hidden md:block" />Gobernanza Corporativa
           </h1>
-          <p className="text-white text-lg mb-12 max-w-xl">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
+            <span className="text-white">Servicios especializados para </span>
+            <span className="text-orange-500">gestión de riesgos</span>
+            <span className="text-white">, </span>
+            <span className="text-orange-500">cumplimiento del MICITT</span>
+            <span className="text-white"> y </span>
+            <span className="text-orange-500">planificación institucional</span>
+          </h2>
+          <p className="text-white/80 text-base md:text-lg mb-6 max-w-xl">
             Transformamos la gestión institucional con soluciones innovadoras en <b>GRC</b>, riesgo y cumplimiento.
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mt-16">
-            Consultoría Expertos en <span className="text-orange-500">GRC</span>
-          </h2>
+        </div>
+        {/* Columna derecha: fondo decorativo */}
+        <div className="hidden md:block w-1/2 h-[420px] relative">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[420px] overflow-hidden">
+            <img
+              src="/images/telaraña.jpg"
+              alt="Fondo telaraña"
+              className="w-full h-full object-cover opacity-20 blur-[2px]"
+              draggable="false"
+              loading="lazy"
+            />
+            {/* Gradiente suave para desvanecer los bordes */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/40 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-black/30 pointer-events-none"></div>
+          </div>
         </div>
       </section>
 
@@ -76,31 +102,31 @@ export default function ServiciosPage() {
               <span className="text-orange-500 text-3xl mt-1"><FaChartLine /></span>
               <div>
                 <h3 className="font-bold text-white text-lg mb-1">Planificación y desempeño estratégico</h3>
-                <p className="text-gray-300 text-sm">Modelos de planificación y gestión alineados a objetivos institucionales.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-orange-500 text-3xl mt-1"><FaCogs /></span>
-              <div>
-                <h3 className="font-bold text-white text-lg mb-1">Optimización de Procesos y TI</h3>
-                <p className="text-gray-300 text-sm">Mejora de procesos, automatización y alineamiento tecnológico.</p>
-              </div>
-            </div>
-          </div>
-          {/* Columna 2 */}
-          <div className="space-y-10">
-            <div className="flex items-start gap-4">
-              <span className="text-orange-500 text-3xl mt-1"><FaGlobe /></span>
-              <div>
-                <h3 className="font-bold text-white text-lg mb-1">Implementación de Estándares Internacionales</h3>
-                <p className="text-gray-300 text-sm">ISO 31000, ISO 22301, ISO 27001, COSO ERM.</p>
+                <p className="text-gray-300 text-sm">Modelos de gestión alineados al PND, PAI y evaluación del desempeño institucional.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <span className="text-orange-500 text-3xl mt-1"><FaShieldAlt /></span>
               <div>
                 <h3 className="font-bold text-white text-lg mb-1">Gestión de Riesgos y Cumplimiento Normativo</h3>
-                <p className="text-gray-300 text-sm">SEVRI, Normas técnicas del MICITT, cumplimiento regulatorio sectorial.</p>
+                <p className="text-gray-300 text-sm">Software alineado a SEVRI, Normas Técnicas del MICITT e ISO 27001.</p>
+              </div>
+            </div>
+          </div>
+          {/* Columna 2 */}
+          <div className="space-y-10">
+            <div className="flex items-start gap-4">
+              <span className="text-orange-500 text-3xl mt-1"><FaCogs /></span>
+              <div>
+                <h3 className="font-bold text-white text-lg mb-1">Optimización de Procesos y TI</h3>
+                <p className="text-gray-300 text-sm">Automatización institucional, digitalización y mejora continua en procesos clave.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-orange-500 text-3xl mt-1"><FaGlobe /></span>
+              <div>
+                <h3 className="font-bold text-white text-lg mb-1">Implementación de Estándares Internacionales</h3>
+                <p className="text-gray-300 text-sm">ISO 31000, ISO 27001, ISO 22301, COSO ERM y otros marcos globales.</p>
               </div>
             </div>
           </div>
@@ -110,18 +136,22 @@ export default function ServiciosPage() {
           <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
             <FaSearch className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
             <span className="text-white font-bold uppercase text-base mt-2">Diagnóstico y análisis personalizados.</span>
+            <p className="text-gray-300 text-sm mt-2">Evaluamos brechas en riesgos, planificación y cumplimiento normativo.</p>
           </div>
           <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
             <FaRocket className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
             <span className="text-white font-bold uppercase text-base mt-2">Implementación ágil y acompañamiento.</span>
+            <p className="text-gray-300 text-sm mt-2">Apoyamos su transformación institucional con una metodología flexible.</p>
           </div>
           <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
             <FaChalkboardTeacher className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
             <span className="text-white font-bold uppercase text-base mt-2">Capacitación y transferencia de conocimiento.</span>
+            <p className="text-gray-300 text-sm mt-2">Formamos equipos internos con enfoque práctico y sostenibilidad.</p>
           </div>
           <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
             <FaHandsHelping className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
             <span className="text-white font-bold uppercase text-base mt-2">Soporte post-proyecto y mejora continua.</span>
+            <p className="text-gray-300 text-sm mt-2">Seguimiento constante para garantizar resultados y evolución del sistema.</p>
           </div>
         </div>
       </section>
@@ -133,7 +163,7 @@ export default function ServiciosPage() {
             <span className="text-orange-500">Soluciones</span> <span className="text-white">a Medida con</span> <span className="text-white font-bold">Delphos</span>
           </h2>
           <p className="text-white mb-10">
-            Adaptamos nuestra plataforma DELPHOS y servicios a las necesidades específicas de cada cliente, garantizando flexibilidad, escalabilidad y resultados tangibles.
+            Adaptamos nuestra plataforma DELPHOS y nuestros servicios a los requerimientos de gobiernos, bancos y entidades del sector público, garantizando cumplimiento con SEVRI, las Normas del MICITT, ISO 27001 y resultados medibles desde el primer mes.
           </p>
           <div className="flex flex-col items-center">
             <a

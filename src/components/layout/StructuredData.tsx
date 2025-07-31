@@ -1,130 +1,67 @@
 import Script from 'next/script';
+import { seoConfig } from '@/lib/seo-config';
 
 export default function StructuredData() {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DEINSA Global",
-    "url": "https://www.deinsa.com",
-    "logo": "https://www.deinsa.com/logo.png",
-    "description": "Empresa costarricense con 35+ años de experiencia en software de gobernanza corporativa y gestión de riesgos.",
-    "foundingDate": "1990",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "CR",
-      "addressLocality": "San José",
-      "addressRegion": "San José"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "info@deinsa.com"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/deinsa-global",
-      "https://twitter.com/deinsaglobal"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Software de Gobernanza Corporativa",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "SoftwareApplication",
-            "name": "DELPHOS",
-            "description": "Plataforma integral SaaS para gobernanza corporativa, gestión de riesgos y cumplimiento normativo",
-            "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web Browser",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD",
-              "description": "Solicite una demostración gratuita"
-            }
-          }
-        }
-      ]
-    }
-  };
-
-  const softwareSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "DELPHOS",
-    "description": "Software líder en gobernanza corporativa, gestión de riesgos, cumplimiento normativo y continuidad del negocio",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web Browser",
-    "softwareVersion": "2024",
-    "datePublished": "2000",
-    "publisher": {
-      "@type": "Organization",
-      "name": "DEINSA Global"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Solicite una demostración gratuita"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "500"
-    }
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Servicios de Gobernanza Corporativa",
-    "description": "Servicios especializados en gobernanza corporativa, gestión de riesgos, cumplimiento normativo y continuidad del negocio",
-    "provider": {
-      "@type": "Organization",
-      "name": "DEINSA Global"
-    },
-    "serviceType": "Consulting Service",
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Costa Rica"
-      },
-      {
-        "@type": "Country", 
-        "name": "Panamá"
-      },
-      {
-        "@type": "Country",
-        "name": "México"
-      },
-      {
-        "@type": "Country",
-        "name": "República Dominicana"
-      }
-    ]
-  };
-
   return (
     <>
       <Script
         id="organization-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
+          __html: JSON.stringify(seoConfig.structuredData.organization),
         }}
       />
       <Script
         id="software-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareSchema),
+          __html: JSON.stringify(seoConfig.structuredData.software),
         }}
       />
       <Script
         id="service-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema),
+          __html: JSON.stringify(seoConfig.structuredData.service),
+        }}
+      />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(seoConfig.structuredData.faq),
+        }}
+      />
+      {/* Schema adicional para mejorar la visibilidad en búsquedas locales */}
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "DEINSA Global",
+            "description": "Empresa especializada en software de gobernanza corporativa y gestión de riesgos",
+            "url": "https://www.deinsa.com",
+            "telephone": "+506-2222-2222",
+            "email": "info@deinsa.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "San José",
+              "addressLocality": "San José",
+              "addressRegion": "San José",
+              "addressCountry": "CR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "9.9281",
+              "longitude": "-84.0907"
+            },
+            "openingHours": "Mo-Fr 08:00-17:00",
+            "priceRange": "$$",
+            "currenciesAccepted": "USD, CRC",
+            "paymentAccepted": "Cash, Credit Card, Bank Transfer"
+          }),
         }}
       />
     </>

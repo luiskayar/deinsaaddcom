@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search } from "lucide-react";
+import { Search } from 'lucide-react';
 
 interface NewsSearchBarProps {
   onSearch: (query: string) => void;
@@ -25,7 +25,7 @@ export default function NewsSearchBar({ onSearch }: NewsSearchBarProps) {
             type="text"
             value={searchQuery}
             onChange={handleSearchChange}
-            placeholder="Buscar por título o descripción…"
+            placeholder="Buscar noticia"
             className="w-full px-0 py-1 bg-transparent text-white placeholder-white focus:outline-none border-b-2 border-gray-600 focus:border-orange-500/50 transition-all duration-300 text-lg"
           />
         </div>

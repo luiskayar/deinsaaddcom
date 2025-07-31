@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
-import NewsSearchBar from './NewsSearchBar';
+import React from 'react';
 import NewsSearch from './NewsSearch';
 import { NewsFirebase } from '@/app/types';
 
@@ -9,14 +8,12 @@ type NewsItem = NewsFirebase & { id: string; category?: string; slug: string };
 
 interface Props {
   allNews: NewsItem[];
+  searchQuery: string;
 }
 
-export default function NewsPageWrapper({ allNews }: Props) {
-  const [searchQuery, setSearchQuery] = useState("");
-
+export default function NewsPageWrapper({ allNews, searchQuery }: Props) {
   return (
     <>
-      <NewsSearchBar onSearch={setSearchQuery} />
       <div className="container mx-auto px-4 max-w-6xl pb-20">
         <div className="mb-16">
           <NewsSearch allNews={allNews} searchQuery={searchQuery} />

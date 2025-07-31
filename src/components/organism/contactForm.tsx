@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import Script from "next/script";
+import React, { useState, useEffect } from "react";
+//import Script from "next/script";
 import FormField from "../molecules/formField";
 import Input from "../atoms/input";
 import Textarea from "../atoms/textArea";
@@ -28,10 +28,16 @@ const ContactForm: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: 'success' | 'error' | null;
     message: string;
   }>({ type: null, message: '' });
+
+  // Manejar hidratación
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -117,6 +123,7 @@ const ContactForm: React.FC = () => {
         });
         window.grecaptcha.reset();
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setSubmitStatus({
         type: 'error',
@@ -127,6 +134,20 @@ const ContactForm: React.FC = () => {
       setIsSubmitting(false);
     }
   };
+
+  // No renderizar hasta que esté montado para evitar problemas de hidratación
+  if (!isMounted) {
+    return (
+      <div className="bg-[#181818] p-8 rounded-2xl">
+        <div className="space-y-8 max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-12 text-center">
+            Formulario de Contacto
+          </h2>
+          <div className="text-center text-gray-400">Cargando formulario...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-[#181818] p-8 rounded-2xl">
@@ -220,7 +241,7 @@ const ContactForm: React.FC = () => {
         <div className="space-y-4">
           <RadioGroup
             name="interes"
-            label="Interés Principal *"
+            label="Servicio *"
             options={interesesOpciones}
             selectedValue={formData.interes}
             onChange={handleRadioChange}
