@@ -1,7 +1,5 @@
 import LinkNote from '../atoms/LinkNote';
-import Heading from '../atoms/Heading';
 import NewsImage from '../atoms/ImageNote';
-import Paragraph from '../atoms/Paragraph';
 
 type Props = {
     titulo: string;
