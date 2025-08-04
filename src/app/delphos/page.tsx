@@ -312,115 +312,198 @@ export default function DelphosPage() {
 
       {/* Universo Delphos */}
       <section className="py-16 relative z-10">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12">
             <span className="text-orange-500">Universo Delphos</span>
           </h2>
-                     <div className="space-y-8">
-             {/* Primera fila - 4 cards */}
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-                               {/* Delphos Continuum */}
-                <div
-                  onClick={() => setModuloSeleccionado({
-                    id: 1,
-                    titulo: "Delphos Continuum",
-                    icono: "🛡️",
-                    descripcion: "Gestione riesgos, continuidad del negocio y cumplimiento normativo desde una sola plataforma.\n\n**DELPHOS Continuum** es una solución SaaS que permite implementar y mantener un sistema robusto de gestión de riesgos, continuidad operativa y seguridad de la información. Está alineado con normas como ISO 22301, ISO 27001, ISO 31000 y COBIT 2019, y permite trazabilidad total entre riesgos, controles, procesos y activos críticos.\n\nDesde el BIA y los planes BCP/DRP, hasta las autoevaluaciones normativas (ISO, SEVRI, etc.), la plataforma automatiza procesos clave para facilitar auditorías, análisis y toma de decisiones estratégicas.\n\n**Funciones destacadas:**\n\n• Gestión de riesgos estratégicos, operativos y normativos\n• BIA, BCP y DRP con trazabilidad integrada\n• Autoevaluaciones normativas (ISO, SEVRI)\n• IA para análisis y generación de estrategias",
-                    caracteristicas: []
-                  })}
-                  className="bg-[#181818] rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 text-center w-44 h-44 flex items-center justify-center"
-                >
-                 <img src="/images/Continuum1.png" alt="Delphos Continuum" className="w-20 h-20 object-contain" />
-               </div>
+          
+          <div className="text-white text-center mb-12 max-w-4xl mx-auto">
+            <p className="text-lg mb-4">
+              Descubra la familia completa de soluciones DELPHOS diseñadas para transformar la gestión institucional
+            </p>
+            <p className="text-base leading-relaxed text-gray-300">
+              Cada producto está optimizado para necesidades específicas, pero todos comparten la misma base tecnológica y filosofía de excelencia operativa.
+            </p>
+          </div>
 
-                               {/* Delphos Core */}
-                <div
-                  onClick={() => setModuloSeleccionado({
-                    id: 2,
-                    titulo: "Delphos Core",
-                    icono: "📊",
-                    descripcion: "El motor central para la planificación, los proyectos y la gestión institucional.\n\n**Delphos Core** es la plataforma base de DELPHOS para gestionar la planificación estratégica, los planes operativos anuales, la gestión de proyectos y el seguimiento institucional. Alinea objetivos, acciones y resultados con trazabilidad total y flujos automatizados.\n\n**Funciones destacadas:**\n\n• Gestión de planificación estratégica (BSC, GpRD, PND, PEM)\n• Planes operativos anuales por unidad, vinculados a objetivos y presupuestos\n• Portafolios de proyectos con seguimiento de ejecución, alertas y prioridades\n• Indicadores estratégicos y operativos con monitoreo visual en tiempo real",
-                    caracteristicas: []
-                  })}
-                  className="bg-[#181818] rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 text-center w-44 h-44 flex items-center justify-center"
-                >
-                  <img src="/images/continuum.png" alt="Delphos Core" className="w-20 h-20 object-contain" />
-                </div>
+          {/* Grid de productos DELPHOS */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Delphos Continuum */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 1,
+                titulo: "Delphos Continuum",
+                icono: "🛡️",
+                descripcion: "Gestione riesgos, continuidad del negocio y cumplimiento normativo desde una sola plataforma.\n\n**DELPHOS Continuum** es una solución SaaS que permite implementar y mantener un sistema robusto de gestión de riesgos, continuidad operativa y seguridad de la información. Está alineado con normas como ISO 22301, ISO 27001, ISO 31000 y COBIT 2019, y permite trazabilidad total entre riesgos, controles, procesos y activos críticos.\n\nDesde el BIA y los planes BCP/DRP, hasta las autoevaluaciones normativas (ISO, SEVRI, etc.), la plataforma automatiza procesos clave para facilitar auditorías, análisis y toma de decisiones estratégicas.\n\n**Funciones destacadas:**\n\n• Gestión de riesgos estratégicos, operativos y normativos\n• BIA, BCP y DRP con trazabilidad integrada\n• Autoevaluaciones normativas (ISO, SEVRI)\n• IA para análisis y generación de estrategias",
+                caracteristicas: []
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <img 
+                  src="/images/Continuum1.png" 
+                  alt="Delphos Continuum" 
+                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                />
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Gestión integral de riesgos, continuidad del negocio y cumplimiento normativo
+                </p>
+              </div>
+            </div>
 
-                               {/* Delphos Elite */}
-                <div
-                  onClick={() => setModuloSeleccionado({
-                    id: 3,
-                    titulo: "Delphos Elite",
-                    icono: "💼",
-                    descripcion: "Impulsando el alto rendimiento con evaluación estratégica del desempeño.\n\n**Delphos Elite** es el módulo especializado en la gestión integral del desempeño institucional, de equipos y de personas. Alinea los objetivos estratégicos con los resultados reales mediante herramientas flexibles de evaluación, seguimiento y retroalimentación.\n\nCumple con los lineamientos de la **Ley 9635** de Fortalecimiento de las Finanzas Públicas, facilitando la implementación de sistemas de evaluación del desempeño en el sector público de forma objetiva, trazable y conforme a la normativa vigente.\n\n**Beneficios clave:**\n\n• Aumenta la motivación, mejora la rendición de cuentas, fortalece la toma de decisiones en recursos humanos y promueve una cultura de alto desempeño en todos los niveles.",
-                    caracteristicas: []
-                  })}
-                  className="bg-[#181818] rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 text-center w-44 h-44 flex items-center justify-center"
-                >
-                  <img src="/images/DelphosElite.png" alt="Delphos Elite" className="w-20 h-20 object-contain" />
+            {/* Delphos Core */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 2,
+                titulo: "Delphos Core",
+                icono: "📊",
+                descripcion: "El motor central para la planificación, los proyectos y la gestión institucional.\n\n**Delphos Core** es la plataforma base de DELPHOS para gestionar la planificación estratégica, los planes operativos anuales, la gestión de proyectos y el seguimiento institucional. Alinea objetivos, acciones y resultados con trazabilidad total y flujos automatizados.\n\n**Funciones destacadas:**\n\n• Gestión de planificación estratégica (BSC, GpRD, PND, PEM)\n• Planes operativos anuales por unidad, vinculados a objetivos y presupuestos\n• Portafolios de proyectos con seguimiento de ejecución, alertas y prioridades\n• Indicadores estratégicos y operativos con monitoreo visual en tiempo real",
+                caracteristicas: []
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-3xl group-hover:scale-110 transition-transform duration-300">
+                  CORE
                 </div>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Planificación estratégica, proyectos y gestión institucional centralizada
+                </p>
+              </div>
+            </div>
 
-                               {/* Delphos BI */}
-                <div
-                  onClick={() => setModuloSeleccionado({
-                    id: 4,
-                    titulo: "Delphos BI",
-                    icono: "📈",
-                    descripcion: "Transforme los datos en decisiones con inteligencia institucional.\n\n**Delphos BI** es la solución de inteligencia de negocios de DELPHOS que permite crear tableros gerenciales, cubos multidimensionales y reportes dinámicos, alimentados desde fuentes internas o externas como bases de datos SQL, Excel o sistemas institucionales.\n\nDesde salidas de rendición de cuentas hasta visualizaciones estratégicas en tiempo real, facilita el análisis predictivo, la evaluación de desempeño y la toma de decisiones informadas.",
-                    caracteristicas: []
-                  })}
-                  className="bg-[#181818] rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 text-center w-44 h-44 flex items-center justify-center"
-                >
-                  <img src="/images/continuum.png" alt="Delphos BI" className="w-24 h-24 object-contain" />
-                </div>
-             </div>
+            {/* Delphos Elite */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 3,
+                titulo: "Delphos Elite",
+                icono: "💼",
+                descripcion: "Impulsando el alto rendimiento con evaluación estratégica del desempeño.\n\n**Delphos Elite** es el módulo especializado en la gestión integral del desempeño institucional, de equipos y de personas. Alinea los objetivos estratégicos con los resultados reales mediante herramientas flexibles de evaluación, seguimiento y retroalimentación.\n\nCumple con los lineamientos de la **Ley 9635** de Fortalecimiento de las Finanzas Públicas, facilitando la implementación de sistemas de evaluación del desempeño en el sector público de forma objetiva, trazable y conforme a la normativa vigente.\n\n**Beneficios clave:**\n\n• Aumenta la motivación, mejora la rendición de cuentas, fortalece la toma de decisiones en recursos humanos y promueve una cultura de alto desempeño en todos los niveles.",
+                caracteristicas: []
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <img 
+                  src="/images/DelphosElite.png" 
+                  alt="Delphos Elite" 
+                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                />
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Gestión del desempeño institucional y evaluación estratégica
+                </p>
+              </div>
+            </div>
 
-             {/* Segunda fila - 3 cards centradas */}
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-4xl mx-auto">
-                               {/* Delphos Mobile */}
-                <div
-                  onClick={() => setModuloSeleccionado({
-                    id: 5,
-                    titulo: "Delphos Mobile",
-                    icono: "📱",
-                    descripcion: "Lleve la gestión institucional en la palma de su mano.\n\n**Delphos Mobile** permite a funcionarios y líderes acceder, visualizar y actualizar información clave desde cualquier lugar, en tiempo real. Compatible con Android y iOS, la app facilita el seguimiento de indicadores, tareas, alertas, riesgos, proyectos y acuerdos, manteniendo la trazabilidad y el control desde el dispositivo móvil.\n\nIdeal para entornos de campo, sesiones remotas o supervisión ejecutiva, **Delphos Mobile** extiende las capacidades de la plataforma a cada colaborador, fortaleciendo la eficiencia y la oportunidad en la toma de decisiones.",
-                    caracteristicas: []
-                  })}
-                  className="bg-[#181818] rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 text-center w-44 h-44 flex items-center justify-center"
-                >
-                  <img src="/images/continuum.png" alt="Delphos Mobile" className="w-20 h-20 object-contain" />
-                </div>
+            {/* Delphos BI */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 4,
+                titulo: "Delphos BI",
+                icono: "📈",
+                descripcion: "Transforme los datos en decisiones con inteligencia institucional.\n\n**Delphos BI** es la solución de inteligencia de negocios de DELPHOS que permite crear tableros gerenciales, cubos multidimensionales y reportes dinámicos, alimentados desde fuentes internas o externas como bases de datos SQL, Excel o sistemas institucionales.\n\nDesde salidas de rendición de cuentas hasta visualizaciones estratégicas en tiempo real, facilita el análisis predictivo, la evaluación de desempeño y la toma de decisiones informadas.",
+                caracteristicas: []
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <img 
+                  src="/images/DelphosBI.png" 
+                  alt="Delphos BI" 
+                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                />
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Inteligencia de negocios y análisis de datos institucionales
+                </p>
+              </div>
+            </div>
 
-                               {/* Delphos Funcion@ */}
-                <div
-                  onClick={() => setModuloSeleccionado({
-                    id: 6,
-                    titulo: "Delphos Funcion@",
-                    icono: "📋",
-                    descripcion: "Simule, proyecte y pronostique con precisión y flexibilidad.\n\n**Delphos Funcion@** es el módulo analítico de simulación y pronóstico de la plataforma DELPHOS. Permite crear modelos personalizados, evaluar escenarios, aplicar métodos estadísticos y realizar simulaciones dinámicas para apoyar decisiones estratégicas, operativas o presupuestarias.\n\nSu entorno de cálculo es similar al de una hoja electrónica, pero sin sus limitaciones, y con más de **13 métodos de pronóstico automático**, elegidos por precisión. Puede utilizarse en planificación, riesgos, finanzas, desempeño, continuidad, cumplimiento y más.\n\nIdeal para instituciones públicas y entidades reguladas que requieren evaluar el impacto de variables, visualizar proyecciones, optimizar recursos y anticiparse a tendencias.",
-                    caracteristicas: []
-                  })}
-                  className="bg-[#181818] rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 text-center w-44 h-44 flex items-center justify-center"
-                >
-                  <img src="/images/DelphosFuncion.png" alt="Delphos Funcion@" className="w-20 h-20 object-contain" />
+            {/* Delphos Mobile */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 5,
+                titulo: "Delphos Mobile",
+                icono: "📱",
+                descripcion: "Lleve la gestión institucional en la palma de su mano.\n\n**Delphos Mobile** permite a funcionarios y líderes acceder, visualizar y actualizar información clave desde cualquier lugar, en tiempo real. Compatible con Android y iOS, la app facilita el seguimiento de indicadores, tareas, alertas, riesgos, proyectos y acuerdos, manteniendo la trazabilidad y el control desde el dispositivo móvil.\n\nIdeal para entornos de campo, sesiones remotas o supervisión ejecutiva, **Delphos Mobile** extiende las capacidades de la plataforma a cada colaborador, fortaleciendo la eficiencia y la oportunidad en la toma de decisiones.",
+                caracteristicas: []
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-4xl group-hover:scale-110 transition-transform duration-300">
+                  📱
                 </div>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Acceso móvil a la gestión institucional desde cualquier lugar
+                </p>
+              </div>
+            </div>
 
-                               {/* Delphos Portal */}
-                <div
-                  onClick={() => setModuloSeleccionado({
-                    id: 7,
-                    titulo: "Delphos Portal",
-                    icono: "🌐",
-                                         descripcion: "Experiencias digitales personalizadas para cada institución.\n\n**DELPHOS Portal** permite crear portales institucionales a la medida, adaptados al diseño, estructura y necesidades de cada organización. Mejora significativamente la experiencia del usuario al mostrar solo la información y herramientas que necesita según su perfil y nivel jerárquico.\n\nSe integra con todos los módulos DELPHOS para ofrecer acceso centralizado a tareas, indicadores, alertas, documentos y reportes clave.\n\n**Beneficios clave:**\n\n✔ Mejora la experiencia del usuario\n✔ Refuerza la identidad institucional\n✔ Acceso rápido y personalizado\n✔ Mayor adopción del sistema",
-                    caracteristicas: []
-                  })}
-                  className="bg-[#181818] rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 text-center w-44 h-44 flex items-center justify-center"
-                >
-                  <img src="/images/DelphosBI.png" alt="Delphos Portal" className="w-80 h-80 object-contain" />
+            {/* Delphos Funcion@ */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 6,
+                titulo: "Delphos Funcion@",
+                icono: "📋",
+                descripcion: "Simule, proyecte y pronostique con precisión y flexibilidad.\n\n**Delphos Funcion@** es el módulo analítico de simulación y pronóstico de la plataforma DELPHOS. Permite crear modelos personalizados, evaluar escenarios, aplicar métodos estadísticos y realizar simulaciones dinámicas para apoyar decisiones estratégicas, operativas o presupuestarias.\n\nSu entorno de cálculo es similar al de una hoja electrónica, pero sin sus limitaciones, y con más de **13 métodos de pronóstico automático**, elegidos por precisión. Puede utilizarse en planificación, riesgos, finanzas, desempeño, continuidad, cumplimiento y más.\n\nIdeal para instituciones públicas y entidades reguladas que requieren evaluar el impacto de variables, visualizar proyecciones, optimizar recursos y anticiparse a tendencias.",
+                caracteristicas: []
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <img 
+                  src="/images/Delphosfunciona.png" 
+                  alt="Delphos Funcion@" 
+                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                />
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Simulación, pronóstico y análisis predictivo avanzado
+                </p>
+              </div>
+            </div>
+
+            {/* Delphos Portal */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 7,
+                titulo: "Delphos Portal",
+                icono: "🌐",
+                descripcion: "Experiencias digitales personalizadas para cada institución.\n\n**DELPHOS Portal** permite crear portales institucionales a la medida, adaptados al diseño, estructura y necesidades de cada organización. Mejora significativamente la experiencia del usuario al mostrar solo la información y herramientas que necesita según su perfil y nivel jerárquico.\n\nSe integra con todos los módulos DELPHOS para ofrecer acceso centralizado a tareas, indicadores, alertas, documentos y reportes clave.\n\n**Beneficios clave:**\n\n✔ Mejora la experiencia del usuario\n✔ Refuerza la identidad institucional\n✔ Acceso rápido y personalizado\n✔ Mayor adopción del sistema",
+                caracteristicas: []
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-4xl group-hover:scale-110 transition-transform duration-300">
+                  🌐
                 </div>
-             </div>
-           </div>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Portales institucionales personalizados y experiencias digitales
+                </p>
+              </div>
+            </div>
+
+            {/* Delphos AI */}
+            <div
+              onClick={() => setModuloSeleccionado({
+                id: 8,
+                titulo: "DELPHOS AI",
+                icono: "🤖",
+                descripcion: "Mucho más que una integración de inteligencia artificial: es su copiloto estratégico. DELPHOS AI transforma datos en decisiones, tareas en acciones y gestión en conocimiento. Asiste en planificación, riesgos, cumplimiento, continuidad, TI y desempeño, adaptándose al estilo de cada organización con plena trazabilidad y control humano. Genere automáticamente indicadores, riesgos, controles, planes, informes y visualizaciones gerenciales en minutos. Integre modelos como GPT, Gemini, Claude o LLaMA según su necesidad. Eleve la gobernanza institucional hacia un modelo basado en conocimiento, agilidad y confianza.",
+                caracteristicas: ["Inteligencia artificial", "Copiloto estratégico", "Gestión pública", "Automatización"]
+              })}
+              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
+            >
+              <div className="flex flex-col items-center text-center h-full">
+                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-3xl group-hover:scale-110 transition-transform duration-300">
+                  AI
+                </div>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Copiloto estratégico con inteligencia artificial avanzada
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

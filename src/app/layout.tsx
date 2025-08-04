@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StructuredData from "@/components/layout/StructuredData";
 import GoogleAnalytics from "@/components/layout/GoogleAnalytics";
+import Script from "next/script";
 
 // Tipografías
 const geistSans = Geist({
@@ -118,6 +119,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <Script
+          src="https://www.google.com/recaptcha/api.js"
+          async
+          defer
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
