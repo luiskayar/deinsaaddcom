@@ -5,8 +5,8 @@ import { MdSecurity, MdGavel, MdIntegrationInstructions, MdSettings, MdTimeline,
 import { FaRegFileAlt, FaChartBar } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "DEINSA Global | Software de Gobernanza Corporativa y Gestión de Riesgos | DELPHOS",
-  description: "DELPHOS: Software líder en gobernanza corporativa, gestión de riesgos, cumplimiento normativo y continuidad del negocio. 35+ años de experiencia. Solución SaaS para instituciones públicas y financieras.",
+  title: "DEINSA Global | Software GRC para Gestión de Riesgos",
+  description: "Descubra DEINSA Global: la plataforma GRC SaaS líder en gestión de riesgos, cumplimiento normativo y gobernanza corporativa. Solicite demo hoy.",
   keywords: [
     "software de gestión de riesgos",
     "gobernanza corporativa",
@@ -87,7 +87,7 @@ export default function Home() {
                 className=" rounded font-semibold text-lg uppercase text-white bg-transparent border-none transition-transform duration-200 transform hover:scale-105 focus:outline-none"
                 aria-label="Solicitar demostración gratuita de software de gestión de riesgos"
               >
-                PROBAR DEMO GRATUITA
+                SOLICITE UNA DEMO GRATUITA
               </Link>
             </div>
           </div>
@@ -154,11 +154,11 @@ export default function Home() {
           </div>
           <style>{`
             @keyframes scroll-logos {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
+              0% { transform: translateX(10%); }
+              100% { transform: translateX(-10%); }
             }
             .animate-scroll-logos {
-              animation: scroll-logos 30s linear infinite;
+              animation: scroll-logos 30s ease-in-out infinite alternate;
               width: max-content;
             }
           `}</style>
@@ -318,7 +318,7 @@ export default function Home() {
                 className=" rounded font-semibold text-lg uppercase text-white bg-transparent border-none transition-transform duration-200 transform hover:scale-105 focus:outline-none"
                 aria-label="Solicitar demostración gratuita de software de gestión de riesgos"
               >
-                PROBAR DEMO GRATUITA
+                SOLICITE UNA DEMO GRATUITA
               </Link>
             </div>
           </div>

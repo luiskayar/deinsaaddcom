@@ -1,15 +1,11 @@
-# *
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-# Googlebot
 User-agent: Googlebot
 Allow: /
 
-# Host
 Host: https://www.deinsa.com
 
-# Sitemaps
 Sitemap: https://www.deinsa.com/sitemap.xml

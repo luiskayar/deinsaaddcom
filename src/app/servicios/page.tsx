@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import { FaGlobe, FaChartLine, FaShieldAlt, FaCogs, FaSearch, FaRocket, FaChalkboardTeacher, FaHandsHelping } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'Consultoría GRC, Gestión de Riesgos y Soluciones a Medida | DEINSA',
-  description: 'Consultoría en GRC, software de gestión de riesgos, planificación estratégica, desempeño institucional, continuidad del negocio y normas técnicas del MICITT. DEINSA, su socio estratégico en gobernanza corporativa.',
+  title: 'Gestión de Riesgos Integrada | DEINSA Global GRC',
+  description: 'Deinsa Global ofrece consultoría en gobernanza corporativa, gestión de riesgos y cumplimiento normativo, con soluciones a medida y formación especializada.',
   keywords: [
     'Consultoría GRC',
     'Software de gestión de riesgos',
@@ -58,14 +58,14 @@ export default function ServiciosPage() {
             <span className="text-orange-500">DEINSA:</span> <br />
             Su Socio Estratégico en <br className="hidden md:block" />Gobernanza Corporativa
           </h1>
-          <h2 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
+          <h3 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
             <span className="text-white">Servicios especializados para </span>
             <span className="text-orange-500">gestión de riesgos</span>
             <span className="text-white">, </span>
             <span className="text-orange-500">cumplimiento del MICITT</span>
             <span className="text-white"> y </span>
             <span className="text-orange-500">planificación institucional</span>
-          </h2>
+          </h3>
           <p className="text-white/80 text-base md:text-lg mb-6 max-w-xl">
             Transformamos la gestión institucional con soluciones innovadoras en <b>GRC</b>, riesgo y cumplimiento.
           </p>
@@ -151,7 +151,7 @@ export default function ServiciosPage() {
           <div className="bg-black/70 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center text-center transition-transform duration-200 hover:scale-105 hover:shadow-orange-500/30 group">
             <FaHandsHelping className="text-4xl text-orange-500 mb-4 drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] group-hover:scale-110 transition-transform duration-200" />
             <span className="text-white font-bold uppercase text-base mt-2">Soporte post-proyecto y mejora continua.</span>
-            <p className="text-gray-300 text-sm mt-2">Seguimiento constante para garantizar resultados y evolución del sistema.</p>
+            <p className="text-gray-300 text-sm mt-2">Nuestro equipo lo acompaña antes, durante y después del proyecto.</p>
           </div>
         </div>
       </section>

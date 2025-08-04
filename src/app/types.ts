@@ -26,6 +26,7 @@ export interface NewsFirebase{
     image:string;
     title:string;
     slug:string;
+    category?:string;
 }
 
 export interface News{

@@ -5,32 +5,27 @@ import ClientAlianzasGrid from './ClientAlianzasGrid';
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Nosotros | DEINSA Global - 35+ Años de Experiencia en Gobernanza Corporativa',
-    description: 'DEINSA Global: Empresa costarricense con 35+ años de trayectoria en software de gobernanza corporativa. Desarrolladores de DELPHOS, plataforma líder en gestión de riesgos, cumplimiento normativo y continuidad del negocio.',
+    title: 'Deinsa Global – Quiénes Somos y Nuestros Valores',
+    description: 'Descubre la misión, visión y valores de Deinsa Global. 35 años de experiencia en gobernanza corporativa, riesgos y cumplimiento normativo',
     keywords: [
-      'DEINSA Global',
-      'empresa costarricense',
-      'software de gobernanza',
+      'Deinsa Global',
+      'quiénes somos',
+      'misión visión valores',
+      'gobernanza corporativa',
       'gestión de riesgos',
       'cumplimiento normativo',
-      'continuidad del negocio',
-      'Delphos SaaS',
       '35 años experiencia',
-      'gestión pública',
-      'instituciones financieras',
-      'casos de éxito',
-      'alianzas internacionales',
-      'Banco de Costa Rica',
-      'Presidencia Costa Rica',
-      'MIDEPLAN',
-      'INAPA República Dominicana',
-      'Buró de Crédito México',
-      'Dun & Bradstreet'
+      'empresa costarricense',
+      'software GRC',
+      'DELPHOS',
+      'valores empresariales',
+      'trayectoria profesional'
     ],
     openGraph: {
-      title: 'Nosotros | DEINSA Global - 35+ Años de Experiencia',
-      description: 'Conozca nuestra trayectoria de 35+ años desarrollando software de gobernanza corporativa. Casos de éxito en instituciones públicas y financieras.',
+      title: 'Deinsa Global – Quiénes Somos y Nuestros Valores',
+      description: 'Descubre la misión, visión y valores de Deinsa Global. 35 años de experiencia en gobernanza corporativa, riesgos y cumplimiento normativo',
       url: 'https://www.deinsa.com/nosotros',
+      type: 'website',
     },
     alternates: {
       canonical: 'https://www.deinsa.com/nosotros',
@@ -67,7 +62,10 @@ export default function NosotrosPage() {
           Más de <span className="text-orange-500">35 años</span> de <span className="text-orange-500">innovación</span> constante
         </h1>
         <p className="text-white/80 mb-12 max-w-2xl">
-        Impulsamos gobiernos y entidades financieras con soluciones que fortalecen la gobernanza, reducen riesgos y aseguran el cumplimiento, a través de nuestra plataforma DELPHOS, presente en más de 4 continentes.
+        Desde la década de los 90  hemos acompañado la evolución institucional de América Latina con soluciones tecnológicas que aseguran gobernanza efectiva, gestión de riesgos integrada y cumplimiento regulatorio automatizado.
+        </p>
+        <p className="text-white/80 mb-12 max-w-2xl">
+        Con presencia en más de 10 continentes y más de 500 implementaciones, lideramos procesos de transformación institucional sostenibles, alineados con normativas como SEVRI, ISO 27001, ISO 22301 y COSO ERM
         </p>
         {/* Bloques Misión, Visión, Valores */}
         <div className="space-y-12">
@@ -77,7 +75,7 @@ export default function NosotrosPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-[#FFA726]">Misión</h2>
             </div>
             <div className="md:w-3/4 text-white/90 text-xl md:text-2xl">
-              Ofrecemos soluciones gerenciales innovadoras para el sector público, privado y financiero, impulsando la eficiencia operativa, relaciones duraderas y un entorno de excelencia.
+              Desarrollar y ofrecer soluciones de software de vanguardia, como la plataforma DELPHOS, que empoderen a nuestros clientes para optimizar sus procesos de gobernanza, mejorar la toma de decisiones, garantizar el cumplimiento normativo y alcanzar sus objetivos estratégicos de manera eficiente y transparente.
             </div>
           </div>
           {/* Visión */}
@@ -86,7 +84,7 @@ export default function NosotrosPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-[#FFA726]">Visión</h2>
             </div>
             <div className="md:w-3/4 text-white/90 text-xl md:text-2xl">
-              Buscamos liderar globalmente en soluciones gerenciales, impulsando la transformación y el éxito sostenible de nuestros clientes con innovación, excelencia y colaboración estratégica.
+              Ser el proveedor líder en Latinoamérica de soluciones de software innovadoras y confiables para la Gobernanza Corporativa, impulsando la transformación digital y el éxito sostenible de nuestros clientes en los sectores público y financiero.
             </div>
           </div>
           {/* Valores */}
@@ -94,13 +92,64 @@ export default function NosotrosPage() {
             <div className="md:w-1/4 mb-4 md:mb-0">
               <h2 className="text-2xl md:text-3xl font-bold text-[#FFA726]">Valores</h2>
             </div>
-            <div className="md:w-3/4 text-white/90 text-xl md:text-2xl grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2">
-              <span>• Excelencia</span>
-              <span>• Integridad</span>
-              <span>• Innovación</span>
-              <span>• Compromiso</span>
-              <span>• Colaboración</span>
-              <span>• Agilidad</span>
+            <div className="md:w-3/4">
+              <div className="space-y-6">
+                {/* Valor 1: Integridad */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">1. Integridad</h3>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Actuamos con honestidad, ética y transparencia en todas nuestras interacciones, manteniendo los más altos estándares de conducta empresarial y profesional.
+                  </p>
+                </div>
+                
+                {/* Valor 2: Excelencia */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">2. Excelencia</h3>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Buscamos la mejora continua en todo lo que hacemos, ofreciendo productos y servicios de la más alta calidad que superen las expectativas de nuestros clientes.
+                  </p>
+                </div>
+                
+                {/* Valor 3: Innovación */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">3. Innovación</h3>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Nos esforzamos por ser pioneros en el desarrollo de soluciones tecnológicas de vanguardia, anticipándonos a las necesidades del mercado y aprovechando las últimas tendencias en tecnología y gobernanza corporativa.
+                  </p>
+                </div>
+                
+                {/* Valor 4: Compromiso */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">4. Compromiso</h3>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Estamos comprometidos con el éxito de nuestros clientes, brindando un servicio al cliente excepcional y construyendo relaciones duraderas basadas en la confianza y el respeto mutuo.
+                  </p>
+                </div>
+                
+                {/* Valor 5: Trabajo en Equipo */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">5. Trabajo en Equipo</h3>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Fomentamos una cultura de colaboración y trabajo en equipo, valorando la diversidad de ideas y perspectivas, y trabajando juntos para alcanzar nuestros objetivos comunes.
+                  </p>
+                </div>
+                
+                {/* Valor 6: Seguridad */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">6. Seguridad</h3>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Priorizamos la seguridad de la información en todos los aspectos de nuestro negocio, protegiendo los datos de nuestros clientes y garantizando la confidencialidad, integridad y disponibilidad de la información.
+                  </p>
+                </div>
+                
+                {/* Valor 7: Responsabilidad Social */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">7. Responsabilidad Social</h3>
+                  <p className="text-white/80 text-base leading-relaxed">
+                    Nos comprometemos a contribuir al desarrollo sostenible de la sociedad y el medio ambiente, actuando de manera responsable y ética en todas nuestras operaciones y decisiones.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -18,7 +18,6 @@ export default async function Footer() {
         </div>
         {/* Cumplimiento */}
         <div className="flex flex-col items-center w-full md:w-1/3">
-          <span className="text-sm text-gray-200 underline mb-2">Cumpliendo las Normas de Gobernanza.</span>
           <div className="flex space-x-5 mt-2">
             <Link href="https://www.linkedin.com/company/deinsa" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="text-white hover:text-orange-500 text-xl" />

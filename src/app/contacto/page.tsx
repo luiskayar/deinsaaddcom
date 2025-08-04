@@ -4,9 +4,9 @@ import { ContactForm } from "../../components/index";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Contacto DEINSA GLOBAL | Solicite Demo de DELPHOS o Consultoría GRC",
+  title: "Contacto DEINSA Global | Solicite Información GRC",
   description:
-    "Contacte a DEINSA GLOBAL para soluciones de Software de gestión de riesgos, Planificación estratégica institucional y Gestión del desempeño institucional. Oficinas en Miami, Costa Rica y Panamá.",
+    "Póngase en contacto con DEINSA Global. Consiga más info sobre nuestra plataforma GRC: gestión de riesgos, cumplimiento y gobernanza.",
   keywords: [
     "contacto DEINSA GLOBAL",
     "demo DELPHOS",
@@ -53,7 +53,7 @@ export default function ContactoPage() {
                   <span className="text-white"> PARA UNA DEMO GRATUITA</span>
                 </h1>
                 <p className="text-base md:text-lg text-white/80 mb-8">
-                  Estamos listos para ayudarle a usted y a su institución.
+                Complete sus datos y nos comunicaremos con usted lo antes posible.
                 </p>
               </div>
 

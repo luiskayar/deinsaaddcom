@@ -10,9 +10,6 @@ type Props = {
 };
 
 export default function ArticlePreview({titulo, extracto, link, alt, src}: Props) {
-    // Usar un valor fijo basado en el título para evitar errores de hidratación
-    const readingTime = Math.abs(titulo.length % 15) + 5;
-    
     return (
         <article className='group relative bg-black border border-gray-800 rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300'>
             {/* Imagen del artículo con overlay */}
@@ -24,13 +21,6 @@ export default function ArticlePreview({titulo, extracto, link, alt, src}: Props
                 />
                 {/* Overlay gradiente sutil */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Indicador de tiempo de lectura en la esquina superior derecha */}
-                <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-orange-400/80 text-xs font-medium">
-                        {readingTime} Min
-                    </span>
-                </div>
             </div>
             
             {/* Contenido del artículo */}

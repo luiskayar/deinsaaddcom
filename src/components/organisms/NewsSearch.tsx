@@ -11,20 +11,83 @@ interface Props {
   searchQuery?: string;
 }
 
-const categories = [
-  { key: "todas", label: "Todas las Categorías" },
-  { key: "grc", label: "GRC - Gobernanza, Riesgos y Cumplimiento" },
-  { key: "delphos", label: "DELPHOS" },
-  { key: "gestion de riesgos", label: "Gestión de Riesgos" },
-  { key: "cumplimiento normativo", label: "Cumplimiento Normativo" },
-  { key: "planificacion estrategica", label: "Planificación Estratégica" },
-  { key: "gestion del desempeño", label: "Gestión del Desempeño" },
-  { key: "continuidad del negocio", label: "Continuidad del Negocio" },
-  { key: "sector publico", label: "Sector Público" },
-  { key: "sector financiero", label: "Sector Financiero" },
-  { key: "casos de exito", label: "Casos de Éxito" },
-  { key: "tecnologia", label: "Tecnología" },
-];
+// Función para normalizar categorías (quitar acentos, espacios extra, etc.)
+const normalizeCategory = (category: string): string => {
+  return category
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Quitar acentos
+    .replace(/\s+/g, ' ') // Normalizar espacios
+    .trim();
+};
+
+// Función para obtener la categoría normalizada de una noticia
+const getNormalizedCategory = (newsItem: NewsItem): string => {
+  if (!newsItem.category) return '';
+  return normalizeCategory(newsItem.category);
+};
+
+// Categorías predefinidas con sus variaciones posibles
+const categoryMappings = {
+  "todas": { key: "todas", label: "Todas las Categorías", variations: [] },
+  "grc": { 
+    key: "grc", 
+    label: "GRC - Gobernanza, Riesgos y Cumplimiento", 
+    variations: ["grc", "gobernanza riesgos y cumplimiento", "gobernanza", "riesgos y cumplimiento"] 
+  },
+  "delphos": { 
+    key: "delphos", 
+    label: "DELPHOS", 
+    variations: ["delphos", "delphos elite", "delphos funciona"] 
+  },
+  "gestion de riesgos": { 
+    key: "gestion de riesgos", 
+    label: "Gestión de Riesgos", 
+    variations: ["gestion de riesgos", "gestión de riesgos", "riesgos", "gestion riesgos"] 
+  },
+  "cumplimiento normativo": { 
+    key: "cumplimiento normativo", 
+    label: "Cumplimiento Normativo", 
+    variations: ["cumplimiento normativo", "cumplimiento", "normativo"] 
+  },
+  "planificacion estrategica": { 
+    key: "planificacion estrategica", 
+    label: "Planificación Estratégica", 
+    variations: ["planificacion estrategica", "planificación estratégica", "planificacion", "estrategica"] 
+  },
+  "gestion del desempeño": { 
+    key: "gestion del desempeño", 
+    label: "Gestión del Desempeño", 
+    variations: ["gestion del desempeño", "gestión del desempeño", "desempeño", "gestion desempeño"] 
+  },
+  "continuidad del negocio": { 
+    key: "continuidad del negocio", 
+    label: "Continuidad del Negocio", 
+    variations: ["continuidad del negocio", "continuidad", "negocio", "bcm"] 
+  },
+  "sector publico": { 
+    key: "sector publico", 
+    label: "Sector Público", 
+    variations: ["sector publico", "sector público", "publico", "gobierno", "estado"] 
+  },
+  "sector financiero": { 
+    key: "sector financiero", 
+    label: "Sector Financiero", 
+    variations: ["sector financiero", "financiero", "bancario", "finanzas"] 
+  },
+  "casos de exito": { 
+    key: "casos de exito", 
+    label: "Casos de Éxito", 
+    variations: ["casos de exito", "casos de éxito", "casos exito", "exito", "casos"] 
+  },
+  "tecnologia": { 
+    key: "tecnologia", 
+    label: "Tecnología", 
+    variations: ["tecnologia", "tecnología", "tech", "innovacion", "innovación", "tecnologia y saas", "saas"] 
+  },
+};
+
+const categories = Object.values(categoryMappings);
 
 export default function NewsSearch({ allNews, searchQuery = "" }: Props) {
   const [news] = useState<NewsItem[]>(allNews);
@@ -41,7 +104,15 @@ export default function NewsSearch({ allNews, searchQuery = "" }: Props) {
     const term = searchQuery.trim().toLowerCase();
 
     if (category !== "todas") {
-      result = result.filter((n) => n.category?.toLowerCase() === category);
+      const categoryConfig = categoryMappings[category as keyof typeof categoryMappings];
+      if (categoryConfig) {
+        result = result.filter((n) => {
+          const normalizedCategory = getNormalizedCategory(n);
+          return categoryConfig.variations.some(variation => 
+            normalizedCategory.includes(variation) || variation.includes(normalizedCategory)
+          );
+        });
+      }
     }
 
     if (term) {
@@ -58,8 +129,24 @@ export default function NewsSearch({ allNews, searchQuery = "" }: Props) {
     if (cat === "todas") {
       return news.length;
     }
-    return news.filter((n) => n.category?.toLowerCase() === cat).length;
+    const categoryConfig = categoryMappings[cat as keyof typeof categoryMappings];
+    if (!categoryConfig) return 0;
+    
+    return news.filter((n) => {
+      const normalizedCategory = getNormalizedCategory(n);
+      return categoryConfig.variations.some(variation => 
+        normalizedCategory.includes(variation) || variation.includes(normalizedCategory)
+      );
+    }).length;
   };
+
+  // Debug: mostrar categorías en consola (solo en desarrollo)
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      const uniqueCategories = [...new Set(news.map(n => n.category).filter(Boolean))];
+      console.log('Categorías en Firebase:', uniqueCategories);
+    }
+  }, [news]);
 
   if (!mounted) return null;
 
