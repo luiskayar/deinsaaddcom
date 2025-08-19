@@ -65,7 +65,7 @@ export default function NosotrosPage() {
         Desde la década de los 90  hemos acompañado la evolución institucional de América Latina con soluciones tecnológicas que aseguran gobernanza efectiva, gestión de riesgos integrada y cumplimiento regulatorio automatizado.
         </p>
         <p className="text-white/80 mb-12 max-w-2xl">
-        Con presencia en más de 10 continentes y más de 500 implementaciones, lideramos procesos de transformación institucional sostenibles, alineados con normativas como SEVRI, ISO 27001, ISO 22301 y COSO ERM
+        Con presencia en 4 continentes y más de 500 clientes, lideramos procesos de transformación institucional sostenibles, alineados con normativas como SEVRI, ISO 27001, ISO 22301 y COSO ERM
         </p>
         {/* Bloques Misión, Visión, Valores */}
         <div className="space-y-12">

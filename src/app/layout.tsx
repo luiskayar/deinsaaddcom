@@ -119,13 +119,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <head>
-        <Script
-          src="https://www.google.com/recaptcha/api.js"
-          async
-          defer
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

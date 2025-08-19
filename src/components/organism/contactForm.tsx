@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-//import Script from "next/script";
+import Script from "next/script";
 import FormField from "../molecules/formField";
 import Input from "../atoms/input";
 import Textarea from "../atoms/textArea";
@@ -9,8 +9,7 @@ import RadioGroup from "../molecules/radioGroup";
 
 const interesesOpciones = [
   "Solicitar Demo de DELPHOS",
-  "Consulta sobre Licitación",
-  "Consultoría GRC",
+  "Consultoría",
   "Soporte Técnico",
   "Información General",
 ];
@@ -151,6 +150,10 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="bg-[#181818] p-8 rounded-2xl">
+      <Script
+        src="https://www.google.com/recaptcha/api.js"
+        strategy="beforeInteractive"
+      />
       <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-12 text-center">
           Formulario de Contacto

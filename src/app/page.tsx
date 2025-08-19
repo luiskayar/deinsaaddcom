@@ -72,7 +72,7 @@ export default function Home() {
               <span className="text-white"> su gobernanza institucional con inteligencia, seguridad y control</span>
             </h1>
             <p className="text-base md:text-xl text-white/80 mb-10 max-w-3xl mx-auto">
-            La solución SaaS que centraliza la gestión de riesgos, el cumplimiento normativo y la gobernanza institucional.            </p>
+            La solución SaaS que centraliza la planificación, proyectos, continuidad, gestión de riesgos, cumplimiento normativo, gobernanza institucional y más.            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Link
                 href="/delphos"
@@ -111,7 +111,7 @@ export default function Home() {
             <div className="bg-black/80 rounded-xl shadow-2xl border-b-2 border-orange-500 flex flex-col items-center p-8 h-full w-full" style={{ boxShadow: '0 8px 40px 0 rgba(0,0,0,0.7)' }}>
               <div className="text-5xl font-extrabold text-orange-500 mb-2">500+</div>
               <div className="text-xl font-bold text-white mb-2 text-center">IMPLEMENTACIONES</div>
-              <div className="text-white/80 text-center text-base">Más de 500 instituciones han implementado nuestro software de gobernanza corporativa, SEVRI y gestión del desempeño en toda Latinoamérica y el mundo.</div>
+              <div className="text-white/80 text-center text-base">Más de 500 organizaciones han implementado nuestras soluciones en Latinoamérica y el mundo.</div>
             </div>
           </article>
           {/* Card 3 */}
@@ -199,22 +199,22 @@ export default function Home() {
             {/* Card 3 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
               <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl" aria-hidden="true"><FaRegFileAlt /></span>
-              <span className="text-white text-base font-semibold text-center w-full">CUMPLIMIENTO DEL MICITT</span>
+              <span className="text-white text-base font-semibold text-center w-full">CUMPLIMIENTO DEL LAS NORMAS TÉCNICAS DEL MICITT PARA COSTA RICA</span>
             </article>
             {/* Card 4 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
               <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl" aria-hidden="true"><MdGavel /></span>
-              <span className="text-white text-base font-semibold text-center w-full">GOBERNANZA Y CUMPLIMIENTOS EN UN SOLO LUGAR</span>
+              <span className="text-white text-base font-semibold text-center w-full">SEGURIDAD DE LA INFORMACIÓN </span>
             </article>
             {/* Card 5 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
               <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl" aria-hidden="true"><MdIntegrationInstructions /></span>
-              <span className="text-white text-base font-semibold text-center w-full">INTEGRA SEVRI</span>
+              <span className="text-white text-base font-semibold text-center w-full">COBIT 2019</span>
             </article>
             {/* Card 6 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
               <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl" aria-hidden="true"><MdSettings /></span>
-              <span className="text-white text-base font-semibold text-center w-full">GESTIÓN ESTRATÉGICA OPERATIVA</span>
+              <span className="text-white text-base font-semibold text-center w-full">INTELIGENCIA ARTIFICIAL INTEGRADA</span>
             </article>
             {/* Card 7 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
@@ -224,7 +224,7 @@ export default function Home() {
             {/* Card 8 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
               <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl" aria-hidden="true"><MdVerifiedUser /></span>
-              <span className="text-white text-base font-semibold text-center w-full">CUMPLIMIENTO NORMATIVO AUTOMATIZADO</span>
+              <span className="text-white text-base font-semibold text-center w-full">CUMPLIMIENTO NORMATIVO</span>
             </article>
             {/* Card 9: vacío */}
             <div></div>
@@ -299,7 +299,7 @@ export default function Home() {
               ¿Listo para <span className="bg-orange-500 text-white px-2 rounded">modernizar</span> su<br className="hidden md:inline" />gobernanza institucional?
             </h2>
             <p className="text-white/80 mb-2">
-              Más de 500 instituciones en Latinoamérica y el mundo ya transformaron su gestión con <span className="text-orange-500 font-bold">DELPHOS</span>.
+              Más de 500 instituciones en Latinoamérica y el mundo ya transformaron su gestión con <span className="text-orange-500 font-bold">DEINSA</span>.
             </p>
             <p className="text-white font-bold mb-8">
               Solicite una demostración y descubra cómo podemos hacerlo también para usted.

@@ -163,7 +163,7 @@ export default function ServiciosPage() {
             <span className="text-orange-500">Soluciones</span> <span className="text-white">a Medida con</span> <span className="text-white font-bold">Delphos</span>
           </h2>
           <p className="text-white mb-10">
-            Adaptamos nuestra plataforma DELPHOS y nuestros servicios a los requerimientos de gobiernos, bancos y entidades del sector público, garantizando cumplimiento con SEVRI, las Normas del MICITT, ISO 27001 y resultados medibles desde el primer mes.
+            Adaptamos nuestra plataforma DELPHOS y nuestros servicios a los requerimientos de gobiernos, bancos y entidades del sector público, garantizando cumplimiento normativo y resultados medibles desde el primer mes.
           </p>
           <div className="flex flex-col items-center">
             <a

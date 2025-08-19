@@ -142,28 +142,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      {/* Sección adicional con mapa (scroll) */}
-      <section className="py-16 px-4 bg-black">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-8 text-center">
-            Ubicación de Nuestras Oficinas
-          </h2>
-          
-          {/* Google Maps embed para San José, Costa Rica */}
-          <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-            <iframe
-              title="Desarrollos Informáticos Deinsa Sociedad Anónima - San José, Costa Rica"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.017964024052!2d-84.049706!3d9.8957466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e38f49e04dbd%3A0x3c6c42af025b9e1!2sDesarrollos%20Inform%C3%A1ticos%20Deinsa%20Sociedad%20An%C3%B3nima!5e0!3m2!1ses-419!2scr!4v1680000000000!5m2!1ses-419!2scr"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }

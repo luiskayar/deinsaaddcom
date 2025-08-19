@@ -156,15 +156,7 @@ const modulos: Modulo[] = [
     descripcion: "Visualice, analice y proyecte sus datos con inteligencia de negocios avanzada. Conecte múltiples fuentes, genere dashboards, simule escenarios y acceda a información clave desde cualquier dispositivo.",
     caracteristicas: []
   },
-  {
-    id: 15,
-    titulo: "DELPHOS AI",
-    icono: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M15.024 2.82491C17.76 2.82491 20.2114 4.04891 21.8571 5.9792V21.6238C21.7989 22.3266 21.4011 23.7941 20.4857 25.1312C19.5771 26.4512 18.3086 27.4558 16.5634 27.6478C16.2836 27.6791 16.0127 27.7652 15.7661 27.9012C15.5196 28.0372 15.3022 28.2204 15.1265 28.4404C14.9507 28.6604 14.82 28.9128 14.7419 29.1833C14.6637 29.4538 14.6396 29.7371 14.6709 30.0169C14.7021 30.2967 14.7883 30.5677 14.9242 30.8142C15.0602 31.0608 15.2435 31.2781 15.4635 31.4539C15.6835 31.6296 15.9359 31.7603 16.2064 31.8385C16.4769 31.9166 16.7602 31.9408 17.04 31.9095C18.8048 31.7167 20.477 31.0204 21.8571 29.9038V42.4866C20.6259 44.0808 18.9533 45.2779 17.0472 45.9292C15.1411 46.5804 13.0857 46.6571 11.1364 46.1497C9.18705 45.6423 7.42987 44.5731 6.08325 43.0752C4.73664 41.5772 3.85999 39.7165 3.56229 37.7243C3.95314 36.5209 4.59086 35.4821 5.20114 34.9986C5.43158 34.8276 5.62532 34.6121 5.77088 34.3648C5.91645 34.1175 6.01086 33.8435 6.04853 33.5591C6.08619 33.2746 6.06635 32.9855 5.99016 32.7088C5.91397 32.4322 5.783 32.1737 5.60501 31.9486C5.42702 31.7235 5.20564 31.5365 4.954 31.3986C4.70236 31.2607 4.42558 31.1747 4.1401 31.1458C3.85461 31.1169 3.56623 31.1456 3.29205 31.2303C3.01788 31.315 2.7635 31.4538 2.544 31.6386C2.22373 31.8905 1.92656 32.1705 1.656 32.4752C0.586128 30.0573 0.0225587 27.446 0 24.8021C0 21.4626 1.06971 18.1815 2.81829 15.7643C3.19543 16.4946 3.648 17.1358 4.13486 17.6912C5.4 19.1312 6.98057 20.0638 8.21143 20.3449C8.76566 20.4708 9.34721 20.3715 9.82816 20.0686C10.3091 19.7658 10.6501 19.2843 10.776 18.7301C10.9019 18.1758 10.8026 17.5943 10.4997 17.1133C10.1969 16.6324 9.71537 16.2914 9.16114 16.1655C8.96571 16.1209 8.13943 15.7575 7.35429 14.8626C6.72343 14.1426 6.17829 13.1483 6.04457 11.8112V11.8009C6.04639 9.42029 6.99313 7.13775 8.6768 5.45472C10.3605 3.77168 12.6434 2.82582 15.024 2.82491ZM34.2754 46.4775C32.7052 46.4772 31.1558 46.1174 29.7461 45.4256C28.3364 44.7338 27.1039 43.7285 26.1429 42.4866V22.4501C27.0206 23.0878 27.9531 23.6089 28.8583 23.9929C29.3825 24.2139 29.973 24.2175 30.5 24.0031C31.0269 23.7887 31.447 23.3737 31.668 22.8495C31.889 22.3253 31.8926 21.7347 31.6782 21.2078C31.4638 20.6809 31.0488 20.2607 30.5246 20.0398C28.6286 19.2409 26.8834 17.6912 26.2731 16.2683L26.1429 16.0146V5.9792C27.3875 4.51695 29.0683 3.49241 30.9384 3.05608C32.8084 2.61975 34.7691 2.79464 36.5324 3.55505C38.2956 4.31545 39.7686 5.6213 40.7348 7.28075C41.7011 8.9402 42.1097 10.8658 41.9006 12.7746L41.9074 12.7781C41.6914 14.1838 41.1189 15.4798 40.5017 16.0866C40.3014 16.2843 40.1419 16.5195 40.0324 16.7788C39.923 17.038 39.8656 17.3164 39.8637 17.5978C39.8618 17.8792 39.9153 18.1583 40.0213 18.419C40.1272 18.6798 40.2835 18.9171 40.4811 19.1175C40.6788 19.3178 40.914 19.4773 41.1733 19.5868C41.4326 19.6962 41.7109 19.7536 41.9923 19.7555C42.2738 19.7574 42.5528 19.7038 42.8136 19.5979C43.0743 19.492 43.3116 19.3357 43.512 19.1381C44.3545 18.2746 45.0053 17.2429 45.4217 16.1106C47.0263 18.4866 48 21.6169 48 24.8021C48 28.5392 46.6629 33.0101 44.5371 35.3141L44.4583 35.3106C43.899 35.2641 43.3493 35.1371 42.8263 34.9335C41.5817 34.4672 40.08 33.4935 38.7703 31.5906C38.6104 31.3587 38.4065 31.1606 38.1701 31.0076C37.9337 30.8545 37.6695 30.7495 37.3925 30.6986C37.1155 30.6476 36.8312 30.6517 36.5558 30.7107C36.2804 30.7696 36.0193 30.8822 35.7874 31.0421C35.5555 31.2019 35.3574 31.4058 35.2044 31.6422C35.0513 31.8786 34.9463 32.1429 34.8954 32.4199C34.8444 32.6969 34.8485 32.9812 34.9075 33.2565C34.9664 33.5319 35.079 33.793 35.2389 34.0249C37.056 36.6649 39.2777 38.1769 41.3177 38.9449C42.2263 39.2878 43.1383 39.4935 43.9851 39.5723C43.2835 41.5887 41.9718 43.3367 40.2319 44.574C38.4921 45.8113 36.4104 46.4765 34.2754 46.4775Z" fill="#F47F27"/>
-</svg>`,
-    descripcion: "Mucho más que una integración de inteligencia artificial: es su copiloto estratégico. DELPHOS AI transforma datos en decisiones, tareas en acciones y gestión en conocimiento. Asiste en planificación, riesgos, cumplimiento, continuidad, TI y desempeño, adaptándose al estilo de cada organización con plena trazabilidad y control humano. Genere automáticamente indicadores, riesgos, controles, planes, informes y visualizaciones gerenciales en minutos. Integre modelos como GPT, Gemini, Claude o LLaMA según su necesidad. Eleve la gobernanza institucional hacia un modelo basado en conocimiento, agilidad y confianza.",
-    caracteristicas: ["Inteligencia artificial", "Copiloto estratégico", "Gestión pública", "Automatización"]
-  }
+
 ];
 
 // Función para procesar texto con formato markdown básico
@@ -273,7 +265,7 @@ export default function DelphosPage() {
           {/* Línea naranja degradada */}
           <div className="h-1 w-48 mb-8 bg-gradient-to-r from-orange-500 via-orange-400/60 to-transparent rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-6">
-            La Plataforma Modular Líder en Gobernanza, Riesgo, Desempeño y más.
+            La Plataforma Modular Líder en Gobernanza, Riesgo, Cumplimento y más.
           </h2>
           <p className="text-white mb-4">
             Integre planificación, riesgos, cumplimiento y desempeño en una sola plataforma SaaS, alineada con estándares internacionales.
@@ -343,7 +335,7 @@ export default function DelphosPage() {
                 <img 
                   src="/images/Continuum1.png" 
                   alt="Delphos Continuum" 
-                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Gestión integral de riesgos, continuidad del negocio y cumplimiento normativo
@@ -363,9 +355,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
-                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-3xl group-hover:scale-110 transition-transform duration-300">
-                  CORE
-                </div>
+                <img 
+                  src="/images/delphos core.png" 
+                  alt="Delphos Core" 
+                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Planificación estratégica, proyectos y gestión institucional centralizada
                 </p>
@@ -387,7 +381,7 @@ export default function DelphosPage() {
                 <img 
                   src="/images/DelphosElite.png" 
                   alt="Delphos Elite" 
-                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Gestión del desempeño institucional y evaluación estratégica
@@ -410,7 +404,7 @@ export default function DelphosPage() {
                 <img 
                   src="/images/DelphosBI.png" 
                   alt="Delphos BI" 
-                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Inteligencia de negocios y análisis de datos institucionales
@@ -430,9 +424,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
-                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-4xl group-hover:scale-110 transition-transform duration-300">
-                  📱
-                </div>
+                <img 
+                  src="/images/delphos mobile.png" 
+                  alt="Delphos Mobile" 
+                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Acceso móvil a la gestión institucional desde cualquier lugar
                 </p>
@@ -454,7 +450,7 @@ export default function DelphosPage() {
                 <img 
                   src="/images/Delphosfunciona.png" 
                   alt="Delphos Funcion@" 
-                  className="w-32 h-32 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Simulación, pronóstico y análisis predictivo avanzado
@@ -474,35 +470,18 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
-                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center text-white font-bold text-4xl group-hover:scale-110 transition-transform duration-300">
-                  🌐
-                </div>
+                <img 
+                  src="/images/delphos portal.png" 
+                  alt="Delphos Portal" 
+                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Portales institucionales personalizados y experiencias digitales
                 </p>
               </div>
             </div>
 
-            {/* Delphos AI */}
-            <div
-              onClick={() => setModuloSeleccionado({
-                id: 8,
-                titulo: "DELPHOS AI",
-                icono: "🤖",
-                descripcion: "Mucho más que una integración de inteligencia artificial: es su copiloto estratégico. DELPHOS AI transforma datos en decisiones, tareas en acciones y gestión en conocimiento. Asiste en planificación, riesgos, cumplimiento, continuidad, TI y desempeño, adaptándose al estilo de cada organización con plena trazabilidad y control humano. Genere automáticamente indicadores, riesgos, controles, planes, informes y visualizaciones gerenciales en minutos. Integre modelos como GPT, Gemini, Claude o LLaMA según su necesidad. Eleve la gobernanza institucional hacia un modelo basado en conocimiento, agilidad y confianza.",
-                caracteristicas: ["Inteligencia artificial", "Copiloto estratégico", "Gestión pública", "Automatización"]
-              })}
-              className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
-            >
-              <div className="flex flex-col items-center text-center h-full">
-                <div className="w-32 h-32 mb-4 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-3xl group-hover:scale-110 transition-transform duration-300">
-                  AI
-                </div>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Copiloto estratégico con inteligencia artificial avanzada
-                </p>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
