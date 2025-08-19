@@ -152,7 +152,7 @@ const ContactForm: React.FC = () => {
     <div className="bg-[#181818] p-8 rounded-2xl">
       <Script
         src="https://www.google.com/recaptcha/api.js"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
       <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-12 text-center">

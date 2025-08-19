@@ -5,7 +5,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StructuredData from "@/components/layout/StructuredData";
 import GoogleAnalytics from "@/components/layout/GoogleAnalytics";
-import Script from "next/script";
 
 // Tipografías
 const geistSans = Geist({
