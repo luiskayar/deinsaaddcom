@@ -67,12 +67,12 @@ export default function Home() {
           aria-label="Sección principal de gobernanza corporativa"
         >
           <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
-            <h1 className="mt-4 md:mt-8 text-2xl md:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-white">
+            <h1 className=" text-2xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white">
               <span className="text-orange-500">IMPULSE</span>
-              <span className="text-white"> su gobernanza institucional con inteligencia, seguridad y control</span>
+              <span className="text-white"> la gobernanza de su organización con una toma de decisiones inteligentes, con seguridad y control.</span>
             </h1>
             <p className="text-base md:text-xl text-white/80 mb-10 max-w-3xl mx-auto">
-            La solución SaaS que centraliza la planificación, proyectos, continuidad, gestión de riesgos, cumplimiento normativo, gobernanza institucional y más.            </p>
+            La solución SaaS que integra la planificación, proyectos, continuidad, gestión de riesgos, cumplimiento normativo, gobernanza organizacional y más. </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Link
                 href="/delphos"
@@ -120,7 +120,7 @@ export default function Home() {
             <div className="bg-black/80 rounded-xl shadow-2xl border-b-2 border-orange-500 flex flex-col items-center p-8 h-full w-full" style={{ boxShadow: '0 8px 40px 0 rgba(0,0,0,0.7)' }}>
               <div className="text-5xl font-extrabold text-orange-500 mb-2">4</div>
               <div className="text-xl font-bold text-white mb-2 text-center">CONTINENTES</div>
-              <div className="text-white/80 text-center text-base">Delphos se adapta a marcos regulatorios como las Normas Técnicas del MICITT, ISO 27001 e ISO 22301, en entornos públicos y financieros.</div>
+              <div className="text-white/80 text-center text-base">Delphos se adapta con facilidad a los marcos regulatorios locales y a las mejores prácticas internacionales de gestión aplicables a entornos tanto públicos como financieros</div>
             </div>
           </article>
         </section>
@@ -199,7 +199,7 @@ export default function Home() {
             {/* Card 3 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
               <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl" aria-hidden="true"><FaRegFileAlt /></span>
-              <span className="text-white text-base font-semibold text-center w-full">CUMPLIMIENTO DEL LAS NORMAS TÉCNICAS DEL MICITT PARA COSTA RICA</span>
+              <span className="text-white text-base font-semibold text-center w-full">GESTIÓN DEL DESEMPEÑO</span>
             </article>
             {/* Card 4 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
@@ -209,7 +209,7 @@ export default function Home() {
             {/* Card 5 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
               <span className="absolute -top-5 left-4 bg-black px-1 text-orange-500 text-xl" aria-hidden="true"><MdIntegrationInstructions /></span>
-              <span className="text-white text-base font-semibold text-center w-full">COBIT 2019</span>
+              <span className="text-white text-base font-semibold text-center w-full">CONTINUIDAD DEL NEGOCIO</span>
             </article>
             {/* Card 6 */}
             <article className="relative border border-orange-500 rounded-xl p-4 flex items-center min-h-[90px]">
@@ -260,7 +260,7 @@ export default function Home() {
               <article className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
                 <MdCloudUpload className="text-4xl text-orange-500 mb-2" aria-hidden="true" />
                 <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" aria-hidden="true"></div>
-                <span className="text-white text-center font-semibold">Plataforma SaaS en Oracle Cloud</span>
+                <span className="text-white text-center font-semibold">Plataforma SaaS en la nube</span>
               </article>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -280,7 +280,8 @@ export default function Home() {
               <article className="bg-[#181818] rounded-xl p-8 flex flex-col items-center shadow-md">
                 <MdCheckCircle className="text-4xl text-orange-500 mb-2" aria-hidden="true" />
                 <div className="w-10 h-1 bg-orange-500 mb-4 rounded-full" aria-hidden="true"></div>
-                <span className="text-white text-center font-semibold">Cumplimiento Normativo Automatizado</span>
+                <span className="text-white text-center font-semibold">Toma de decisiones inteligentes 
+                </span>
               </article>
             </div>
           </div>
@@ -296,10 +297,10 @@ export default function Home() {
           {/* Contenido principal */}
           <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
-              ¿Listo para <span className="bg-orange-500 text-white px-2 rounded">modernizar</span> su<br className="hidden md:inline" />gobernanza institucional?
+              ¿Listo para <span className="bg-orange-500 text-white px-2 rounded">modernizar</span> su<br className="hidden md:inline" />gobernanza organizacional?
             </h2>
             <p className="text-white/80 mb-2">
-              Más de 500 instituciones en Latinoamérica y el mundo ya transformaron su gestión con <span className="text-orange-500 font-bold">DEINSA</span>.
+              Más de 500 organizaciones en Latinoamérica y el mundo ya transformaron su gestión con <span className="text-orange-500 font-bold">DEINSA</span>.
             </p>
             <p className="text-white font-bold mb-8">
               Solicite una demostración y descubra cómo podemos hacerlo también para usted.

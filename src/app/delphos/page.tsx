@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { quantifyBold } from '@/app/fonts';
 
 // Tipo para los módulos
 interface Modulo {
@@ -18,7 +19,7 @@ const modulos: Modulo[] = [
     icono: `<svg width="32" height="32" viewBox="0 0 53 48" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M5.3 42.6667H15.9V21.3333H5.3V42.6667ZM21.2 42.6667H31.8V5.33333H21.2V42.6667ZM37.1 42.6667H47.7V26.6667H37.1V42.6667ZM0 42.6667V21.3333C0 19.8667 0.5194 18.6116 1.5582 17.568C2.597 16.5244 3.84427 16.0018 5.3 16H15.9V5.33333C15.9 3.86667 16.4194 2.61156 17.4582 1.568C18.497 0.524445 19.7443 0.00177778 21.2 0H31.8C33.2575 0 34.5056 0.522667 35.5444 1.568C36.5832 2.61333 37.1018 3.86844 37.1 5.33333V21.3333H47.7C49.1575 21.3333 50.4056 21.856 51.4444 22.9013C52.4832 23.9467 53.0018 25.2018 53 26.6667V42.6667C53 44.1333 52.4815 45.3893 51.4444 46.4347C50.4074 47.48 49.1593 48.0018 47.7 48H5.3C3.8425 48 2.59523 47.4782 1.5582 46.4347C0.521167 45.3911 0.00176667 44.1351 0 42.6667Z" fill="#FF6D00"/>
     </svg>`,
-    descripcion: "Defina, gestione y proyecte el futuro de su organización con precisión. Alinee metas, KPIs, planes y presupuestos bajo metodologías como BSC o GpRD, apoyado por inteligencia artificial, simulaciones avanzadas y análisis estratégico 360°.",
+    descripcion: "Defina, gestione y proyecte el futuro de su organización con precisión. Alineé metas, KPIs, planes y presupuestos bajo metodologías como BSC o GpRD, apoyado por inteligencia artificial, simulaciones avanzadas y análisis estratégico 360°.",
     caracteristicas: ["Metas y KPIs alineados", "Simulación de escenarios", "Inteligencia estratégica", "Metodologías flexibles"]
   },
   {
@@ -39,7 +40,7 @@ const modulos: Modulo[] = [
     <path d="M44.7784 3.58696C44.7613 3.50405 44.7209 3.42773 44.662 3.36696C44.603 3.30619 44.528 3.26348 44.4456 3.24384C38.9547 1.90134 26.2675 6.6854 19.3937 13.5563C18.1678 14.7724 17.0501 16.093 16.0534 17.5032C13.9337 17.3157 11.8141 17.4723 10.0075 18.2598C4.9103 20.5032 3.42624 26.357 3.0128 28.8751C2.98935 29.0129 2.9982 29.1543 3.03865 29.2881C3.07909 29.422 3.15004 29.5446 3.2459 29.6464C3.34176 29.7481 3.45993 29.8263 3.5911 29.8746C3.72228 29.923 3.86289 29.9403 4.00187 29.9251L12.1872 29.0223C12.193 29.6394 12.2302 30.2558 12.2987 30.8692C12.3399 31.2951 12.529 31.6931 12.8331 31.9942L16.0028 35.1563C16.3042 35.46 16.702 35.649 17.1278 35.6907C17.7377 35.7589 18.3507 35.7961 18.9644 35.8023L18.0662 43.9773C18.0513 44.1162 18.0687 44.2567 18.1171 44.3878C18.1655 44.5189 18.2437 44.637 18.3454 44.7328C18.4471 44.8286 18.5697 44.8996 18.7034 44.9401C18.8371 44.9806 18.9784 44.9896 19.1162 44.9663C21.6297 44.5632 27.4937 43.0792 29.7241 37.982C30.5116 36.1754 30.6728 34.066 30.4909 31.9566C31.9045 30.9599 33.2286 29.8419 34.4481 28.6154C41.3434 21.7548 46.1003 9.35071 44.7784 3.58696ZM27.5687 20.431C26.9391 19.8018 26.5102 19 26.3364 18.127C26.1625 17.254 26.2514 16.349 26.5919 15.5266C26.9324 14.7042 27.5092 14.0012 28.2493 13.5066C28.9894 13.012 29.8595 12.748 30.7497 12.748C31.6398 12.748 32.51 13.012 33.2501 13.5066C33.9901 14.0012 34.5669 14.7042 34.9074 15.5266C35.2479 16.349 35.3369 17.254 35.163 18.127C34.9891 19 34.5602 19.8018 33.9306 20.431C33.5131 20.8491 33.0173 21.1808 32.4714 21.4071C31.9256 21.6335 31.3406 21.7499 30.7497 21.7499C30.1588 21.7499 29.5737 21.6335 29.0279 21.4071C28.4821 21.1808 27.9863 20.8491 27.5687 20.431Z" fill="#FF6D00"/>
     <path d="M15.7875 37.4466C15.2737 37.9613 14.4497 38.1619 13.4578 38.3334C11.2294 38.7131 9.26156 36.7875 9.66187 34.5347C9.81469 33.6806 10.2666 32.4834 10.5478 32.2022C10.6093 32.1419 10.6502 32.0638 10.6648 31.9789C10.6793 31.8941 10.6667 31.8068 10.6289 31.7294C10.591 31.6521 10.5297 31.5887 10.4537 31.5482C10.3777 31.5077 10.2909 31.4921 10.2056 31.5038C8.95946 31.6562 7.80013 32.2212 6.91219 33.1088C4.70813 35.3147 4.5 43.5 4.5 43.5C4.5 43.5 12.69 43.2919 14.8941 41.0859C15.7843 40.1987 16.35 39.0376 16.5 37.7897C16.5347 37.3978 16.0575 37.1644 15.7875 37.4466Z" fill="#FF6D00"/>
     </svg>`,
-    descripcion: "Impulse sus iniciativas con una plataforma robusta usada a nivel nacional. Alinee proyectos a sus metas, gestione presupuestos, recursos y riesgos con precisión, y visualice el impacto territorial. Incluye: Gantt, PERT y rutas críticas, Presupuesto vs. ejecución, Riesgos y problemas, Georreferenciación, Delphos AI para predicción y automatización.",
+    descripcion: "Impulsar sus iniciativas de mejora, innovación y crecimiento de la organización, con una plataforma robusta que incluye herramientas de apoyo tales como: Gantt, PERT y rutas críticas, Presupuesto vs. ejecución, Riesgos y problemas, Georreferenciación, Delphos AI para predicción y automatización.",
     caracteristicas: ["Gantt, PERT y rutas críticas", "Presupuesto vs. ejecución", "Riesgos y problemas", "Georreferenciación"]
   },
   {
@@ -49,7 +50,7 @@ const modulos: Modulo[] = [
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M34 31V34C34 35.2 33.2 36 32 36C30.8 36 30 35.2 30 34V31H18V34C18 35.2 17.2 36 16 36C14.8 36 14 35.2 14 34V31H10C8.6 31 7.2 30.6 6 30V38C6 41.4 8.6 44 12 44H36C39.4 44 42 41.4 42 38V30C40.8 30.6 39.4 31 38 31H34ZM42 12H34V10C34 6.6 31.4 4 28 4H20C16.6 4 14 6.6 14 10V12H6C4.8 12 4 12.8 4 14V22C4 25.4 6.6 28 10 28H38C41.4 28 44 25.4 44 22V14C44 12.8 43.2 12 42 12ZM30 12H18V10C18 8.8 18.8 8 20 8H28C29.2 8 30 8.8 30 10V12Z" fill="#FF6D00"/>
     </svg>`,
-    descripcion: "Transforme el talento institucional con evaluación continua, alineación estratégica y desarrollo personalizado, validado por el ente rector del empleo público en Costa Rica. Cumpla con la Ley 9635 en Costa Rica.",
+    descripcion: "Transforme la gestión del talento organizacional con un enfoque en la medición de resultados. Nuestro módulo va más allá de la evaluación tradicional del desempeño, entendida como un proceso continuo y sistemático para analizar, medir y valorar el rendimiento de los colaboradores. A la luz de las leyes locales, hemos evolucionado la herramienta para superar el autoengaño de la administración pública, donde la falta de trazabilidad y los planes individuales de trabajo son la norma.",
     caracteristicas: []
   },
   {
@@ -109,7 +110,7 @@ const modulos: Modulo[] = [
     <path d="M30.3187 7.9875L21.2438 15.3375C19.7344 16.5562 19.4438 18.75 20.5875 20.3156C21.7969 21.9844 24.15 22.3125 25.7719 21.0469L35.0813 13.8094C35.7375 13.3031 36.675 13.4156 37.1906 14.0719C37.7063 14.7281 37.5844 15.6656 36.9281 16.1812L34.9688 17.7L51.5813 33H55.5C57.9844 33 60 30.9844 60 28.5V16.5C60 14.0156 57.9844 12 55.5 12H47.9344L47.5687 11.7656L40.7625 7.40625C39.3281 6.4875 37.65 6 35.9437 6C33.9 6 31.9125 6.70312 30.3187 7.9875ZM32.4563 19.65L27.6094 23.4187C24.6562 25.725 20.3719 25.125 18.1594 22.0875C16.0781 19.2281 16.6031 15.2344 19.35 13.0125L27.15 6.70312C26.0625 6.24375 24.8906 6.00937 23.7 6.00937C21.9375 6 20.2219 6.525 18.75 7.5L12 12H4.5C2.01562 12 0 14.0156 0 16.5V28.5C0 30.9844 2.01562 33 4.5 33H14.6437L23.2125 40.8187C25.05 42.4969 27.8906 42.3656 29.5687 40.5281C30.0844 39.9562 30.4312 39.2906 30.6094 38.5969L32.2031 40.0594C34.0312 41.7375 36.8812 41.6156 38.5594 39.7875C38.9812 39.3281 39.2906 38.7937 39.4875 38.2406C41.3063 39.4594 43.7812 39.2062 45.3094 37.5375C46.9875 35.7094 46.8656 32.8594 45.0375 31.1812L32.4563 19.65Z" fill="#FF6D00"/>
     </svg>`,
     descripcion: "Evalúe, supervise y optimice su red de proveedores, socios y contratistas. Aplique due diligence, gestione contratos y SLAs, y controle riesgos que afectan la continuidad, seguridad y cumplimiento de su organización.",
-    caracteristicas: ["Gestión de terceros", "Due diligence", "SLAs", "Riesgo proveedor"]
+    caracteristicas: ["Gestión de terceros", "Due diligence", "Aliados estratégicos", "Riesgo proveedor"]
   },
   {
     id: 10,
@@ -153,7 +154,7 @@ const modulos: Modulo[] = [
     icono: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26.42 0.000133213H13.5C9.9212 0.00542339 6.4905 1.42944 3.9599 3.96003C1.42931 6.49063 0.00529018 9.92134 0 13.5001V26.5001C0.00529018 30.0789 1.42931 33.5096 3.9599 36.0402C6.4905 38.5708 9.9212 39.9948 13.5 40.0001H26.5C30.0788 39.9948 33.5095 38.5708 36.0401 36.0402C38.5707 33.5096 39.9947 30.0789 40 26.5001V13.5001C39.9974 11.7213 39.6438 9.96044 38.9594 8.31851C38.275 6.67657 37.2734 5.18583 36.0118 3.93172C34.7503 2.6776 33.2536 1.68477 31.6077 1.01011C29.9617 0.335452 28.1988 -0.00776301 26.42 0.000133213ZM30.2 21.3801H29.92C29.5679 21.3769 29.2278 21.2515 28.9578 21.0253C28.6879 20.7991 28.5049 20.4863 28.44 20.1401L28.08 18.1401L25.46 22.1401C24.9664 22.8749 24.207 23.3896 23.3417 23.5761C22.4764 23.7626 21.5725 23.6063 20.82 23.1401L16.28 20.2601C16.1964 20.2277 16.1036 20.2277 16.02 20.2601C15.9156 20.277 15.8221 20.3345 15.76 20.4201L11.12 26.6001C10.9782 26.7842 10.7966 26.9338 10.5888 27.0377C10.381 27.1416 10.1523 27.1971 9.92 27.2001C9.59521 27.2016 9.27895 27.0962 9.02 26.9001C8.72956 26.6642 8.53777 26.3283 8.48226 25.9583C8.42676 25.5883 8.51155 25.2109 8.72 24.9001L13.36 18.7201C13.8708 18.0455 14.6135 17.5841 15.4447 17.4253C16.2759 17.2664 17.1364 17.4214 17.86 17.8601L22.42 20.7401C22.5132 20.7864 22.6192 20.7997 22.721 20.7779C22.8227 20.7561 22.914 20.7005 22.98 20.6201L25.66 16.6201L23.5 16.9201C23.3056 16.9569 23.1059 16.955 22.9123 16.9146C22.7187 16.8742 22.5349 16.7961 22.3715 16.6846C22.208 16.5732 22.0682 16.4307 21.9598 16.2652C21.8515 16.0997 21.7768 15.9145 21.74 15.7201C21.7032 15.5258 21.7051 15.3261 21.7455 15.1324C21.7859 14.9388 21.8641 14.755 21.9755 14.5916C22.0869 14.4282 22.2295 14.2883 22.3949 14.1799C22.5604 14.0716 22.7456 13.9969 22.94 13.9601L28.46 12.9401H29.18C29.2318 12.9218 29.2882 12.9218 29.34 12.9401L29.64 13.1001L29.94 13.3401C30.012 13.4268 30.072 13.5201 30.12 13.6201C30.176 13.713 30.2165 13.8143 30.24 13.9201L31.28 19.5201C31.3341 19.7132 31.349 19.9152 31.3237 20.1141C31.2985 20.313 31.2336 20.5048 31.1329 20.6783C31.0322 20.8517 30.8977 21.0031 30.7375 21.1237C30.5773 21.2442 30.3945 21.3314 30.2 21.3801Z" fill="#FF6D00"/>
 </svg>`,
-    descripcion: "Visualice, analice y proyecte sus datos con inteligencia de negocios avanzada. Conecte múltiples fuentes, genere dashboards, simule escenarios y acceda a información clave desde cualquier dispositivo.",
+    descripcion: "Nuestro módulo de información gerencial está diseñado para la alta dirección. No se trata solo de visualizar datos, sino de obtener información cierta, de calidad y oportuna para la toma de decisiones. Conéctese a múltiples fuentes, genere dashboards interactivos y simule escenarios. Deje de hacer autopsias a sus resultados y obtenga biopsias en tiempo real que le permitan actuar con inteligencia estratégica. Acceda a la información clave que necesita, en cualquier momento y desde cualquier dispositivo, para liderar su organización hacia el éxito.",
     caracteristicas: []
   },
 
@@ -265,7 +266,7 @@ export default function DelphosPage() {
           {/* Línea naranja degradada */}
           <div className="h-1 w-48 mb-8 bg-gradient-to-r from-orange-500 via-orange-400/60 to-transparent rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-6">
-            La Plataforma Modular Líder en Gobernanza, Riesgo, Cumplimento y más.
+            La Plataforma Modular Líder en Gobernanza, Riesgo, Cumplimiento y más.
           </h2>
           <p className="text-white mb-4">
             Integre planificación, riesgos, cumplimiento y desempeño en una sola plataforma SaaS, alineada con estándares internacionales.
@@ -278,10 +279,10 @@ export default function DelphosPage() {
             </h3>
             <div className="text-white text-center mb-8 max-w-4xl mx-auto">
               <p className="text-lg mb-4">
-                Delphos es la plataforma de Gestión, Riesgos y Cumplimiento (GRC) en la nube que evoluciona con su institución.
+                Delphos es la plataforma de Gestión, Riesgos y Cumplimiento (GRC) en la nube que evoluciona con su organización.
               </p>
               <p className="text-base leading-relaxed">
-                Centraliza todo lo que necesita para planificar, controlar riesgos y cumplir con normativas, en un solo sistema modular, seguro y escalable. Diseñada para adaptarse a su realidad, Delphos permite empezar por lo esencial como la planificación o el cumplimiento y escalar hacia una gestión integral alineada con estándares como SEVRI, ISO 27001 y COSO ERM.
+                Integra todo lo que se necesita para planificar, controlar riesgos y cumplir con normativas, en un solo sistema modular, seguro y escalable. Diseñada para adaptarse a su realidad, Delphos permite empezar por lo esencial como la planificación o el cumplimiento y escalar hacia una gestión integral alineada con estándares y mejores prácticas globales.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -332,10 +333,13 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-0 leading-none group-hover:text-orange-400 transition-colors duration-300`}>
+                  Delphos Continuum
+                </h3>
                 <img 
-                  src="/images/Continuum1.png" 
+                  src="/images/pruebas/Continuum 1.svg" 
                   alt="Delphos Continuum" 
-                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-44 h-auto object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Gestión integral de riesgos, continuidad del negocio y cumplimiento normativo
@@ -355,10 +359,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Core</h3>
                 <img 
-                  src="/images/delphos core.png" 
+                  src="/images/pruebas/delphos 1.svg" 
                   alt="Delphos Core" 
-                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Planificación estratégica, proyectos y gestión institucional centralizada
@@ -378,10 +383,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Elite</h3>
                 <img 
-                  src="/images/DelphosElite.png" 
+                  src="/images/pruebas/delphosElite 3.svg" 
                   alt="Delphos Elite" 
-                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Gestión del desempeño institucional y evaluación estratégica
@@ -401,10 +407,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos BI</h3>
                 <img 
-                  src="/images/DelphosBI.png" 
+                  src="/images/pruebas/delphosBI 1.svg" 
                   alt="Delphos BI" 
-                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Inteligencia de negocios y análisis de datos institucionales
@@ -424,10 +431,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Mobile</h3>
                 <img 
-                  src="/images/delphos mobile.png" 
+                  src="/images/pruebas/delphos 1.svg" 
                   alt="Delphos Mobile" 
-                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Acceso móvil a la gestión institucional desde cualquier lugar
@@ -447,10 +455,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Funcion@</h3>
                 <img 
-                  src="/images/Delphosfunciona.png" 
+                  src="/images/pruebas/delphosFunciona 1.svg" 
                   alt="Delphos Funcion@" 
-                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Simulación, pronóstico y análisis predictivo avanzado
@@ -470,10 +479,11 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Portal</h3>
                 <img 
-                  src="/images/delphos portal.png" 
+                  src="/images/pruebas/delphosPortal 1.svg" 
                   alt="Delphos Portal" 
-                  className="w-36 h-36 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Portales institucionales personalizados y experiencias digitales
@@ -490,7 +500,7 @@ export default function DelphosPage() {
       <section className=" py-16 relative z-10">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            ¿Listo para <span className="bg-orange-500 text-white px-2 rounded">transformar</span> su gobernanza?
+            ¿Listo para <span className="bg-orange-500 text-white px-2 rounded">transformar</span> su organización a mayores niveles de competitividad?
           </h2>
           <p className="text-gray-200 mb-8">Únase a más de 500 instituciones que ya confían en DEINSA.</p>
           <div className="flex flex-col items-center">

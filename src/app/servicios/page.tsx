@@ -60,14 +60,11 @@ export default function ServiciosPage() {
           </h1>
           <h3 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
             <span className="text-white">Servicios especializados para </span>
-            <span className="text-orange-500">gestión de riesgos</span>
-            <span className="text-white">, </span>
-            <span className="text-orange-500">cumplimiento del MICITT</span>
-            <span className="text-white"> y </span>
-            <span className="text-orange-500">planificación institucional</span>
+            <span className="text-orange-500">gestión de riesgos y cumplimiento normativo, diseñados para adaptarse a los estándares internacionales.</span>
+
           </h3>
           <p className="text-white/80 text-base md:text-lg mb-6 max-w-xl">
-            Transformamos la gestión institucional con soluciones innovadoras en <b>GRC</b>, riesgo y cumplimiento.
+            Transformamos la gestión organizacional con soluciones innovadoras en <b>GRC</b>, riesgo y cumplimiento.
           </p>
         </div>
         {/* Columna derecha: fondo decorativo */}
@@ -102,14 +99,14 @@ export default function ServiciosPage() {
               <span className="text-orange-500 text-3xl mt-1"><FaChartLine /></span>
               <div>
                 <h3 className="font-bold text-white text-lg mb-1">Planificación y desempeño estratégico</h3>
-                <p className="text-gray-300 text-sm">Modelos de gestión alineados al PND, PAI y evaluación del desempeño institucional.</p>
+                <p className="text-gray-300 text-sm">Modelos de gestión alineados a planes de orden superior y evaluación del desempeño organizacional para la toma de decisiones, la transparencia y la rendición de cuentas.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <span className="text-orange-500 text-3xl mt-1"><FaShieldAlt /></span>
               <div>
                 <h3 className="font-bold text-white text-lg mb-1">Gestión de Riesgos y Cumplimiento Normativo</h3>
-                <p className="text-gray-300 text-sm">Software alineado a SEVRI, Normas Técnicas del MICITT e ISO 27001.</p>
+                <p className="text-gray-300 text-sm">Software alineado a los mejores estándares internacionales.</p>
               </div>
             </div>
           </div>
@@ -156,6 +153,39 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      {/* SERVICIOS PROFESIONALES: ASESORÍA, CONSULTORÍA Y CAPACITACIÓN */}
+      <section className="relative py-20 bg-black z-10">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="bg-black/60 backdrop-blur-sm rounded-3xl border border-white/10 shadow-2xl shadow-orange-500/10 p-8 md:p-12 relative overflow-hidden">
+            {/* acentos visuales */}
+            <div className="absolute -top-24 -right-24 w-[380px] h-[380px] rounded-full bg-gradient-to-br from-orange-600/30 via-orange-400/20 to-transparent blur-[80px] pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-[320px] h-[320px] rounded-full bg-gradient-to-tr from-blue-600/30 via-blue-400/20 to-transparent blur-[80px] pointer-events-none" />
+
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-4">
+                Servicios profesionales de asesoría, consultoría y capacitación
+              </h2>
+              <p className="text-white/80 text-base md:text-lg text-center max-w-4xl mx-auto">
+                Nuestra plataforma de servicios empresariales pone, a su vez, a disposición de las organizaciones y clientes un equipo de consultores de primer nivel profesional y experiencia que brindan servicios de consultoría, asesoría y capacitación en los diferentes temas de la gestión moderna. Su experiencia y conocimiento no solo generan valor real para nuestros clientes, fortaleciendo capacidades organizacionales y humanas que, a su vez, enriquecen de manera continua el desarrollo de nuestras soluciones tecnológicas, asegurando que estén siempre alineadas con las mejores prácticas, las tendencias globales y las necesidades específicas de cada organización.
+              </p>
+
+              {/* bullets de respaldo visual */}
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-black/70 rounded-2xl border border-white/10 p-6 text-center">
+                  <span className="inline-block text-orange-500 text-sm font-bold tracking-wider">CONSULTORÍA</span>
+                </div>
+                <div className="bg-black/70 rounded-2xl border border-white/10 p-6 text-center">
+                  <span className="inline-block text-orange-500 text-sm font-bold tracking-wider">ASESORÍA</span>
+                </div>
+                <div className="bg-black/70 rounded-2xl border border-white/10 p-6 text-center">
+                  <span className="inline-block text-orange-500 text-sm font-bold tracking-wider">CAPACITACIÓN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SOLUCIONES A MEDIDA CON DELPHOS */}
       <section className="relative py-20 bg-black overflow-hidden z-10">
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
@@ -163,7 +193,7 @@ export default function ServiciosPage() {
             <span className="text-orange-500">Soluciones</span> <span className="text-white">a Medida con</span> <span className="text-white font-bold">Delphos</span>
           </h2>
           <p className="text-white mb-10">
-            Adaptamos nuestra plataforma DELPHOS y nuestros servicios a los requerimientos de gobiernos, bancos y entidades del sector público, garantizando cumplimiento normativo y resultados medibles desde el primer mes.
+            Adaptamos nuestra plataforma DELPHOS y nuestros servicios a los requerimientos de gobiernos, empresas del sector financiero y entidades del sector público, garantizando cumplimiento normativo y resultados medibles desde el primer mes.
           </p>
           <div className="flex flex-col items-center">
             <a
