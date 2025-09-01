@@ -333,13 +333,13 @@ export default function DelphosPage() {
               className="group bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-orange-500/30"
             >
               <div className="flex flex-col items-center text-center h-full">
-                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-0 leading-none group-hover:text-orange-400 transition-colors duration-300`}>
+                <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>
                   Delphos Continuum
                 </h3>
                 <img 
                   src="/images/pruebas/Continuum 1.svg" 
                   alt="Delphos Continuum" 
-                  className="w-44 h-auto object-contain group-hover:scale-110 transition-transform duration-300" 
+                  className="w-28 h-28 mb-4 object-contain scale-125 group-hover:scale-140 transition-transform duration-300" 
                 />
                 <p className="text-sm text-gray-400 leading-relaxed">
                   Gestión integral de riesgos, continuidad del negocio y cumplimiento normativo
