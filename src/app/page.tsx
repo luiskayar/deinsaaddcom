@@ -5,8 +5,8 @@ import { MdSecurity, MdGavel, MdIntegrationInstructions, MdSettings, MdTimeline,
 import { FaRegFileAlt, FaChartBar } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "DEINSA Global | Software GRC para Gestión de Riesgos",
-  description: "Descubra DEINSA Global: la plataforma GRC SaaS líder en gestión de riesgos, cumplimiento normativo y gobernanza corporativa. Solicite demo hoy.",
+  title: "Gobernanza y Gestión de Riesgos integrada | Deinsa Global",
+  description: "Plataforma de gobernanza corporativa integral que asegura la Continuidad del Negocio, la Seguridad de la Información, la Gestión de Riesgos.",
   keywords: [
     "software de gestión de riesgos",
     "gobernanza corporativa",
@@ -72,7 +72,7 @@ export default function Home() {
               <span className="text-white"> la gobernanza de su organización con una toma de decisiones inteligentes, con seguridad y control.</span>
             </h1>
             <p className="text-base md:text-xl text-white/80 mb-10 max-w-3xl mx-auto">
-            La solución SaaS que integra la planificación, proyectos, continuidad, gestión de riesgos, cumplimiento normativo, gobernanza organizacional y más. </p>
+            Plataforma SaaS de Gobernanza Corporativa: Continuidad del Negocio y Gestión de Riesgos, Planes Estratégicos, Seguridad de la Información y Cumplimiento con Normas Internacionales. </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Link
                 href="/delphos"

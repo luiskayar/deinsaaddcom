@@ -4,7 +4,7 @@ import { FaGlobe, FaChartLine, FaShieldAlt, FaCogs, FaSearch, FaRocket, FaChalkb
 
 export const metadata: Metadata = {
   title: 'Gestión de Riesgos Integrada | DEINSA Global GRC',
-  description: 'Deinsa Global ofrece consultoría en gobernanza corporativa, gestión de riesgos y cumplimiento normativo, con soluciones a medida y formación especializada.',
+  description: 'Servicios especializados en diseño de Planes Estratégicos y Anuales, Continuidad del Negocio, Seguridad de la Información y Gestión estratégica.',
   keywords: [
     'Consultoría GRC',
     'Software de gestión de riesgos',
@@ -193,7 +193,7 @@ export default function ServiciosPage() {
             <span className="text-orange-500">Soluciones</span> <span className="text-white">a Medida con</span> <span className="text-white font-bold">Delphos</span>
           </h2>
           <p className="text-white mb-10">
-            Adaptamos nuestra plataforma DELPHOS y nuestros servicios a los requerimientos de gobiernos, empresas del sector financiero y entidades del sector público, garantizando cumplimiento normativo y resultados medibles desde el primer mes.
+          Ofrecemos gestión de proyectos con resultados medibles, alineados a objetivos, planes estratégicos y planes anuales basados en BSC y GpRD, continuidad del negocio con recuperación rápida ante crisis, seguridad de la información bajo ISO 27001, gestión de tecnologías de la información con COBIT 2019 y gestión de riesgos.          
           </p>
           <div className="flex flex-col items-center">
             <a

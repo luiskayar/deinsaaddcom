@@ -5,8 +5,8 @@ import ClientAlianzasGrid from './ClientAlianzasGrid';
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Deinsa Global – Quiénes Somos y Nuestros Valores',
-    description: 'Descubre la misión, visión y valores de Deinsa Global. 35 años de experiencia en gobernanza corporativa, riesgos y cumplimiento normativo',
+    title: 'Deinsa Global | Líderes en Gobernanza Corporativa y Continuidad de Negocio.',
+    description: 'Somos Deinsa Global, creadores de Delphos. Expertos en Gobernanza Corporativa, Continuidad del Negocio, Seguridad de la Información y Gestión de Proyectos. Implementamos BSC, GpRD, COBIT 2019, ISO 27001.',
     keywords: [
       'Deinsa Global',
       'quiénes somos',
