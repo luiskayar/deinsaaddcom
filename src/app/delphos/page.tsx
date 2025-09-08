@@ -337,7 +337,7 @@ export default function DelphosPage() {
                   Delphos Continuum
                 </h3>
                 <img 
-                  src="/images/pruebas/Continuum 1.svg" 
+                  src="/images/pruebas/Continuum-1.svg" 
                   alt="Delphos Continuum" 
                   className="w-28 h-28 mb-4 object-contain scale-125 group-hover:scale-140 transition-transform duration-300" 
                 />
@@ -361,7 +361,7 @@ export default function DelphosPage() {
               <div className="flex flex-col items-center text-center h-full">
                 <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Core</h3>
                 <img 
-                  src="/images/pruebas/delphos 1.svg" 
+                  src="/images/pruebas/delphos-1.svg" 
                   alt="Delphos Core" 
                   className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
@@ -385,7 +385,7 @@ export default function DelphosPage() {
               <div className="flex flex-col items-center text-center h-full">
                 <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Elite</h3>
                 <img 
-                  src="/images/pruebas/delphosElite 3.svg" 
+                  src="/images/pruebas/delphosElite-3.svg" 
                   alt="Delphos Elite" 
                   className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
@@ -409,7 +409,7 @@ export default function DelphosPage() {
               <div className="flex flex-col items-center text-center h-full">
                 <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos BI</h3>
                 <img 
-                  src="/images/pruebas/delphosBI 1.svg" 
+                  src="/images/pruebas/delphosBI-1.svg" 
                   alt="Delphos BI" 
                   className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
@@ -433,7 +433,7 @@ export default function DelphosPage() {
               <div className="flex flex-col items-center text-center h-full">
                 <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Mobile</h3>
                 <img 
-                  src="/images/pruebas/delphos 1.svg" 
+                  src="/images/pruebas/delphos-1.svg" 
                   alt="Delphos Mobile" 
                   className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
@@ -457,7 +457,7 @@ export default function DelphosPage() {
               <div className="flex flex-col items-center text-center h-full">
                 <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Funcion@</h3>
                 <img 
-                  src="/images/pruebas/delphosFunciona 1.svg" 
+                  src="/images/pruebas/delphosFunciona-1.svg" 
                   alt="Delphos Funcion@" 
                   className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />
@@ -481,7 +481,7 @@ export default function DelphosPage() {
               <div className="flex flex-col items-center text-center h-full">
                 <h3 className={`${quantifyBold.className} text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300`}>Delphos Portal</h3>
                 <img 
-                  src="/images/pruebas/delphosPortal 1.svg" 
+                  src="/images/pruebas/delphosPortal-1.svg" 
                   alt="Delphos Portal" 
                   className="w-28 h-28 mb-4 object-contain group-hover:scale-110 transition-transform duration-300" 
                 />

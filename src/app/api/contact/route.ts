@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+// Revertido: sin rate limit
 
 interface ContactFormData {
   nombre: string;
@@ -10,7 +11,8 @@ interface ContactFormData {
   cargo: string;
   interes: string;
   mensaje: string;
-  "g-recaptcha-response": string;
+  "g-recaptcha-response"?: string;
+  company?: string;
 }
 
 async function sendEmail(data: ContactFormData) {
@@ -155,7 +157,23 @@ deinsa.com
 export async function POST(req: Request) {
   try {
     const body: ContactFormData = await req.json();
-    const token = body["g-recaptcha-response"];
+
+    // Rate limit por IP (5/min) y honeypot
+    const { rateLimit } = await import("@/lib/rateLimit");
+    const ip =
+      (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() ||
+      (req as unknown as { ip?: string }).ip ||
+      "unknown";
+    const rl = await rateLimit({ key: `contact:${ip}`, limit: 5, windowMs: 60_000 });
+    if (!rl.ok) {
+      return NextResponse.json(
+        { error: "Demasiados envíos. Intente nuevamente en un minuto." },
+        { status: 429 }
+      );
+    }
+    if (body.company && body.company.trim().length > 0) {
+      return NextResponse.json({ success: true });
+    }
 
     // Validar campos requeridos
     if (!body.nombre || !body.apellido || !body.email || !body.mensaje) {
@@ -165,40 +183,9 @@ export async function POST(req: Request) {
       );
     }
 
-    if (!token) {
-      return NextResponse.json(
-        { error: "Falta el token reCAPTCHA" },
-        { status: 400 }
-      );
-    }
+    // Sin reCAPTCHA
 
-    // Verificar reCAPTCHA
-    const secret = process.env.RECAPTCHA_SECRET;
-    if (!secret) {
-      console.error("RECAPTCHA_SECRET no está configurado");
-      return NextResponse.json(
-        { error: "Error de configuración del servidor" },
-        { status: 500 }
-      );
-    }
-
-    const recaptchaRes = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `secret=${secret}&response=${token}`,
-    });
-
-    const recaptchaData = await recaptchaRes.json();
-
-    if (!recaptchaData.success) {
-      console.error("reCAPTCHA verification failed:", recaptchaData);
-      return NextResponse.json(
-        { error: "Verificación reCAPTCHA fallida" },
-        { status: 400 }
-      );
-    }
-
-    // Enviar email
+    // Enviar email siempre (si faltan vars, devolver error claro)
     await sendEmail(body);
 
     return NextResponse.json({ 

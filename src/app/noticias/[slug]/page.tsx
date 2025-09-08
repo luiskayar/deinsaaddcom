@@ -5,6 +5,8 @@ import Script from "next/script";
 import Link from "next/link";
 import { Metadata } from "next";
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || ""; // fallback a relativo
+
 // Metadata dinámica para cada noticia
 export async function generateMetadata({ 
   params 
@@ -15,7 +17,7 @@ export async function generateMetadata({
   
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/news/${slug}`,
+      `${API_BASE}/api/news/${slug}`,
       { next: { revalidate: 3600 } } // Cache por 1 hora
     );
     
@@ -49,7 +51,7 @@ export async function generateMetadata({
 // Generar rutas estáticas para las noticias más populares
 export async function generateStaticParams() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news`, {
+    const res = await fetch(`${API_BASE}/api/news`, {
       next: { revalidate: 1800 }
     });
     
@@ -75,7 +77,7 @@ export default async function NoticiaPage({
   
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/news/${slug}`,
+      `${API_BASE}/api/news/${slug}`,
       {
         next: { revalidate: 1800 }, // Cache por 30 minutos
       }

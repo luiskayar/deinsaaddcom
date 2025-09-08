@@ -63,7 +63,7 @@ export default function Home() {
         {/* Hero Section - Diseño Único */}
         <section
           className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-4 md:pt-8 pb-10"
-          style={{ backgroundImage: "url('/images/fondo principal.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{ backgroundImage: "url('/images/fondo-principal.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
           aria-label="Sección principal de gobernanza corporativa"
         >
           <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
@@ -134,10 +134,10 @@ export default function Home() {
           {/* Carrusel de logos */}
           <div className="relative z-20 w-full max-w-6xl flex items-center justify-center gap-6 animate-scroll-logos">
             {[
-              '/images/banco m.png',
+              '/images/banco-m.png',
               '/images/BID.png',
               '/images/D&B.png',
-              '/images/CR Gobierno.png',
+              '/images/CR-Gobierno.png',
               '/images/MIDELPAN.png',
               '/images/buro.png',
               '/images/CR.png',

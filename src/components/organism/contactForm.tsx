@@ -33,6 +33,9 @@ const ContactForm: React.FC = () => {
     message: string;
   }>({ type: null, message: '' });
 
+  // Honeypot
+  const [botTrap, setBotTrap] = useState("");
+
   // Manejar hidratación
   useEffect(() => {
     setIsMounted(true);
@@ -74,27 +77,6 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: '' });
 
-    // Verificar que reCAPTCHA esté disponible
-    if (typeof window.grecaptcha === 'undefined') {
-      setSubmitStatus({
-        type: 'error',
-        message: 'Error: reCAPTCHA no está cargado. Por favor, recarga la página.'
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    const token = window.grecaptcha.getResponse();
-
-    if (!token) {
-      setSubmitStatus({
-        type: 'error',
-        message: 'Por favor, completa el reCAPTCHA antes de enviar el formulario.'
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -103,7 +85,7 @@ const ContactForm: React.FC = () => {
         },
         body: JSON.stringify({
           ...formData,
-          "g-recaptcha-response": token,
+          company: botTrap,
         }),
       });
 
@@ -113,14 +95,12 @@ const ContactForm: React.FC = () => {
           message: '¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.'
         });
         resetForm();
-        window.grecaptcha.reset();
       } else {
         const errorData = await res.json();
         setSubmitStatus({
           type: 'error',
-          message: errorData.message || 'Error al enviar el mensaje. Por favor, intenta de nuevo.'
+          message: errorData.error || errorData.message || 'Error al enviar el mensaje. Por favor, intenta de nuevo.'
         });
-        window.grecaptcha.reset();
       }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
@@ -128,7 +108,6 @@ const ContactForm: React.FC = () => {
         type: 'error',
         message: 'Error de conexión. Por favor, verifica tu conexión a internet e intenta de nuevo.'
       });
-      window.grecaptcha.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -150,10 +129,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="bg-[#181818] p-8 rounded-2xl">
-      <Script
-        src="https://www.google.com/recaptcha/api.js"
-        strategy="afterInteractive"
-      />
+      {/* Formulario simple con honeypot invisible */}
       <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-12 text-center">
           Formulario de Contacto
@@ -265,10 +241,17 @@ const ContactForm: React.FC = () => {
           />
         </FormField>
 
-        <div
-          className="g-recaptcha flex justify-center"
-          data-sitekey="6Ld_2YYrAAAAADCNaewT-M7O_TetUpXWDW1dJcRl"
-        ></div>
+        {/* Honeypot invisible: bots suelen completarlo */}
+        <input
+          type="text"
+          name="company"
+          value={botTrap}
+          onChange={(e) => setBotTrap(e.target.value)}
+          className="hidden"
+          autoComplete="off"
+          tabIndex={-1}
+          aria-hidden="true"
+        />
 
         <button
           type="submit"
