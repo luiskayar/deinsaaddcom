@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { slug } = await params;
   
   try {
-    const noticia = await getNoticiaBySlug(slug);
+    const noticia = (await getNoticiaBySlug(slug)) as (NewsFirebase & { id: string }) | null;
     if (noticia) {
       return {
         title: `${noticia.title} | Deinsa Global`,
