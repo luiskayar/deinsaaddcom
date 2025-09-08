@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Script from "next/script";
+// import Script from "next/script"; // eliminado: no se usa
 import FormField from "../molecules/formField";
 import Input from "../atoms/input";
 import Textarea from "../atoms/textArea";
