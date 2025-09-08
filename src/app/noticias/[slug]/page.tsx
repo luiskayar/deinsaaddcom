@@ -4,8 +4,8 @@ import Image from "next/image";
 import Script from "next/script";
 import Link from "next/link";
 import { Metadata } from "next";
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || ""; // fallback a relativo
+import { getNoticiaBySlug } from "@/lib/functions/getNoticiaBySlug";
+import { getNews } from "@/lib/functions/getNews";
 
 // Metadata dinámica para cada noticia
 export async function generateMetadata({ 
@@ -16,13 +16,8 @@ export async function generateMetadata({
   const { slug } = await params;
   
   try {
-    const res = await fetch(
-      `${API_BASE}/api/news/${slug}`,
-      { next: { revalidate: 3600 } } // Cache por 1 hora
-    );
-    
-    if (res.ok) {
-      const noticia = await res.json();
+    const noticia = await getNoticiaBySlug(slug);
+    if (noticia) {
       return {
         title: `${noticia.title} | Deinsa Global`,
         description: noticia.description,
@@ -51,21 +46,14 @@ export async function generateMetadata({
 // Generar rutas estáticas para las noticias más populares
 export async function generateStaticParams() {
   try {
-    const res = await fetch(`${API_BASE}/api/news`, {
-      next: { revalidate: 1800 }
-    });
-    
-    if (res.ok) {
-      const noticias = await res.json();
-      return noticias.slice(0, 5).map((noticia: NewsFirebase & { id: string }) => ({
-        slug: noticia.slug,
-      }));
-    }
+    const noticias = await getNews();
+    return noticias.slice(0, 5).map((noticia: NewsFirebase & { id: string }) => ({
+      slug: noticia.slug,
+    }));
   } catch (error) {
     console.error('Error generating static params:', error);
+    return [];
   }
-  
-  return [];
 }
 
 export default async function NoticiaPage({ 
@@ -76,25 +64,7 @@ export default async function NoticiaPage({
   const { slug } = await params;
   
   try {
-    const res = await fetch(
-      `${API_BASE}/api/news/${slug}`,
-      {
-        next: { revalidate: 1800 }, // Cache por 30 minutos
-      }
-    );
-    
-    if (!res.ok) {
-      return (
-        <div className="min-h-screen bg-black flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold text-red-500 mb-4">Error al cargar la noticia</h1>
-            <p className="text-gray-400">No se pudo cargar el contenido solicitado.</p>
-          </div>
-        </div>
-      );
-    }
-    
-    const noticia: NewsFirebase & { id: string } = await res.json();
+    const noticia = (await getNoticiaBySlug(slug)) as (NewsFirebase & { id: string }) | null;
 
     // Validar que la noticia tenga los campos requeridos
     if (!noticia || !noticia.title || !noticia.description || !noticia.image) {
